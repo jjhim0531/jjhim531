@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트관련스타일</title>
+
+    <style>
+        #c {
+            color: red;
+            color: #ebc74f;
+            color: rgb(15, 12, 12), rgb(24, 32, 24), rgb(30, 30, 58);
+            color: rgba(99, 41, 41, 0.562);
+
+        }
+
+        #td1 {
+            text-decoration: underline;
+        }
+
+        #td2 {
+            text-decoration: line-through;
+        }
+
+        #td3 {
+            text-decoration: overline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>텍스트 관련 스타일(text~)</h1>
+
+
+    <h2>color : 텍스트 색상 지정</h2>
+
+
+    <pre>
+        선택자{
+            color : 색상명 | #16진수(코드값) |rgb(x,x,x) | rgba(x,x,x,x)
+        }
+    </pre>
+
+    <pre id="c">
+        선택자{
+            color : 색상명 | #16진수(코드값) |rgb(x,x,x) | rgba(x,x,x,x)
+        }
+    </pre>
+
+    <h2>text-decoration : 텍스트에 줄을 긋거나 줄을 없앨 때 사용</h2>
+    <pre>
+        선택자{
+            text-decoration : none | underline | overline | line-through
+        }
+    </pre>
+
+    <ul>
+        <li id="td1">텍스트 영역 아래 줄 긋기</li>
+        <li id="td2">텍스트 영역 중간에 줄 긋기</li><br>
+
+        <li id="td3">텍스트 영역 위에 줄 긋기</li>
+
+    </ul>
+
+    <a href="https://www.naver.com" target="_blank" style="text-decoration: none;">네이버로</a>
+
+
+    <hr>
+
+    <h3>text-align : 텍스트 정렬할 때 사용</h3>
+    <pre>
+        선택자{
+            text-align : left(기본값) | right | center | justify
+        }
+    </pre>
+
+    <h4>왼쪽정렬(기본값)</h4>
+    <p style="text-align: left;">
+        [한국물가협회]
+        한국물가협회는 전국 17개 시도 전통시장에서 28개 차례 용품 품목별 가격을 조사한 결과, 추석 차례상(4인 기준) 비용은 28만7100원으로 지난해 추석보다 9.1% 늘었다고 26일 밝혔다. 이는
+        10년 전 추석 차례상 비용(19만8610원)과 비교하면 44.6% 높
+
+
+
+    </p>
+
+
+    <p style="text-align: justify;"> [한국물가협회]
+        한국물가협회는 전국 17개 시도 전통시장에서 28개 차례 용품 품목별 가격을 조사한 결과, 추석 차례상(4인 기준) 비용은 28만7100원으로 지난해 추석보다 9.1% 늘었다고 26일 밝혔다. 이는
+        10년 전 추석 차례상 비용(19만8610원)과 비교하면 44.6% 높
+
+
+
+    </p>
+
+    <p style="text-align: center;">
+        [한국물가협회]
+        한국물가협회는 전국 17개 시도 전통시장에서 28개 차례 용품 품목별 가격을 조사한 결과, 추석 차례상(4인 기준) 비용은 28만7100원으로 지난해 추석보다 9.1% 늘었다고 26일 밝혔다. 이는
+        10년 전 추석 차례상 비용(19만8610원)과 비교하면 44.6% 높
+
+
+
+    </p>
+
+    <p style="text-align: right;">
+        [한국물가협회]
+        한국물가협회는 전국 17개 시도 전통시장에서 28개 차례 용품 품목별 가격을 조사한 결과, 추석 차례상(4인 기준) 비용은 28만7100원으로 지난해 추석보다 9.1% 늘었다고 26일 밝혔다. 이는
+        10년 전 추석 차례상 비용(19만8610원)과 비교하면 44.6% 높
+
+
+
+    </p>
+
+    <hr>
+
+    <h3>line-height : 줄 간격 조절할 때 사용</h3>
+    <pre>
+            선택자{
+                line-height : normal 
+                | px |em |%
+            }
+        </pre>
+
+    <h4>px고정단위 간격</h4>
+
+    <p style="line-height: 30px;">[한국물가협회]
+        한국물가협회는 전국 17개 시도 전통시장에서 28개 차례 용품 품목별 가격을 조사한 결과, 추석 차례상(4인 기준) 비용은 28만7100원으로 지난해 추석보다 9.1% 늘었다고 26일 </p>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
