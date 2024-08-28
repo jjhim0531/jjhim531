@@ -11,34 +11,40 @@
             padding: 0;
         }
 
+        /*시작할 때 세팅해주기*/
+
         div {
             box-sizing: border-box;
             border: 1px solid black;
         }
 
-        /*화면 전체를 감싸는 div*/
-
+        /* 화면 전체를 감싸는 div */
         .wrap {
             width: 100%;
-            min-height: 100vh;
+            min-height: 500px;
+            height: 800px;
+            /*height는 페이지 전체높이를 갖고자 한다면 추가적인 설정이 필요함.*/
+            /*width는 html및body에서 따로 설정하지 않아도 기본적으로 페이지의 전체크기를 갖는다.*/
         }
 
-        .
-
-        /*hread, content, footer*/
+        /* header, content, footer */
         .wrap>div {
             width: 100%;
-
         }
 
         #header,
         #footer {
-            height: 150px
+            height: 150px;
         }
 
         #content {
             min-height: 200px;
-            height: calc(100%-300px);
+            height: calc(100% - 300px);
+        }
+
+        #content>div {
+            height: 100%;
+            float: left;
         }
 
         #content1 {
@@ -46,7 +52,7 @@
         }
 
         #content2 {
-            width: calc(100%-150px);
+            width: calc(100% - 150px);
         }
     </style>
 </head>
@@ -54,13 +60,12 @@
 <body>
     <div class="wrap">
         <div id="header"></div>
-        <div id="content"></div>
-        <div id="content1"></div>
-        <div id="content2"></div>
+        <div id="content">
+            <div id="content1"></div>
+            <div id="content2"></div>
+        </div>
+        <div id="footer"></div>
     </div>
-    <div id="footer"></div>
-
-
 </body>
 
 </html>
