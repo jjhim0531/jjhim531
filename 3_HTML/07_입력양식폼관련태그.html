@@ -14,8 +14,10 @@
 
     아이디 : <input type="text"><br>
     비밀번호 : <input type="password"> <br>
-    성별 : <input type="radio" name="gender"> 남
-    <input type="radio" name="gender"> 여<!--name ="~~" 한쌍으로 묶어서 여러개중 하나만 선택가능하게 해줌-->
+    성별 :
+    <input type="radio" name="gender"> 남
+    <input type="radio" name="gender"> 여
+    <!--name ="~~" 한쌍으로 묶어서 여러개중 하나만 선택가능하게 해줌-->
 
     <input type="submit" value="회원가입">
 
@@ -30,16 +32,13 @@
         form 태그내에 submit버튼 클릭 시 해당 form안에 작성된 <br>
         사용자가 입력한 값들을 서버로 넘기면서 요청하는 역할을 수행<br><br>
 
-        form action ="" method =""<br><br>
-        * action : 해당 form에 사용자가 입력한 값들을 전달하면서 요청을 보낼 서버의 경로를 제시<br><br>
-        * method : 요청 전송방식을 지정하는 속성(get(기본값)/post)<br>
+        form action =" " method =" "<br><br>
+        * action : 해당 form에 사용자가 입력한 값들을 전달하면서 요청을 보낼 서버의 경로를 제시<br>
+        * method : 요청 전송방식을 지정하는 속성 (get(기본값) / post)<br>
         > get : 요청시 사용자가 입력한 값들이 url에 그대로 노출이 된다.<br>
-        > post : 요청시 사용자가 입력한 값들이 url에 노출되지 않는 방식
+        > post : 요청시 사용자가 입력한 값들이 url에 노출되지 않는 방식<br>
 
-        form내에 submit버튼 클릭시 action에 지정한 서버로 사용자가 입력한 값들이 넘어가면서 요청됨(key=value세트로 전달)
-
-
-
+        form 내에 submit버튼 클릭시 action에 지정한 서버로 사용자가 입력한 값들이 넘어가면서 요청됨 (key = value 세트로 전달)
 
     </p>
 
@@ -57,6 +56,8 @@
         안녕하세요
     </fieldset>
 
+    <br><br>
+
     <hr>
 
     <h3>
@@ -71,15 +72,20 @@
             입력 : <input type="text"><br>
 
         </fieldset>
+
+        <br>
+
         <fieldset>
             <legend>제목2</legend>
             입력 : <input type="text"><br>
             입력 : <input type="text"><br>
 
         </fieldset>
+        <br>
         <input type="submit">
         <input type="reset">
     </form>
+    <br><br>
 
     <hr>
 
@@ -97,31 +103,34 @@
         <hr>
 
         <br><br>
-        아이디 : <input type="text" name="userId" placeholder="아이디를 입력해주세요." maxlength="12" required>
 
-        <h3> type ="password"</h3>
+        아이디 :
+        <input type="text" name="userId" placeholder="아이디를 입력해주세요." maxlength="12" required>
+
+        <h3>type = "password"</h3>
         <p>
             - 비밀번호를 입력할 수 있는 텍스트 상자
-
         </p>
         비밀번호 :
         <input type="password" name="userPwd" placeholder="영문, 숫자 포함 8~12자리" maxlength="12" required>
 
+        <h3>type = "search | url | email | phone"</h3>
+        <p>겉모습은 텍스트상자와 동일하지만 각각의 정보에 맞게 세분화된 기능을 제공한다.</p>
 
+        검색 :
+        <input type="search" name="keyword"> <br>
 
-        <h3> type ="search | url | email | phone"</h3>
-        <p>
-            - 겉모습은 텍스트 상자와 동일하지만 각각의 정보에 맞게 세분화된 기능을 제공한다.
+        홈페이지 :
+        <input type="url" name="url"> <br>
 
-        </p>
-        검색 : <input type="search" name="keyword"><br>
-        홈페이지 : <input type="url" name="url"><br>
-        이메일 : <input type="email" name="email"><br>
-        전화번호 : <input type="phone" name="phone"><br>
+        이메일 :
+        <input type="email" name="email"> <br>
 
-        <br><br><br>
+        전화번호 :
+        <input type="phone" name="phone"> <br>
+
+        <br><br>
         <input type="submit">
-
     </form>
 
     <h2>textarea</h2>
@@ -136,7 +145,7 @@
     <form action="test.co">
         <h3>type="number"</h3>
         <p>
-            - 숫자값만 작성 가능한 텍스트상자
+            - 숫자값만 작성 가능한 텍스트상자<br>
             - 스핀박스가 표시된다(스핀박스 : 위/아래 화살표)
         </p>
         수량 :
@@ -154,6 +163,9 @@
         <input type="submit">
 
     </form>
+
+    <hr>
+
     <h2>날짜 및 시간과 관련된 input 태그의 타입</h2>
     <form action="">
         <h3> type ="date | month | week | time | datetime-local</h3>
@@ -169,12 +181,56 @@
         datetime-local : <input type="datetime-local"><br>
         <!--date+time. 연도, 월, 일, 오전 / 오후 몇시 몇분을  입력받을 수 있는 상자-->
     </form>
+
+
     <hr>
     <h3>selectbox</h3>
-    <select name="color"><!--여러개 중에 하나 선택가능-->
-        <option value="red">빨간색</option>
-        <option value="blue">파란색</option>
+    <h4>무조건 하나를 선택해야할 때</h4>
+    <select name="name"><!--여러개 중에 하나 선택가능-->
+        <option value="104">최지원</option>
+        <option value="105">서재용</option>
     </select>
+
+    <hr>
+    <form action="test.co">
+
+        <h3>radio button</h3>
+        <!--label과 id를 묶어놓으면 글씨를 클릭해도 선택이 가능하다.-->
+        <p>selectbox처럼 여러개 중에 하나를 선택할 때 주로 사용함<br>
+            * name속성을 통해서 여러개의 라디오버튼을 하나의 선택지로 묶을 수 있음<br>
+            * checked속성을 넣은 라디오버튼이 기본값으로 설정됨<br>
+            * id - for 속성을 통해서 input과 label태그를 묶어줄 수 있음<br>
+            * 서버에 실제로 전달될 때 key -> name속성값, vlaue -> value속성값으로 전달</p>
+        <input type="radio" id="man" name="gender" value="man">
+        <label for="man">남자</label>
+        <input type="radio" id="woman" name="gender" value="woman" checked>
+        <label for="woman">여자</label>
+
+
+        <hr>
+
+        <h3>checkbox</h3>
+        <!--label과 id를 묶어놓으면 글씨를 클릭해도 선택이 가능하다.-->
+        <h4>여러개를 선택할 때 사용</h4>
+        <p>다중 선택할 시 주로 사용함<br>
+            * name속성을 통해서 여러개의 체크박스를 하나의 선택지로 묶을 수 있음<br>
+            * checked속성을 넣은 체크박스는 체크가 된상태가 기본이 됨<br>
+            * id - for 속성을 통해서 input과 label태그를 묶어줄 수 있음<br>
+            * 서버에 실제로 전달될 때 key -> name속성값, vlaue -> value속성값으로 전달</p>
+
+        <input type="checkbox" id="red" value="red" name="color" checked>
+        <label for="red">빨간색</label>
+
+        <input type="checkbox" id="blue" value="blue" name="color" checked>
+        <label for="blue">파란색</label>
+
+        <input type="checkbox" id="yellow" value="yellow" name="color">
+        <label for="yellow">노란색</label>
+
+        <br><br>
+        <input type="submit">
+    </form>
+    <br><br><br>
 </body>
 
 </html>

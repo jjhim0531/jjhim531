@@ -16,23 +16,46 @@
         }
 
         #test2 {
-            width: 50%;
+            width: calc(100% - 100px);
             height: 150px;
         }
 
         .display-test {
-            border: 1px solid blakc;
+            border: 1px solid black;
             width: 150px;
             height: 150px;
         }
 
-        .red {}
+        .red {
+            background: rgb(221, 26, 26);
+
+        }
+
+        .yellow {
+            background: yellow;
+        }
+
+        .pink {
+            background: pink;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .block {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <!--블럭요소 : 한줄로 영역을 차지하고 있는 요소 / 줄바꿈 발생(div, p, pre, h)
-    인라인요소 : content부분만 영역을 차지하고 있는 요소 / 앞으로 다른 요소가 올 수 잇음(spam, lable, input, img, 글자...)
+    인라인요소 : content부분만 영역을 차지하고 있는 요소 / 앞으로 다른 요소가 올 수 잇음(span, lable, input, img, 글자...)
     
     * 요소 : content + padding + border
     요소 바깥쪽 영역 : margin-->
@@ -44,26 +67,43 @@
     <h4>고정크기(px)</h4>
     <div id="test1" class="size-test"></div>
 
-    <h4>가변크기(%)(px)</h4>
+    <h4>가변크기(%)</h4>
     <div id="test2" class="size-test"></div>
 
-    <hr>
-    <h3>display 화면 배치 방법 변경</h3>
-    <pre>선택자{
+    <!-- calc(xx% - xxpx) -->
 
-     inline | block | inline-block}
-     </pre>
+    <hr>
+
+    <h3>display : 화면 배치 방법 변경</h3>
+
+    <pre>
+        선택자{
+            display : inline | block | inline-block
+        }
+    </pre>
+
     <h4>display : inline</h4>
-    <div class="display-test red inline">첫번쨰</div>
-    <div class="display-test yellow inline">두번쨰</div>
-    <div class="display-test pink inline">세번쨰</div>
+    <p>요소들끼리 한줄에 배치</p>
+    <div class="display-test red inline">첫번째</div>
+    <div class="display-test yellow inline">두번째</div>
+    <div class="display-test pink inline">세번째</div>
+    <!-- 인라인 요소는 크기조절x -->
+
+    <h4>display : block</h4>
+    <p>한줄에 하나의 요소만 배치</p>
+    <div class="display-test red block">첫번째</div>
+    <div class="display-test yellow block">두번째</div>
+    <div class="display-test pink block">세번째</div>
 
     <h4>display : inline-block</h4>
-    <div class="display-test red inline-block">첫번쨰</div>
-    <div class="display-test yellow inline-block">두번쨰</div>
-    <div class="display-test pink inline-block">세번쨰</div>
-
-
+    <p>기본적으로 inline 엘리먼트처럼 한 줄에 다른 엘리먼트들과 배치됨. <br>
+        하지만 inline 엘리먼트에서 불가능하던 width와 height 속성 지정 및 margin과 padding 속성의 상하 간격지정이 가능함.<br>
+        즉 inline의 성질을 가지면서 동시에 사용자가 원하는 대로 모형을 꾸밀 수 있다.
+        button, input, select 태그 등이 대표적인 inine-block element이다.
+    </p>
+    <div class="display-test red inline-block">첫번째</div>
+    <div class="display-test yellow inline-block">두번째</div>
+    <div class="display-test pink inline-block">세번째</div>
 </body>
 
 </html>
