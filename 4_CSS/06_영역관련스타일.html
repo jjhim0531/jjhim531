@@ -7,20 +7,19 @@
     <title>영역관련스타일</title>
     <style>
         body {
-            margin: 0;
+            margin: 0px;
         }
 
         .test {
             background: yellow;
             width: 100px;
             height: 100px;
-            border: 10px solid black;
+            border: 10px solid blue;
         }
 
         #test1 {
             padding: 100px;
             /*사방으로 100px*/
-
         }
 
         #test2 {
@@ -33,7 +32,7 @@
         #test3 {
             padding: 100px 20px 30px 10px;
             /*위에서부터 시계방향으로(test2와 동일한 의미)*/
-            padding: 100px 30px;
+            padding: 100px 50px;
             /*위아래 - 양쪽 을 의미*/
         }
 
@@ -52,12 +51,13 @@
         }
 
         #test7 {
-            border: 1px solid black;
-            border-width: 10px;
+            border: 1px solid red;
+            border-width: 5px;
             border-style: double;
-            border-color: aquamarine;
-            border-left: 1px solid black;
-            border-right-color: blue;
+            border-color: orange;
+            border-left: 5px double green;
+            border-right: 5px solid blue;
+
         }
 
         #test8 {
@@ -73,7 +73,7 @@
             background-size: 100% 100%;
             background-size: 200px 100px;
             /*배경이미지 크기조절*/
-            background-position: 100px 90px;
+            background-position: 100px 50px;
 
         }
     </style>
@@ -86,7 +86,7 @@
 
     <h1>여백 및 간격 관련스타일</h1>
 
-    <h2>요소 영역 ---> content(내용) + padding(여백) + border(테두리)</h2>
+    <h2>요소 영역 --> content(내용) + padding(여백) + border(테두리)</h2>
 
     <h4>기존 div</h4>
     <div class="test">기존 div</div>

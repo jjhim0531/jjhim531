@@ -15,16 +15,16 @@
     <h2>1. 속성선택자</h2>
     <p>
         선택하고자 하는 요소에서 작성되어있는 속성을 이용해서 선택하는 방법<br>
-        선택자 뒤에 [ ]를 이용해서 속성과 속성값을 제시하여 선택
+        선택자 뒤에 []를 이용해서 속성과 속성값을 제시하여 선택
 
     </p>
     <pre>
-    선택자 [속성=속성값]
-    선택자 [속성~=속성값]
-    선택자 [속성|=속성값]
-    선택자 [속성^=속성값]
-    선택자 [속성$=속성값]
-    선택자 [속성*=속성값]{
+    선택자[속성=속성값]
+    선택자[속성~=속성값]
+    선택자[속성!=속성값]
+    선택자[속성^=속성값]
+    선택자[속성$=속성값]
+    선택자[속성*=속성값]{
         스타일 속성 : 값
         스타일 속성 : 값
         스타일 속성 : 값
@@ -81,7 +81,7 @@ a+b{
     ...
 }
 
-* a요소 뒤에 "모든" b 요소 전부 선택
+* a요소 뒤에 "모든"b 요소 전부 선택
 a~b{
     스타일 속성 : 값
     ...
@@ -91,7 +91,6 @@ a~b{
     <div id="test2">div1</div>
     <div>div2</div>
     <div>div3</div>
-    <ul>ul</ul>
     <div>div4</div>
     <ul>ul</ul>
     <div>div5</div>
@@ -103,13 +102,13 @@ a~b{
     <pre>
         *해당요소에 클릭이 되었을 경우 스타일 부여
         선택자 : active{
-            스타일 속성 : 값
+            스타일 속성 : ㄱㅄ
             ....
         }
 
         * 해당요소에 마우스가 올라가는 순간 스타일 부여
         선택자 : hover{
-            스타일속성 : 값
+            스타일속성 : ㄱㅄ
             ...
         }
     </pre>
@@ -125,20 +124,17 @@ a~b{
     <h2>5. 상태선택자</h2>
     <p>요소의 상태에 따라서 선택되는 선택자</p>
     <pre>
-        1) 체크된 상태(checked)의 요소
+        1)체크된 상태(checked)의 요소
         선택자 : checked{
             스타일속성 : 값
             ...
         }
-    </pre>
-    <fieldset>
-        <input type="checkbox" id="apple">
-        <label for="apple">사과</label>
 
-        <input type="checkbox" id="banana">
-        <label for="banana">바나나</label>
-    </fieldset>
-    <br><br>
+    </pre>
+    <input type="checkbox" id="apple">
+    <label for="apple">사과</label>
+    <input type="checkbox" id="apple">
+    <label for="banana">바나나</label>
 
     <pre>
         2) 초점(focus)이 맞춰진 input요소 선택
@@ -163,15 +159,16 @@ a~b{
             스타일속성 : 값
             ...
         }
-    </pre>
 
+
+    </pre>
     <input type="button" value="클릭불가" disabled>
     <button>
-        클릭 가능
-    </button></form>
+        클릭기능
+    </button>
 
     <button disabled>
-        클릭기능 사용불가
+        클릭기능사용불가
     </button>
 
 </body>

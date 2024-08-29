@@ -27,7 +27,7 @@
         블럭요소 : 한줄 단위로 영역을 차지함
                 줄바꿈이 적용되어 이미 존재하는 태그의 다음줄에 다음영역이 잡힘
                 (p, pre, "div", h...)
-        인라인 요소 : content(내용) 영역에 해당하는 부분만 영역을 차지하는 요소
+        인라인 요소 : content(내용) 영역에 해당하는           부분만 영역을 차지하는 요소
                     줄바꿈이 적용되지 않아 다음영역에 바로 옆으로 다음영역이 잡힘
                     (b, mark, s, img, "span",...)
     -->
@@ -37,58 +37,44 @@
     <h2>div태그와 span태그의 차이점 1 : 줄바꿈 적용</h2>
 
     <h3>div태그</h3>
-    <p>div태그는 블럭요소로 한줄 단위로 영역을 차지함<br>(width를 줄이더라도 이미 존재하는 태그 다음줄에 영역이 잡힘)</p>
+    <p>div태그는 블럭요소로 한줄 단위로 영역을 차지함(width를 줄이더라도 이미 존재하는 태그 다음줄에 영역이 잡힘)</p>
 
-    <div style="background :red;"><b>
-            <h2> 첫번째 영역</h2>
-        </b></div>
+    <div style="background :red;"> 첫번째 영역</div>
     <div style="background :orange;"> 두번째 영역</div>
     <div style="background :yellow;"> 세번째 영역</div>
 
 
     <h3>span태그</h3>
-    <p>span태그는 인라인 요소로 content영역만 차지<br>(줄바꿈이 발생되지 않고 옆으로 영역이잡힘)</p>
-    <!--margin제거를 안했기 때문에 서로서로 조금씩 떨어져 있다.-->
-    <span style="background :red;">첫번째 영역</span>
-    <span style="background :orange;">두번째 영역</span>
-    <span style="background :yellow;">세번째 영역</span>
-
+    <p>span태그는 인라인 요소로 content영역만 차지(줄바꿈이 발생되지 않고 옆으로 영역이잡힘)</p>
+    <span style="background :red;"> 첫번째 영역 </span>
+    <span style="background :orange;"> 두번째 영역</span>
+    <span style="background :yellow;"> 세번째 영역</span>
 
     <h2>div태그와 span의 차이점 2 : 영역지정방식 </h2>
     <h3>div태그 : 사각형 박스로 영역을 지정함</h3>
-    <div style="height : auto;">
-        서장훈은 21일 영화감독 장항준이 운영하는 유튜브 채널 ‘이응디귿디귿’에 출연해 ‘향후 지도자를 할 의향이 있느냐’는 질문하자 “안 한다”고 잘라 말했다.
+    <div style="height : auto;">서장훈은 21일 영화감독 장항준이 운영하는 유튜브 채널 ‘이응디귿디귿’에 출연해 ‘향후 지도자를 할 의향이 있느냐’는 질문하자 “안 한다”고 잘라 말했다.
         서장훈은 “지도자 생활을 해보고 싶은 생각은 어떤 선수나 다 있을 것”이라면서도 “지금 하고 있는 방송이 너무 많다”고 말했다.
 
         이어 서장훈은 “(감독을) 하는 건 좋은데 성적이 안 나서 3개월 만에 잘리면 다시 (방송계에) 돌아오냐 어떻게 하냐”며 “다 떠나서 지금은 그런 생각이 전혀 없다”고 말했다.
 
-        서장훈은 1998년 ‘청주 SK 나이츠’에 입단해 2013년까지 15년간 선수생활을 한 뒤 방송인으로 전향했다.
-    </div>
-
+        서장훈은 1998년 ‘청주 SK 나이츠’에 입단해 2013년까지 15년간 선수생활을 한 뒤 방송인으로 전향했다.</div>
     <br><br>
-
-    <h3>span태그 : span태그 사이의 문장단위로 영역을 지정함. 스타일도 지정 가능.</h3>
-
-    <p>
-        서장훈은 21일 영화감독 장항준이 운영하는 유튜브 채널 ‘이응디귿디귿’에 출연해 ‘향후 지도자를 할 의향이 있느냐’는 질문하자 “안 한다”고 잘라 말했다. 서장훈은 “지도자 생활을 해보고 싶은
+    <h3>span태그 : 문장단위로 영역을 지정함</h3>
+    <span>서장훈은 21일 영화감독 장항준이 운영하는 유튜브 채널 ‘이응디귿디귿’에 출연해 ‘향후 지도자를 할 의향이 있느냐’는 질문하자 “안 한다”고 잘라 말했다. 서장훈은 “지도자 생활을 해보고 싶은
         생각은 어떤 선수나 다 있을 것”이라면서도 “지금 하고 있는 방송이 너무 많다”고 말했다.
 
-        이어 <span style="color: red;">서장훈은 “(감독을) 하는 건 좋은데 성적이 안 나서 3개월 만에 잘리면 다시 (방송계에) 돌아오냐 어떻게 하냐”</span>며 “다 떠나서 지금은
-        그런 생각이 전혀 없다”고 말했다.
+        이어 서장훈은 “(감독을) 하는 건 좋은데 성적이 안 나서 3개월 만에 잘리면 다시 (방송계에) 돌아오냐 어떻게 하냐”며 “다 떠나서 지금은 그런 생각이 전혀 없다”고 말했다.
 
-        서장훈은 1998년 ‘청주 SK 나이츠’에 입단해 2013년까지 15년간 선수생활을 한 뒤 방송인으로 전향했다.
-    </p>
+        서장훈은 1998년 ‘청주 SK 나이츠’에 입단해 2013년까지 15년간 선수생활을 한 뒤 방송인으로 전향했다.</span>
 
     <hr>
 
     <h1>iframe</h1>
     <p>웹 문서 안에 다른 웹페이지를 추가하는 태그(인라인요소)</p>
 
-    <iframe src="./04_이미지및 멀티미디어태그.html" width="300" height="300"></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ExFxS4POIkY?si=zxY6B5rLJYgR6tII"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://kh-academy.co.kr/main/main.kh" width="300" height="300"></iframe>
+
+    <iframe width="300" height="300" src="https://www.youtube.com/embed/"></iframe>
 </body>
 
 </html>
