@@ -1,0 +1,132 @@
+/* index.css */
+body {
+  margin: 0;
+  background-color: black;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* 로고와 검색창 사이의 여백 */
+}
+.hamburger-menu {
+  width: 60px;
+  height: 100%;
+  margin: 0 24px 0 24px;
+}
+.hamburger-menu > img {
+  width: 60px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.youtube-logo {
+  height: 70px;
+}
+
+.search-section {
+  display: inline-block;
+  align-items: center;
+  max-width: 500px; /* 검색창 최대 폭 설정 */
+  border: 2px solid gray;
+  border-radius: 20px; /* 검색창 전체에 둥근 모서리 적용 */
+  overflow: hidden; /* 버튼이 검색창 안에 자연스럽게 위치하게 */
+  margin: 0 auto; /* 검색창의 좌우 여백 설정 */
+  flex-grow: 1; /* 검색창이 로고와 아이콘 사이 공간을 최대한 차지하도록 설정 */
+  height: 40px; /* 검색창 높이 고정 */
+}
+
+.search-input {
+  padding-right: 15px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: #121212;
+  color: white;
+  height: 100%; /* 입력 필드의 높이를 검색창 전체 높이로 설정 */
+  border-radius: 20px 0 0 20px; /* 왼쪽 모서리만 둥글게 */
+}
+.search-button {
+  width: 40px; /* 고정된 버튼 너비 */
+  height: 40px; /* 고정된 버튼 높이 */
+  background-color: #303030;
+  border: none;
+  border-radius: 0 20px 20px 0; /* 오른쪽 모서리 둥글게 */
+  cursor: pointer;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  margin-right: -4px; /* 버튼이 검색창에 밀착되도록 조정 */
+}
+.mic {
+  width: 40px; /* 고정된 버튼 너비 */
+  height: 40px; /* 고정된 버튼 높이 */
+  background-color: #303030;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  border-radius: 50%; /* 음성 버튼은 둥근 모양 유지 */
+  margin-left: 10px; /* 검색 버튼과 음성 버튼 사이 여백 */
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* 알림 배지를 위해 상대 위치 설정 */
+  gap: 15px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  background-color: transparent; /* 배경을 투명하게 설정 */
+  border: none; /* 경계선 제거 */
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* 알림 배지를 위해 상대 위치 설정 */
+  padding: 0;
+}
+
+.icon > img {
+  width: 40px;
+  height: 40px;
+  background: black;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* 둥근 모서리로 설정 */
+  cursor: pointer;
+}
+.sidebar {
+  position: fixed;
+  top: 80px; /* 헤더 바로 아래에 위치하도록 설정 */
+  left: 0;
+  width: 60px; /* 고정된 사이드바 너비 */
+  height: calc(100% - 60px); /* 헤더 높이를 제외한 전체 높이 */
+  background-color: black;
+  padding-top: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 아이콘들이 가운데 정렬되도록 설정 */
+  gap: 20px; /* 아이콘들 사이의 간격 */
+}
+.sidebar-item {
+  padding: 0px;
+  cursor: pointer;
+  width: 50%;
+}
+
+.sidebar-item:hover {
+  background-color: #444444;
+}
