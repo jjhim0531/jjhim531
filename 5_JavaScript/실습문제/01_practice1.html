@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .result {
+        background: white;
+        border: 1px solid red;
+        width: 300px;
+        height: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>3)name속성값을 이용해서 요소 가져오기</h3>
+    <form action="">
+      <fieldset>
+        <legend>취미</legend>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="all"
+          onchange="allCheck()"
+        /><label for="all">전체선택</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="game"
+          onchange="checkBoxTrigger()"
+        /><label for="game">종합</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="novel"
+          onchange="checkBoxTrigger()"
+        /><label for="novel">소설</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="essay"
+          onchange="checkBoxTrigger()"
+        /><label for="essay">시/에세이</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="economic"
+          onchange="checkBoxTrigger()"
+        /><label for="economic">경제/경영</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="selfStudy"
+          onchange="checkBoxTrigger()"
+        /><label for="selfStudy">자기계발</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="child"
+          onchange="checkBoxTrigger()"
+        /><label for="child">아동</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="travel"
+          onchange="checkBoxTrigger()"
+        /><label for="travel">여행</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="science"
+          onchange="checkBoxTrigger()"
+        /><label for="science">과학</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="history"
+          onchange="checkBoxTrigger()"
+        /><label for="history">역사/문화</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="foreignLangauge"
+          onchange="checkBoxTrigger()"
+        /><label for="foreignLangauge">외국어</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="IT"
+          onchange="checkBoxTrigger()"
+        /><label for="IT">컴퓨터</label>
+        <input
+          type="checkbox"
+          name="hobby"
+          id="comic"
+          onchange="checkBoxTrigger()"
+        /><label for="comic">만화</label>
+      </fieldset>
+    </form>
+
+    <div id="area3" class="area"></div>
+    <script>
+      function allCheck() {
+        //전체선택버튼의 checked 속성값이 변경되었을 때 다른 checkbox도 동일하게 변경
+
+        let allCheckBox = document.getElementById("all");
+
+        //name으로 속성요소 가져올 때
+        //document.getElementsByName("네임값");
+        let hobbyList = document.getElementsByName("hobby");
+
+        // for(let i =0; i<hobbyList.length; i++){
+        //   let checkBox = hobbyList[i];
+        // }
+        for (let checkBox of hobbyList) {
+          checkBox.checked = allCheckBox.checked;
+        }
+      }
+
+      function checkBoxTrigger() {
+        //전체체크박스 이외에 체크박스들의 상태에 따라서 전체체크박스를 true, false로 변경하고 싶다.
+        //true  나머지 모든 체크박스가 true
+        //false=> 하나라도 false이면 false
+
+        let allCheck = true;
+        let hobbyList = document.getElementsByName("hobby");
+        for (let checkBox of hobbyList) {
+          if (checkBox.id === "all") {
+            continue;
+          }
+
+          //checkBox 중 하나라도 checked가 false라면  전체선택 체크박스의 checked는 false여야한다.
+          if (!checkBox.checked) {
+            allCheck = false;
+          }
+        }
+        let allCheckBox = document.getElementById("all");
+        allCheckBox.checked = allCheck;
+      }
+      function checkHobby() {
+        let hobbyList = document.getElementsByName("hobby");
+        for (let checkBox of hobbyList) {
+          if (checkBox.id === "all") {
+            continue;
+          }
+          if (!checkBox.checked) {
+            allCheck = false;
+          }
+        }
+      }
+      function Selected() {
+        let checkboxes = document.getElementsByName("hobby");
+        let selected = [];
+
+        for (let checkbox of checkboxes) {
+          if (checkbox.checked && checkbox.id !== "all") {
+            selected.push(checkbox.nextElementSibling.innerText);
+          }
+        }
+
+        document.querySelector(".result").innerText =
+          selected.length > 0
+            ? selected.join(", ")
+            : "선택된 카테고리가 없습니다.";
+      }
+    </script>
+    <br />
+    <button onclick="Selected()">카테고리 선택</button>
+    <div class="result"></div>
+  </body>
+</html>

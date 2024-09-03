@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="number"],
+      button {
+        width: 80px; /* 버튼과 입력 필드의 너비 */
+        height: 30px; /* 버튼과 입력 필드의 높이 */
+        font-size: 11px; /* 텍스트 크기 */
+        margin: 5px; /* 여백 */
+      }
+      select {
+        width: 80px; /* 버튼과 입력 필드의 너비 */
+        height: 32px; /* 버튼과 입력 필드의 높이 */
+        font-size: 20px;
+        margin: 5px; /* 여백 */
+      }
+      .result {
+        width: 200px;
+        height: 30px;
+        background-color: white;
+        border: 1px solid black;
+        text-align: center;
+        line-height: 30px;
+        margin-top: 10px;
+        user-select: none; /* 읽기 전용으로 설정 */
+      }
+      .error {
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><b>Practice 2</b></h1>
+    <input type="number" id="number1" placeholder="첫 번째 숫자" />
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="number" id="number2" placeholder="두 번째 숫자" />
+    <button onclick="calculate()">=</button>
+
+    <div id="result" class="result"></div>
+
+    <script>
+      function calculate() {
+        // 입력 값 가져오기
+        const num1 = parseFloat(document.getElementById("number1").value);
+        const num2 = parseFloat(document.getElementById("number2").value);
+        const operator = document.getElementById("operator").value;
+        const resultDiv = document.getElementById("result");
+
+        let result;
+
+        // 연산 수행
+        switch (operator) {
+          case "+":
+            result = num1 + num2;
+            break;
+          case "-":
+            result = num1 - num2;
+            break;
+          case "*":
+            result = num1 * num2;
+            break;
+          case "/":
+            result = num2 !== 0 ? num1 / num2 : "연산 불가";
+            break;
+          case "%":
+            result = num2 !== 0 ? num1 % num2 : "연산 불가";
+            break;
+          default:
+            result = "연산 불가";
+        }
+
+        // 결과 표시 및 스타일 설정
+        if (result === "연산 불가") {
+          resultDiv.classList.add("error");
+        } else {
+          resultDiv.classList.remove("error");
+        }
+        resultDiv.textContent = isNaN(result) ? "연산 불가" : result;
+      }
+    </script>
+  </body>
+</html>
