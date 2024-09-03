@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      .calculator-container {
+        display: flex; /* 요소들을 한 줄에 배치 */
+        align-items: center; /* 수직 중앙 정렬 */
+        gap: 5px; /* 요소들 간의 간격 */
+      }
       input[type="number"],
-      button {
-        width: 80px; /* 버튼과 입력 필드의 너비 */
-        height: 30px; /* 버튼과 입력 필드의 높이 */
-        font-size: 11px; /* 텍스트 크기 */
-        margin: 5px; /* 여백 */
+      select,
+      button,
+      .result {
+        width: 50px; /* 모든 요소의 너비를 동일하게 설정 */
+        height: 30px; /* 모든 요소의 높이를 동일하게 설정 */
+        font-size: 16px; /* 텍스트 크기 설정 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        margin: 0; /* 추가적인 여백 제거 */
+        padding: 0; /* 추가적인 패딩 제거 */
+        box-sizing: border-box; /* 패딩과 테두리를 포함한 너비와 높이 */
       }
       select {
         width: 80px; /* 버튼과 입력 필드의 너비 */
@@ -19,14 +29,11 @@
         margin: 5px; /* 여백 */
       }
       .result {
-        width: 200px;
-        height: 30px;
+        flex-shrink: 0; /* 요소 크기를 줄이지 않도록 설정 */
+        width: 60px; /* 결과 창의 너비 */
         background-color: white;
         border: 1px solid black;
-        text-align: center;
-        line-height: 30px;
-        margin-top: 10px;
-        user-select: none; /* 읽기 전용으로 설정 */
+        user-select: none; /* 읽기 전용 */
       }
       .error {
         background-color: red;

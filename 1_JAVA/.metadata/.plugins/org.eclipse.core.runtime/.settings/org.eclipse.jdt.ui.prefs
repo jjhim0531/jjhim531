@@ -8,7 +8,7 @@ markOccurrences=false
 org.eclipse.jdt.internal.ui.navigator.layout=2
 org.eclipse.jdt.internal.ui.navigator.librariesnode=true
 org.eclipse.jdt.ui.formatterprofiles.version=23
-org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="java" deleted\="false" description\="psvm" enabled\="true" name\="psvm">public static void main(String[] args) {&\#13;\r\n&\#13;\r\n}</template><template autoinsert\="true" context\="java" deleted\="false" description\="scn" enabled\="true" name\="scn">Scanner scanner \= new Scanner(System.in);</template><template autoinsert\="true" context\="java" deleted\="false" description\="syso" enabled\="true" name\="syso">System.out.println();</template></templates>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="java" deleted\="false" description\="psvm" enabled\="true" name\="psvm">public static void main(String[] args) {&\#13;\r\n&\#13;\r\n}</template><template autoinsert\="true" context\="java" deleted\="false" description\="scn" enabled\="true" name\="scn">Scanner scanner \= new Scanner(System.in);</template><template autoinsert\="true" context\="java" deleted\="false" description\="syso" enabled\="true" name\="syso">System.out.println(${cursor});</template></templates>
 spelling_locale_initialized=true
 typefilter_migrated_2=true
 useAnnotationsPrefPage=true
