@@ -9,17 +9,17 @@
       form {
         box-sizing: border-box;
       }
-      div {
-        border: 1px solid red;
-      }
+
       #content {
-        width: 300px;
+        width: 500px;
         height: 150px;
+        border: 1px solid pink;
       }
 
       #login-form {
-        width: 100%;
+        width: 50%;
         height: 100%;
+        border: 1px solid blue;
       }
 
       #login-form > * {
@@ -123,8 +123,9 @@
   </head>
   <body>
     <h1>로그인폼</h1>
+    <!--로그인폼 외에 다른 요소들을 배치하기 위해 만든 전체 컨테이너-->
     <div id="content">
-      <!--페이지 전체를 감싸는 div-->
+      <!--로그인폼 전체를 감싸는 div-->
       <div id="login-form">
         <!--입력받아 요청할 수 있는 form태그-->
         <form action="" id="login-form-input">
