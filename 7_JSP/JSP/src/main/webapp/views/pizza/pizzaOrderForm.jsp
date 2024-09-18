@@ -20,7 +20,7 @@
     <!--
         주문자정보, 주문정보를 입력받아서
         서버에 결제요청(servlet에 전달)
-        controller -> PizzaServlet.java
+        controller(식당의 주방장) -> PizzaServlet.java(식당의 종업원)
         응답을 위한 jsp페이지
         pizza -> pizzaPayment.jsp
     -->

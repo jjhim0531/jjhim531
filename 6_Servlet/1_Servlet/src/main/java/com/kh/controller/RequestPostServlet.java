@@ -86,7 +86,7 @@ public class RequestPostServlet extends HttpServlet {
 		RequestDispatcher view = request.getRequestDispatcher("/views/responsePage.jsp");
 		/*
 		 .forward(request, response) : 
-		요청(reques*과 응답(response)객체를 지정된 경로로 포워딩한다.
+		요청(request)과 응답(response)객체를 지정된 경로로 포워딩한다.
 		즉, 기존의 요청을 그대로 유지한 상태에서 JSP 페이지로 제어를 넘기고, 해당 JSP가 응답을 생성한다.
 		서버 내에서만 동작하며, 클라이언트는 실제로 어떤 JSP나 서블릿으로 요청이 전달되었는지 알 수 없다. URL이 변경되지 않는다.
 		*/
