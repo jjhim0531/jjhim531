@@ -35,7 +35,7 @@
 	<jsp:include page="footer.jsp" >
 		<jsp:param name="test" value="hi" />
 	</jsp:include>
-	<!-- footer페이지를 가져와서 param이라는 변수에 test라는 name과 hi라는 value 값을 넣은 것을 추가해서 다시 footer페이지를 돌려보냄.-->
+	<!-- footer페이지를 가져와서 param이라는 변수에 test라는 name과 hi라는 value 값을 넣은 것을 추가해서 다시 footer 페이지를 돌려보냄.-->
 	<!--footer.jsp에 test : ${param.test}를 적어준 후 실행해보면 hi가 추가되어 있음 -->
 </body>
 </html>

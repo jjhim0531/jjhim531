@@ -12,7 +12,7 @@
     <p>
         기존에 사용했던 표현식(출력식) &lt;%=name%&gt;와 같이 <br>
         JSP상에서 표현하고자하는 값을 ${name}의 형식으로 표현해서 작성하는 것
-        <!-- ${name} : script영역안에서면 jquery이고, html영역안에서 쓰이면 el문법이다 -->
+        <!-- ${name} : script영역 안에서면 jquery이고, html영역안에서 쓰이면 el문법이다 -->
     </p>
 
     <h4><a href="el.do">01_EL의 기본구문</a></h4>
