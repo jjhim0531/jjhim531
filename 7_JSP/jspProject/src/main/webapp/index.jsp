@@ -36,6 +36,6 @@
  	
  	<%-- JDBCTemplate.getConnection(); --%>
  	
- 	<%@ include file="views/common/menubar.jsp" %>
+	<%@ include file="views/common/menubar.jsp" %>
 </body>
 </html>

@@ -45,13 +45,13 @@
 		학원명 : ${academy} 강의장 : ${classRoom} 강사 : ${teacher.name},
 		${teacher.age}, ${teacher.gender}<br> <br> 
 		
-		수강생정보
+		수강생정보</p>
 	<ul>
 		<li>이름 : ${student.name}</li>
 		<li>나이 : ${student.age}</li>
 		<li>성별 : ${student.gender}</li>
 	</ul>
-	</p>
+	
 
 	<h3>3. scope의 키값이 동일한 경우</h3>
 	<!-- EL은 공유범위가 가장 작은 scope부터 해당 키값을 검색함(page -> request -> session -> application) -->
