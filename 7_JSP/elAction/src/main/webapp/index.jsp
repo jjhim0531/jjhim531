@@ -60,6 +60,7 @@
     	taglib 지시어를 사용해서 선언함<br><br>
     	
     	&lt;%@ taglib prefix="접두어" uri="라이브러리 파일상의 uri주소" %&gt;
+    	<!-- 라이브러리마다 접두어가 다르다 -->
     </p>
     
     <h3>* Custom Action Tag</h3>
