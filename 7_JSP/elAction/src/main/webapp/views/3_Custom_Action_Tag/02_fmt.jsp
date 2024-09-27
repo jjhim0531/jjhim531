@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h3>1. formatNumber</h3>
-	
+
 	<p>
 		숫자데이터의 포맷(형식) 지정 <br> -표현하고자하는 숫자데이터의 형식을 통화기호, %등으로 원하는 방식에 맞게
 		지정하는 태그<br> (fmt : formatNumber value="출력할 값"
@@ -59,6 +59,7 @@
 		<!-- type생략시 type="date" (연월일)-->
 		<li>현재 날짜 : <fmt:formatDate value="${current}" type="date" /></li>
 		<li>현재 시간 : <fmt:formatDate value="${current}" type="time" /></li>
+
 		<br>
 
 		<li>둘다 : <fmt:formatDate value="${current}" type="both" /></li>
