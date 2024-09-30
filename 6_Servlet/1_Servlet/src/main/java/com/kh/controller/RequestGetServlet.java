@@ -55,6 +55,7 @@ public class RequestGetServlet extends HttpServlet {
 		System.out.println("age :" + age);
 		System.out.println("city :" + city);
 		System.out.println("height :" + height);
+		
 
 		if (foods == null) {
 			System.out.println("foods : 없음 ");

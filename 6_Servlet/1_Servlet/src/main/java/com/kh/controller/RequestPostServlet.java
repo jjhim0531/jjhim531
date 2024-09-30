@@ -29,6 +29,7 @@ public class RequestPostServlet extends HttpServlet {
 		//회사에서는 톰캣 10버전(자동으로 UTF-8)보다는 자동이 안되는 8버전이나 9버전일 확률이 매우 높다.
 		//POST방식같은 경우
 		//데이터를 추출하기전에 인코딩 형식을 설정해줘야 함
+		//GET방식에서 써준다고 해서 오류는 안뜨지만 보통 POST방식에서만 쓴다.
 		request.setCharacterEncoding("UTF-8");
 		
 		//요청시 전달된 값들은 request의 parameter영역에 담겨있음
@@ -64,8 +65,8 @@ public class RequestPostServlet extends HttpServlet {
 		 */
 		
 		
-		//순수 servlet방식 : java코드 내에 html을 기술
-		//JSP(Java Server Page)방식 : html내에 java코드를 쓸 수 있음
+		//순수 servlet방식 : java 코드 내에 html을 기술
+		//JSP(Java Server Page)방식 : html 내에 java 코드를 쓸 수 있음
 		//java는 구조가 보이지 않아서 그 안에 html을 써도 구조가 잘 보이지 않음.
 		//but, html은 구조적언어여서 그 안에 java를 쓰면 덩달아 구조가 잘 파악됨.
 		
@@ -84,13 +85,17 @@ public class RequestPostServlet extends HttpServlet {
 		//응답하고자하는 뷰(jsp) 선택해서 넘겨줌 ->getRequestDispatcher()메서드를 호출함으로서 RequestDispatcher객체를 생성 후 view라는 변수에 저장
 		//RequestDispatcher객체 - (특정 경로(JSP나 다른 서블릿 등)로 요청을 전달하는 역할)
 		RequestDispatcher view = request.getRequestDispatcher("/views/responsePage.jsp");
+		
 		/*
 		 .forward(request, response) : 
 		요청(request)과 응답(response)객체를 지정된 경로로 포워딩한다.
 		즉, 기존의 요청을 그대로 유지한 상태에서 JSP 페이지로 제어를 넘기고, 해당 JSP가 응답을 생성한다.
 		서버 내에서만 동작하며, 클라이언트는 실제로 어떤 JSP나 서블릿으로 요청이 전달되었는지 알 수 없다. URL이 변경되지 않는다.
 		*/
+		//서블릿을 만들면 이미 request와 response객체가 동시에 생성되서 움직인다고보면된다. 동시에 넘어가서 JSP에 request에 담긴 정보들을 넘겨주고 reponse에 그 답을 실어서 다시 보내준다.
 		view.forward(request, response);
+		
+		//view를 만들고 forward하는 방식은 jsp로 코드를 짠다면 post,get 모두 동일하다.
 	}
 
 	/**

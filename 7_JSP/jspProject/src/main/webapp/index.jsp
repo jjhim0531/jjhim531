@@ -1,6 +1,6 @@
 <%@page import="com.kh.common.JDBCTemplate"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +34,8 @@
 		게시글 작성(C) - 첨부파일업로드
  	-->
 
- 	<%-- JDBCTemplate.getConnection(); --%>
-dsavmnsdkvn
+	<%-- JDBCTemplate.getConnection(); --%>
+
+	<%@ include file="views/common/menubar.jsp"%>
 </body>
 </html>
