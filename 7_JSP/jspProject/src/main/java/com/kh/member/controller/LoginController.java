@@ -2,7 +2,7 @@ package com.kh.member.controller;
 //controller : 브라우저에서 요청을 받아서 서버가 응답을 내려줌(servlet으로 만듬)
 //(실질적인 내용은 controller에 보이지 않고 service에 표시됨)
 //service : 요청의 실질적인 작업을 처리해줌.(controller가 너무 길어지지 않기 위해서)
-
+ 
 import java.io.IOException;
 
 import com.kh.member.model.vo.Member;
