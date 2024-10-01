@@ -18,11 +18,11 @@
     <h4><%=sdf.format(today)%></h4>
 
     <!--
-        주문자정보, 주문정보를 입력받아서
+        주문자정보, 주문정보를 입력받아서(pizzaOrderForm.jsp)
         서버에 결제요청(servlet에 전달)
-        controller(식당의 주방장) -> PizzaServlet.java(식당의 종업원)
+        controller(식당의 주방장) -> PizzaServlet.java(식당의 종업원(실질적업무))
         응답을 위한 jsp페이지
-        pizza -> pizzaPayment.jsp
+       선택한 pizza -> pizzaPayment.jsp
     -->
 
     <form action="/JSP/confirmPizza.do" method="GET">
@@ -68,23 +68,23 @@
                     <th>토핑</th>
                     <td>
                         <label>
-                            <input type="checkbox" name="topping" value="고구마무스"> 고구마무스 
+                            <input type="checkbox" name="topping" value="고구마무스"> 고구마무스
                         </label>
                         <label>
-                            <input type="checkbox" name="topping" value="치즈크러스트"> 치즈크러스트 
+                            <input type="checkbox" name="topping" value="치즈크러스트"> 치즈크러스트
                         </label>
                         <label>
-                            <input type="checkbox" name="topping" value="치즈바이트"> 치즈바이트 
+                            <input type="checkbox" name="topping" value="치즈바이트"> 치즈바이트
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox" name="topping" value="치즈추가"> 치즈추가 
+                            <input type="checkbox" name="topping" value="치즈추가"> 치즈추가
                         </label>
                         <label>
-                            <input type="checkbox" name="topping" value="베이컨/소세지"> 베이컨/소세지 
+                            <input type="checkbox" name="topping" value="베이컨/소세지"> 베이컨/소세지
                         </label>
                         <label>
-                            <input type="checkbox" name="topping" value="파인애플"> 파인애플 
+                            <input type="checkbox" name="topping" value="파인애플"> 파인애플
                         </label>
                     </td>
                 </tr>
@@ -92,23 +92,23 @@
                     <th>사이드</th>
                     <td>
                         <label>
-                            <input type="checkbox" name="side" value="콜라"> 콜라 
+                            <input type="checkbox" name="side" value="콜라"> 콜라
                         </label>
                         <label>
-                            <input type="checkbox" name="side" value="사이다"> 사이다 
+                            <input type="checkbox" name="side" value="사이다"> 사이다
                         </label>
                         <label>
-                            <input type="checkbox" name="side" value="환타"> 환타 
+                            <input type="checkbox" name="side" value="환타"> 환타
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox" name="side" value="핫소스"> 핫소스 
+                            <input type="checkbox" name="side" value="핫소스"> 핫소스
                         </label>
                         <label>
-                            <input type="checkbox" name="side" value="파마산"> 파마산 
+                            <input type="checkbox" name="side" value="파마산"> 파마산
                         </label>
                         <label>
-                            <input type="checkbox" name="side" value="피클"> 피클 
+                            <input type="checkbox" name="side" value="피클"> 피클
                         </label>
                     </td>
                 </tr>
