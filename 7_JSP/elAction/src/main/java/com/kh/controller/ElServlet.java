@@ -36,7 +36,7 @@ public class ElServlet extends HttpServlet {
 		 * 	  한 애플리케이션당 단 1개 존재하는 객체
 		 *    이 영역에 데이터를 담으면 애플리케이션 전역에서 사용이 가능
 		 *    공유범위가 가장 크다
-		 *    프로젝트 1개가 실행되면 무조건 ServletContext1개가 생긴다.
+		 *    프로젝트 1개가 실행되면 무조건 ServletContext 1개가 생긴다.
 		 *    
 		 * 2. HttpSession(session Scope)
 		 * 	  한 브라우저당 1개 존재하는 객체(브라우저에서 요청을 하면 톰캣서버에 session이 1개 만들어진다.)

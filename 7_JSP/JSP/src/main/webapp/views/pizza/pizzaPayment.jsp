@@ -12,7 +12,7 @@ String[] side = (String[]) request.getAttribute("side");
 String payment = (String) request.getAttribute("payment");
 int price = (int) request.getAttribute("price");
 %>
-	
+
 <!DOCTYPE html>
 <html>
 
