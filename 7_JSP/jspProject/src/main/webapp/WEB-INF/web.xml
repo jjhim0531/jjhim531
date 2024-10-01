@@ -11,7 +11,6 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-<<<<<<< HEAD
     <display-name>LoginController</display-name>
     <servlet-name>LoginController</servlet-name>
     <servlet-class>com.kh.member.controller.LoginController</servlet-class>
@@ -22,8 +21,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-=======
->>>>>>> 3c9163dcee227edd24c5c7c30d2096ab9f684454
     <display-name>login.me</display-name>
     <servlet-name>login.me</servlet-name>
     <servlet-class>com.kh.member.controller.LoginController</servlet-class>
@@ -32,8 +29,6 @@
     <servlet-name>login.me</servlet-name>
     <url-pattern>/login.me</url-pattern>
   </servlet-mapping>
-<<<<<<< HEAD
-=======
   <servlet>
     <description></description>
     <display-name>logout.me</display-name>
@@ -244,5 +239,4 @@
     <servlet-name>rlist.bo</servlet-name>
     <url-pattern>/rlist.bo</url-pattern>
   </servlet-mapping>
->>>>>>> 3c9163dcee227edd24c5c7c30d2096ab9f684454
 </web-app>
