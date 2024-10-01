@@ -18,11 +18,11 @@
     <h4><%=sdf.format(today)%></h4>
 
     <!--
-        주문자정보, 주문정보를 입력받아서
+        주문자정보, 주문정보를 입력받아서(pizzaOrderForm.jsp)
         서버에 결제요청(servlet에 전달)
-        controller(식당의 주방장) -> PizzaServlet.java(식당의 종업원)
+        controller(식당의 주방장) -> PizzaServlet.java(식당의 종업원(실질적업무))
         응답을 위한 jsp페이지
-        pizza -> pizzaPayment.jsp
+       선택한 pizza -> pizzaPayment.jsp
     -->
 
     <form action="/JSP/confirmPizza.do" method="GET">
