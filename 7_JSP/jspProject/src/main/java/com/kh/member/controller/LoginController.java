@@ -38,7 +38,7 @@ public class LoginController extends HttpServlet {
 		//2) 요청시 전달값 추출해서 변수 또는 객체에 기록하기(form 태그의 name 그대로 가져오기)
 		String userId = request.getParameter("userId");
 		String userPwd = request.getParameter("userPwd");
-		
+		 
 		Member loginUser = new MemberService().loginMember(userId, userPwd);
 		
 		if(loginUser == null) { 
@@ -55,14 +55,15 @@ public class LoginController extends HttpServlet {
 			
 			//1. 포워딩방식 -> 해당방식은 url이 변경되지 않는다. 
 			//	 -> 우리는 localhost:8888/jsp/라는 기존의 메인 url이 있다.
-			//   해당 방식으로 응답시 url은 http://localhost:8888/jsp/login.me가 나타난다.
+			//   해당 방식으로 응답시 url은 http://localhost:8888/jsp/login.me가 나타난다.(url 2개에 도착지는 1개인 현상이 나타난다)
 			//   실제 화면은 localhost:8888/jsp/의 응답화면이 나타난다.
-			//	 request.getRequestDispatcher("index.jsp").forward(request, response);
+			//	 request.getRequestDispatcher("index.jsp").forward(request, response);(요청마다 도착지가 달라진다면 forward 방식이 맞다)
 			
-			//2. url재요청 방식
+			//2. url재요청 방식(로그인은 로그인후 다시 메인화면이 나타나야 하기에 도착지가 동일하다)
 			// 기존에 해당 페이지를 응답하는 url이 존재했다면 사용가능
 			// 응답페이지 -> index.jsp페이지(jsp url 재요청)
 			response.sendRedirect(request.getContextPath());
+			//contextPath = /jsp
 		}
 		
 	}
