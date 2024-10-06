@@ -1,4 +1,4 @@
-package com.kh.member.sevice;
+package com.kh.member.service;
 
 import static com.kh.common.JDBCTemplate.close;
 import static com.kh.common.JDBCTemplate.commit;
