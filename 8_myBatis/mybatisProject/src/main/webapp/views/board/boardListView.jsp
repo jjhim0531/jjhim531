@@ -25,7 +25,7 @@
         <br>
         <h1 align="center">게시판</h1>
         <br>
-        
+
         <div id="search-area">
             <form action="search.bo">
                 <input type="hidden" name="cpage" value="1">
@@ -68,20 +68,20 @@
 	                    <td>${b.boardWriter }</td>
 	                    <td>${b.count }</td>
 	                    <td>${b.createDate }</td>
-                	</tr> 
+                	</tr>
                 </c:forEach>
             </tbody>
         </table>
         <br>
-        
-        
+
+
         <div id="paging-area">
             <c:if test="${pi.currentPage ne 1}">
                 <a href="list.bo?cpage=${pi.currentPage - 1}">[이전]</a>
             </c:if>
 
             <c:forEach var="i" begin="${pi.startPage}" end="${pi.endPage}">
-            	
+
             	<c:choose>
             		<c:when test="${empty condition}">
             			<a href="list.bo?cpage=${i}">${i}</a>
@@ -90,7 +90,7 @@
             			<a href="search.bo?cpage=${i}&condition=${condition}&keyword=${keyword}">${i}</a>
             		</c:otherwise>
             	</c:choose>
-                
+
             </c:forEach>
 
             <c:if test="${pi.currentPage ne pi.maxPage}">

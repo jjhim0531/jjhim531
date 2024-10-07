@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 public class MemberLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -30,15 +30,15 @@ public class MemberLoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+
 		Member m = new Member();
 		m.setUserId(request.getParameter("userId"));
 		m.setUserPwd(request.getParameter("userPwd"));
-		
-		
-		MemberService memberService = new MemberServiceImpl(); 
+
+
+		MemberService memberService = new MemberServiceImpl();
 		Member loginUser = memberService.loginMember(m);
-		
+
 		if(loginUser != null) {
 			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());
@@ -46,7 +46,7 @@ public class MemberLoginController extends HttpServlet {
 			request.setAttribute("errorMsg", "로그인 실패");
 			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
 		}
-		
+
 	}
 
 	/**

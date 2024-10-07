@@ -54,7 +54,7 @@
                 <th><button>등록</button></th>
             </tr>
             <tr>
-                <td colspan="3"><b>댓글(${list.size()})</b></td> 
+                <td colspan="3"><b>댓글(${list.size()})</b></td>
             </tr>
             	<c:forEach var="r" items="${list}">
 		            <tr>

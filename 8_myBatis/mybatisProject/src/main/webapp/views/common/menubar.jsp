@@ -8,7 +8,7 @@
 	<title>Insert title here</title>
 
  	<!-- jQuery -->
-    <script 
+    <script
         src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
@@ -16,19 +16,19 @@
         src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
         integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
         crossorigin="anonymous"></script>
-        
+
     <!-- 부트스트램 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
- 
- 
+
+
 	<style>
 	    .login-area a{
 	        text-decoration: none;
 	        color: black;
 	        font-size: 12px;
 	    }
-	
+
 	    .nav-area{
 	        background: black;
 	        color: white;
@@ -70,13 +70,13 @@
 			            <tr>
 			                <td>비밀번호</td>
 			                <td><input type="password" name="userPwd" required></td>
-			                
+
 			            </tr>
 			            <tr>
 			                <td colspan="3" align="center">
 			                    <a href="enrollForm.me">회원가입</a>
 			                    <a href="">아이디/비번찾기</a>
-			                </td> 
+			                </td>
 			            </tr>
 		            </table>
 		        </form>

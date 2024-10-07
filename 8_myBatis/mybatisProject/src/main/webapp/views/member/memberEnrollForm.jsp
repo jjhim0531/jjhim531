@@ -14,7 +14,7 @@
 		<br>
 		<h1 align="center">회원가입</h1>
 		<br>
-                                                              
+
 		<form action="insert.me" method="post">
 			<table align="center">
 				<tr>
