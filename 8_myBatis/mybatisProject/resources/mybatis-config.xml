@@ -21,8 +21,8 @@
     <environment id="development">
       <!--
       		transactionManager : JDBC와 MANAGED 둘중 하나의 타입을 설정할 수 있음
-      		- JDBC : 트랜잭션을 내가 직접관리(수동commit)
-      		- MANAGED : 트랜잭션에 대해서 어떤한 영향도 행사하지 않겠다.(자동commit)
+      		- JDBC : 트랜잭션을 내가 직접관리(수동 commit)
+      		- MANAGED : 트랜잭션에 대해서 어떤한 영향도 행사하지 않겠다.(자동 commit)
        -->
       <transactionManager type="JDBC"/>
       <!--
