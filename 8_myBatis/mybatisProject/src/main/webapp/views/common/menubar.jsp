@@ -59,6 +59,7 @@
     <div class="login-area" align="right">
     	<c:choose>
     		<c:when test="${ empty loginUser }">
+    		<!-- choose랑 when 사이에는 주석이라할지라도 아무것도 넣으면 안된다. 에러난다. -->
 		        <!-- 로그인전 -->
 		        <form action="login.me" method="post">
 			        <table>

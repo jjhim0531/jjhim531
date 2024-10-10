@@ -18,7 +18,7 @@
 
   <!-- environments : mybatis에서 연동할 db정보들을 등록하는 영역 -->
   <environments default="development">
-    <environment id="development">
+    <environment id="development"> 
       <!--
       		transactionManager : JDBC와 MANAGED 둘중 하나의 타입을 설정할 수 있음
       		- JDBC : 트랜잭션을 내가 직접관리(수동commit)
@@ -26,7 +26,7 @@
        -->
       <transactionManager type="JDBC"/>
       <!--
-      		dataSource는 pooled와 unpooled 둘중 하나의 타입을 선택할 수 있음(connectionPool사용여부)
+      		dataSource는 pooled와 unpooled 둘 중 하나의 타입을 선택할 수 있음(connectionPool사용여부)
       		connectionPool : Connection객체를 담아둘 수 있는 영역
       						 한번 생성된 Connection객체를 담아두면 재사용할 수 있다.
        -->
