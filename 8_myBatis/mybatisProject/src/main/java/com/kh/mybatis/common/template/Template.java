@@ -12,7 +12,7 @@ import com.kh.mybatis.common.vo.PageInfo;
 
 public class Template {
 	public static SqlSession getSqlSession() {
-		//mybatis-config.xml 읽어드리기
+		//mybatis-config.xml 읽어들이기
 
 		SqlSession sqlSession = null;
 

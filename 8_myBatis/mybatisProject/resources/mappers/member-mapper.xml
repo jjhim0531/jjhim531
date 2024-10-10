@@ -22,7 +22,11 @@
   	<result column="STATUS" property="status"/>
   </resultMap>
 
+<<<<<<< HEAD
   <!-- 
+=======
+  <!--
+>>>>>>> 2d60ed879cbba1f329e22688f4ac9428a59229bd
   		*SELECT문 전송시
   		<select id="각sql문의 식별자" [parameterType="전달받을 자바타입"] resultMap="결과객체" | resultType="결과타입">
   		</select>
@@ -45,8 +49,13 @@
 	  AND USER_PWD = #{userPwd}
 	  AND STATUS = 'Y'
   </select>
+<<<<<<< HEAD
   
   <!-- 
+=======
+
+  <!--
+>>>>>>> 2d60ed879cbba1f329e22688f4ac9428a59229bd
   		*DML문일 경우
   		<insert | update | delete id="식별자" [parameterType="전달받을 자바타입"]>
    -->
