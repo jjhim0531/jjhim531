@@ -4,7 +4,7 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list> 
+  </welcome-file-list>
   <servlet>
     <description></description>
     <display-name>MemberLogin.do</display-name>
@@ -15,4 +15,14 @@
     <servlet-name>MemberLogin.do</servlet-name>
     <url-pattern>/MemberLogin.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FindId1.do</display-name>
+   <servlet-name>FindId1.do</servlet-name>
+    <servlet-class>com.semi.member.controller.MemberFindId1Controller</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>FindId1.do</servlet-name>
+    <url-pattern>/FindId1.do</url-pattern>
+</servlet-mapping>
 </web-app>

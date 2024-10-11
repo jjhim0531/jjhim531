@@ -20,7 +20,7 @@ public class MemberLoginController extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberLoginController() { 
+    public MemberLoginController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,15 +39,16 @@ public class MemberLoginController extends HttpServlet {
 		MemberService memberService = new MemberServiceImpl();
 		Member loginUser = memberService.loginMember(m);
 
-		if(loginUser != null) {
-			request.getSession().setAttribute("loginUser", loginUser);
-			response.sendRedirect(request.getContextPath());
-		} else {
-			request.setAttribute("errorMsg", "로그인 실패");
-			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
-		}
-
-	}
+    // 로그인 성공 시 사용자 정보를 세션에 저장하고 MemberManagement.jsp로 리다이렉트
+    if (loginUser != null && loginUser.getUserId().equals(m.getUserId()) && loginUser.getUserPwd().equals(m.getUserPwd())) {
+        request.getSession().setAttribute("loginUser", loginUser);
+        response.sendRedirect(request.getContextPath());
+    } else {
+        // 로그인 실패 시 alert 메시지 후 AdminLoginPage.jsp로 포워딩
+        request.setAttribute("loginError", "로그인에 실패하였습니다."); // 로그인 실패 메시지
+        request.getRequestDispatcher("/views/jsp/LoginPage1.jsp").forward(request, response);
+    }
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

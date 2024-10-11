@@ -3,49 +3,85 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="memberMapper">
+<mapper namespace="MemberMapper">
     <resultMap type="Member" id="memberResultSet">
+    <!-- 컬럼 매핑 -->
         <result column="USER_ID" property="userId" />
         <result column="USER_PWD" property="userPwd" />
         <result column="USER_NAME" property="userName" />
         <result column="GENDER" property="gender" />
-        <result column="BIRTHDAY" property="birthday" />
-        <result column="EMAIL" property="email" />
-        <result column="PHONE" property="phone" />
-        <result column="ADDRESS" property="address" />
-        <result column="ENROLL_DATE" property="enrollDate" />
-        <result column="GRADE" property="grade" />
-        <result column="ADMIN_GRADE" property="admingrade" />
+        <result column="USER_BIRTHDAY" property="birthday" />
+        <result column="USER_EMAIL" property="email" />
+        <result column="USER_PHONE" property="phone" />
+        <result column="USER_ENROLL_DATE" property="enrollDate" />
+        <result column="USER_DELFLAG" property="delFlag" />
+        <result column="USER_DELETE_DATE" property="deleteDate" />
+        <result column="USER_GRADE" property="grade" />
+        <result column="USER_ADDRESS" property="address" />
+        <result column="GRADE_ADMIN" property="admingrade" />
         <result column="USER_COIN" property="userCoin" />
-        <result column="DELETE_DATE" property="deleteDate" />
-        <result column="DEL_FLAG" property="delFlag" />
     </resultMap>
-	<!-- 
-		*SELECT문 
-		전송시 <select id="각sql문의 식별자" [parameterType="전달받을 자바타입"] resultMap="결과객체" 
-		| resultType="결과타입"> </select> 
-	-->
-	<select id="loginMember" parameterType="Member"
-		resultMap="memberResultSet">
-		SELECT USER_ID,
-		USER_PWD,
-		USER_NAME,
-		GENDER,
-		BIRTHDAY,
-		EMAIL,
-		PHONE,
-		ADDRESS,
-		ENROLL_DATE,
-		GRADE,
-		ADMIN_GRADE,
-		USER_COIN,
-		DELETE_DATE,
-		DEL_FLAG
-		FROM MEMBER
-		WHERE
-		USER_ID = #{userId}
-		AND USER_PWD = #{userPwd}
-		AND STATUS = 'Y'
-	</select>
-	
+
+     <!-- 로그인 쿼리 -->
+    <select id="loginMember" parameterType="Member" resultMap="memberResultSet">
+        SELECT USER_ID,
+               USER_PWD,
+               USER_NAME,
+               GENDER,
+               USER_BIRTHDAY,
+               USER_EMAIL,
+               USER_PHONE,
+               USER_ENROLL_DATE,
+               USER_DELFLAG,
+               USER_DELETE_DATE,
+               USER_GRADE,
+               USER_ADDRESS,
+               GRADE_ADMIN,
+               USER_COIN
+        FROM MEMBER
+        WHERE USER_ID = #{userId}
+          AND USER_PWD = #{userPwd}
+    </select>
+
+
+    <!-- 이름으로 회원 검색 쿼리 (오라클용) -->
+    <select id="searchMembersByName" parameterType="String" resultMap="memberResultSet">
+        SELECT USER_ID,
+               USER_PWD,
+               USER_NAME,
+               GENDER,
+               USER_BIRTHDAY,
+               USER_EMAIL,
+               USER_PHONE,
+               USER_ENROLL_DATE,
+               USER_DELFLAG,
+               USER_DELETE_DATE,
+               USER_GRADE,
+               USER_ADDRESS,
+               GRADE_ADMIN,
+               USER_COIN
+        FROM MEMBER
+        WHERE USER_NAME LIKE '%' || #{name} || '%'
+    </select>
+
+    <!-- 전화번호로 회원 검색 쿼리 -->
+    <select id="searchMembersByPhone" parameterType="String" resultMap="memberResultSet">
+        SELECT USER_ID,
+               USER_PWD,
+               USER_NAME,
+               GENDER,
+               USER_BIRTHDAY,
+               USER_EMAIL,
+               USER_PHONE,
+               USER_ENROLL_DATE,
+               USER_DELFLAG,
+               USER_DELETE_DATE,
+               USER_GRADE,
+               USER_ADDRESS,
+               GRADE_ADMIN,
+               USER_COIN
+        FROM MEMBER
+        WHERE USER_PHONE = #{phone}
+    </select>
+
 </mapper>

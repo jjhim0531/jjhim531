@@ -1,30 +1,39 @@
 package com.semi.member.service;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
+
 import com.semi.common.template.Template;
 import com.semi.member.model.dao.MemberDao;
 import com.semi.member.model.vo.Member;
 
+public class MemberServiceImpl implements MemberService {
 
-public class MemberServiceImpl implements MemberService{
+    // MemberDao 인스턴스를 주입받거나 생성
+    private MemberDao mDao = new MemberDao();
 
-	private MemberDao mDao = new MemberDao();
+    @Override
+    public Member loginMember(Member m) {
+        SqlSession sqlSession = Template.getSqlSession();
+        Member loginUser = mDao.loginMember(sqlSession, m);
+        sqlSession.close();
+        return loginUser;
+    }
 
-	@Override
-	public Member loginMember(Member m) {
-//		Connection conn = getConnection();
-//
-//		Member loginMember = new MemberDao().loginMember(conn, m);
-//		close(conn);
-//		return loginMember;
+    @Override
+    public List<Member> searchMembersByName(String name) {
+        SqlSession sqlSession = Template.getSqlSession();
+        List<Member> membersByName = mDao.findMembersByName(sqlSession, name);
+        sqlSession.close();
+        return membersByName;
+    }
 
-		SqlSession sqlSession = Template.getSqlSession();
-		Member loginUser = mDao.loginMember(sqlSession, m);
-
-		sqlSession.close();
-
-		return loginUser;
-	}
-
-
+    @Override
+    public List<Member> searchMembersByPhone(String phone) {
+        SqlSession sqlSession = Template.getSqlSession();
+        List<Member> membersByPhone = mDao.findMembersByPhone(sqlSession, phone);
+        sqlSession.close();
+        return membersByPhone;
+    }
 }

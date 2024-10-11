@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-dfbdfb 
+<jsp:include page="/views/jsp/MainPage.jsp" />
 </body>
 </html>

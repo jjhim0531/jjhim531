@@ -1,0 +1,781 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.main-page .header {
+  display: flex;
+  flex-direction: column;
+  max-height: 150px;
+  align-items: flex-start;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+  background-color: #ffffff;
+}
+
+.main-page .top {
+  height: 75px;
+  gap: 50px;
+  padding: 15px 230px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.main-page .home-button {
+  display: flex;
+  max-width: 150px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .text-wrapper {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  margin-left: -35px;
+  margin-right: -35px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #12690b;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 26.4px;
+}
+
+.main-page .search-bar {
+  display: flex;
+  min-width: 550px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 0px 50px 0px 16px;
+  background-color: #f2f4f8;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #c1c7cd;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .search-icon {
+  max-width: 45px;
+  max-height: 45px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .search-input-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .div {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #c1c1c1;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.main-page .cart-login {
+  display: flex;
+  min-width: 250px;
+  max-width: 350px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  background-color: #ffffff;
+}
+
+.main-page .shoppin-cart-button {
+  display: flex;
+  max-width: 150px;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  border-radius: 100px;
+}
+
+.main-page .shopping-cart-icon {
+  max-width: 40px;
+  width: 40px;
+  max-height: 40px;
+  position: relative;
+  align-self: stretch;
+}
+
+.main-page .shopping-cart-text {
+  display: flex;
+  max-width: 200px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+  flex-grow: 1;
+  position: relative;
+  align-self: stretch;
+}
+
+.main-page .text-wrapper-2 {
+  position: relative;
+  flex: 1;
+  height: 43px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 17.6px;
+}
+
+.main-page .login-button {
+  display: flex;
+  max-width: 120px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-grow: 1;
+  border-radius: 100px;
+  position: relative;
+  align-self: stretch;
+}
+
+.main-page .login-icon {
+  width: 45px;
+  position: relative;
+  align-self: stretch;
+}
+
+.main-page .login-text {
+  display: flex;
+  max-width: 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+  flex-grow: 1;
+  position: relative;
+  align-self: stretch;
+}
+
+.main-page .text-wrapper-3 {
+  position: relative;
+  flex: 1;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 17.6px;
+}
+
+.main-page .menu {
+  display: flex;
+  height: 75px;
+  align-items: center;
+  gap: 50px;
+  padding: 8px 150px;
+  width: 100%;
+  background-color: #edf8e8;
+  position: relative;
+  align-self: stretch;
+}
+
+.main-page .category-button {
+  display: flex;
+  min-width: 150px;
+  max-width: 200px;
+  max-height: 50px;
+  align-items: center;
+  padding: 4px 16px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  background-color: #12690b;
+  border: 1px solid;
+  border-color: #dadada;
+  backdrop-filter: blur(4px) brightness(100%);
+  -webkit-backdrop-filter: blur(4px) brightness(100%);
+}
+
+.main-page .img {
+  flex: 1;
+  max-width: 50px;
+  flex-grow: 1;
+  max-height: 45px;
+  position: relative;
+  align-self: stretch;
+}
+
+.main-page .text-wrapper-4 {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 20px;
+}
+
+.main-page .navbar {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .text-wrapper-5 {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Bold", Helvetica;
+  font-weight: 700;
+  color: #12690b;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+
+.main-page .body-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.main-page .advertisement {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.main-page .recommend {
+  flex-direction: column;
+  height: 1100px;
+  gap: 30px;
+  padding: 0px 200px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.main-page .today-tiems {
+  display: flex;
+  max-height: 70px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0px 20px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 5px;
+}
+
+.main-page .text-wrapper-6 {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 45px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .div-2 {
+  gap: 50px;
+  padding: 0px 10px;
+  flex: 1;
+  flex-grow: 1;
+  background-color: #ffffff;
+  overflow: hidden;
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.main-page .tamato {
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .image {
+  flex: 1;
+  min-width: 230px;
+  min-height: 338px;
+  flex-grow: 1;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  object-fit: cover;
+}
+
+.main-page .element {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .broccoli {
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .image-2 {
+  min-width: 230px;
+  height: 338px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  object-fit: cover;
+}
+
+.main-page .element-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .div-3 {
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.main-page .img-2 {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  min-height: 338px;
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+.main-page .tokyo-banana {
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  border-radius: 25px;
+}
+
+.main-page .element-3 {
+  position: relative;
+  flex: 1;
+  width: 245px;
+  margin-right: -15px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .customized-tiems {
+  display: flex;
+  max-height: 70px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0px 20px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.main-page .p {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 45px;
+  text-align: center;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .span {
+  letter-spacing: 0;
+}
+
+.main-page .text-wrapper-7 {
+  letter-spacing: 0.2px;
+}
+
+.main-page .mille-feuille-nabe {
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.main-page .image-3 {
+  height: 338px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  object-fit: cover;
+}
+
+.main-page .element-4 {
+  position: relative;
+  flex: 1;
+  width: 92px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .tteokbokki {
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .image-4 {
+  flex: 1;
+  min-width: 230px;
+  min-height: 338px;
+  max-height: 338px;
+  flex-grow: 1;
+  margin-top: -6.5px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  object-fit: cover;
+}
+
+.main-page .element-5 {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-bottom: -5.5px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .element-6 {
+  position: relative;
+  flex: 1;
+  width: 214px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .element-7 {
+  position: relative;
+  flex: 1;
+  width: 177px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.main-page .footer {
+  display: flex;
+  flex-direction: column;
+  max-height: 150px;
+  height: 150px;
+  align-items: flex-start;
+  padding: 1px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  background-color: #edf8e8;
+}
+
+.main-page .top-2 {
+  gap: 20px;
+  padding: 7px 150px;
+  flex: 1;
+  flex-grow: 1;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.main-page .company {
+  display: flex;
+  max-width: 250px;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .text-wrapper-8 {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--x-6);
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 26.4px;
+}
+
+.main-page .ceo {
+  display: flex;
+  max-width: 250px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .text-wrapper-9 {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--x-6);
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22.4px;
+}
+
+.main-page .employee {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  padding: 12px 8px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .frame {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  padding: 0px 12px 0px 13px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.main-page .url {
+  display: flex;
+  max-height: 50px;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 30px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.main-page .text-wrapper-10 {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--x-6);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 19.6px;
+}
