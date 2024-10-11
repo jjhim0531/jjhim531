@@ -15,9 +15,10 @@ public class Template {
 		//mybatis-config.xml 읽어들이기
 
 		SqlSession sqlSession = null;
-
+		
+		//SqlSession만 있으면 쿼리를 날린다던가, commit을 한다던가 하는게 모두 가능.
 		//SqlSession생성하기 위해서는 -> SqlSessionFactory객체 필요
-		//SqlSessionFactory생성하기위해서는 -> SqlSessionFactoryFactoryBuilder필요
+		//SqlSessionFactory를 생성하기위해서는 -> SqlSessionFactoryFactoryBuilder필요
 
 		String resource = "/mybatis-config.xml";
 
