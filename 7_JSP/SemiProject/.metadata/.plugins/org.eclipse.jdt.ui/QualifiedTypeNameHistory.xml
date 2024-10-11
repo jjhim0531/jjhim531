@@ -2,4 +2,5 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.semi.customer.vo.Member"/>
     <fullyQualifiedTypeName name="com.semi.member.vo.Member"/>
+    <fullyQualifiedTypeName name="com.semi.member.model.vo.Member"/>
 </qualifiedTypeNameHistroy>
