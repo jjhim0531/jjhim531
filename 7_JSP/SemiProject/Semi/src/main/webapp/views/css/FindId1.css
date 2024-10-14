@@ -1,136 +1,107 @@
-html,
-body {
-    margin: 0;
-    height: 100%;
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
-.find-id {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-color: #ffffff;
-}
-
-.body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    height: calc(100vh - 300px);
-    /* 150px씩 상하 여백을 뺀 높이 */
-
-}
-
-.login-form {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* 폼 내부 요소들을 중앙에 정렬 */
-  gap: 10px;
-  width: 100%;
-  max-width: 600px;
-  height: 50vh;
-  /* 화면 높이의 60%로 설정 */
-
+.find-Id-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: calc(91vh - 225px);
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
 .find-Id-text {
-    background-color: #f2f4f8;
-    width: 100%;
-    height: 25%;
-    font-family: "Roboto-Bold", Helvetica;
-    font-weight: 700;
-    color: #000000;
-    font-size: 40px;
-    text-align: center;
-    display: flex;
-    /* Flexbox 사용 */
-    align-items: center;
-    /* 세로 중앙 정렬 */
-    justify-content: center;
-    /* 가로 중앙 정렬 */
-    border-radius: 10px;
-    padding: 20px;
+	height: 20%;
+	/* 부모인 login-form의 20%를 차지하도록 설정 */
+	position: relative;
+	display: flex;
+	align-items: center;
+	/* 세로 가운데 정렬 */
+	justify-content: center;
+	/* 가로 가운데 정렬 */
+	font-family: "Roboto-Regular", Helvetica;
+	font-weight: 400;
+	color: #000000;
+	font-size: 48px;
+	text-align: center;
+	letter-spacing: 0;
+	white-space: nowrap;
+	margin-bottom: 20px; /* 제목과 입력 필드 사이 간격 추가 */
 }
 
-.find-id .mid {
-
-    width: 90%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 30px;
+.mid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	width: 100%;
+	height: auto; /* 필요한 만큼의 높이를 차지 */
+	flex-grow: 1;
+	margin-bottom: 20px; /* mid와 bottom 사이에 20px 여백 추가 */
 }
 
-.find-id .name-function,
-.find-id .phone-function {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 50%;
-    /* 각 섹션이 50%씩 차지하도록 설정 */
 
+
+.name-function, .phone-function {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
 }
 
-.find-id .name-blank,
-.find-id .phone-blank {
-
-    display: flex;
-    align-items: center;
-    /* 세로 중앙 정렬 */
-    justify-content: flex-start;
-    /* 가로는 왼쪽 정렬 */
-    font-family: "Roboto-Regular", Helvetica;
-    font-weight: 400;
-    font-size: 24px;
-    color: #000000;
-    height: 50%;
-    /* 부모 높이의 절반을 차지 */
-    padding-left: 5px;
-    /* 레이블과 입력 필드 사이의 간격 */
-}
-
-input::placeholder {
-    font-size: 20px;
+.name-blank, .phone-blank {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-family: "Roboto-Regular", Helvetica;
+	font-weight: 400;
+	font-size: 24px;
+	color: #000000;
+	padding-left: 5px;
 }
 
 .input-field {
-    width: 100%;
-    height: 50%;
-    /* 입력 필드도 부모 높이의 절반을 차지 */
-    padding: 20px;
-    font-size: 28px;
-    border: 1px solid #9b9b9b;
-    border-radius: 10px;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	font-size: 28px;
+	border: 1px solid #9b9b9b;
+	border-radius: 10px;
+	box-sizing: border-box;
 }
-
-.input-field:focus {
-    outline: none;
-    border-color: #12690b;
+.bottom {
+	display: flex;
+	justify-content: center;
+	height : 20%;
 }
-
-.find-id .find-button {
-    width: 100%;
-    height: 20%;
-    padding: 20px;
-    font-size: 24px;
-    color: white;
-    background-color: black;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    font-size: 48px;
+.find-button {
+	width: 70%;
+	/* 입력창과 동일한 너비로 설정 */
+	height: 100%;
+	display: flex;
+	/* 플렉스박스를 사용하여 정렬 */
+	align-items: center;
+	/* 세로 가운데 정렬 */
+	justify-content: center;
+	/* 가로 가운데 정렬 */
+	background-color: #000000;
+	color: #ffffff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	text-align: center;
+	transition: background-color 0.3s ease;
+	margin: 0 auto;
+	/* 버튼을 가운데로 정렬 */
+	padding: 20px;
+	/* 패딩을 추가하여 버튼 크기를 적절히 조절 */
+	font-size: 48px;
+	/* 글씨 크기를 48px로 유지 */
 }
-
-

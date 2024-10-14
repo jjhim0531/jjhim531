@@ -6,17 +6,13 @@
   box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+
 .body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height : calc(100vh - 315px);
+    height: calc(91vh - 225px);
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -39,7 +35,7 @@ html, body {
 .body .login-form .text-wrapper-6 {
 
   height: 20%;
-  /* 부모인 login-form의 30%를 차지하도록 설정 */
+  /* 부모인 login-form의 20%를 차지하도록 설정 */
   position: relative;
   display: flex;
   align-items: center;

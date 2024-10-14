@@ -36,4 +36,13 @@ public class MemberServiceImpl implements MemberService {
         sqlSession.close();
         return membersByPhone;
     }
+    // 이름과 전화번호로 회원 검색 메서드 추가
+    @Override
+    public List<Member> searchMembersByNameAndPhone(String name, String phone) {
+        SqlSession sqlSession = Template.getSqlSession();
+        List<Member> members = mDao.findMembersByNameAndPhone(sqlSession, name, phone);
+        sqlSession.close();
+        return members;
+    }
+ 
 }

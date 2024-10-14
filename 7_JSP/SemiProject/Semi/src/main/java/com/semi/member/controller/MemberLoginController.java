@@ -44,7 +44,7 @@ public class MemberLoginController extends HttpServlet {
         request.getSession().setAttribute("loginUser", loginUser);
         response.sendRedirect(request.getContextPath());
     } else {
-        // 로그인 실패 시 alert 메시지 후 AdminLoginPage.jsp로 포워딩
+        // 로그인 실패 시 alert 메시지 후 LoginPage1.jsp로 포워딩
         request.setAttribute("loginError", "로그인에 실패하였습니다."); // 로그인 실패 메시지
         request.getRequestDispatcher("/views/jsp/LoginPage1.jsp").forward(request, response);
     }
@@ -58,4 +58,3 @@ public class MemberLoginController extends HttpServlet {
 		doGet(request, response);
 	}
 }
-

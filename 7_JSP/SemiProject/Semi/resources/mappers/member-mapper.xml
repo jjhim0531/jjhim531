@@ -22,7 +22,7 @@
         <result column="USER_COIN" property="userCoin" />
     </resultMap>
 
-     <!-- 로그인 쿼리 -->
+    <!-- 로그인 쿼리 -->
     <select id="loginMember" parameterType="Member" resultMap="memberResultSet">
         SELECT USER_ID,
                USER_PWD,
@@ -43,8 +43,7 @@
           AND USER_PWD = #{userPwd}
     </select>
 
-
-    <!-- 이름으로 회원 검색 쿼리 (오라클용) -->
+    <!-- 이름으로 회원 검색 쿼리 -->
     <select id="searchMembersByName" parameterType="String" resultMap="memberResultSet">
         SELECT USER_ID,
                USER_PWD,
@@ -82,6 +81,27 @@
                USER_COIN
         FROM MEMBER
         WHERE USER_PHONE = #{phone}
+    </select>
+
+    <!-- 이름과 전화번호로 회원 검색 쿼리 -->
+    <select id="searchMembersByNameAndPhone" parameterType="map" resultMap="memberResultSet">
+        SELECT USER_ID,
+               USER_PWD,
+               USER_NAME,
+               GENDER,
+               USER_BIRTHDAY,
+               USER_EMAIL,
+               USER_PHONE,
+               USER_ENROLL_DATE,
+               USER_DELFLAG,
+               USER_DELETE_DATE,
+               USER_GRADE,
+               USER_ADDRESS,
+               GRADE_ADMIN,
+               USER_COIN
+        FROM MEMBER
+        WHERE USER_NAME LIKE '%' || #{name} || '%'
+          AND USER_PHONE = #{phone}
     </select>
 
 </mapper>

@@ -18,11 +18,21 @@
   <servlet>
     <description></description>
     <display-name>FindId1.do</display-name>
-   <servlet-name>FindId1.do</servlet-name>
+    <servlet-name>FindId1.do</servlet-name>
     <servlet-class>com.semi.member.controller.MemberFindId1Controller</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>FindId1.do</servlet-name>
     <url-pattern>/FindId1.do</url-pattern>
-</servlet-mapping>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FindId2.do</display-name>
+    <servlet-name>FindId2.do</servlet-name>
+    <servlet-class>com.semi.member.controller.MemberFindId2Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindId2.do</servlet-name>
+    <url-pattern>/FindId2.do</url-pattern>
+  </servlet-mapping>
 </web-app>
