@@ -1,5 +1,0 @@
-INDEX VERSION 1.134
-C:\jjhim531\7_JSP\SemiProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1299345947.index
-\Semi\src\main\java
-C:\jjhim531\7_JSP\SemiProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2382335509.index
-\Semi\src\main\java
