@@ -65,11 +65,15 @@ public class MemberController {
 	}
 	
 	/*
-	 * Spring에서클라이언트가 보낸 정보를 받는 방법
+	 * Spring에서 클라이언트가 보낸 정보를 받는 방법
 	 * 1. HttpServletRequest를 활용해서 전달값을 가져옴
 	 * 메소드에 매개변수로 HttpServletRequest를 작성해두면
 	 * 스프링컨테이너가 해당 메소드를 호출할 때 자동으로 객체생성해서 매게변수로 주입해준다.
 	 */
+	
+	/*
+	 * @RequestMapping : get, post 모두 가능(@getMapping, @postMapping도 존재하긴한다)
+	 * */
 //	@RequestMapping("login.me")
 //	public String loginMember(HttpServletRequest request) {
 //		String id = request.getParameter("userId");
@@ -79,6 +83,7 @@ public class MemberController {
 //		System.out.println(pwd);
 //		return null;
 //	}
+	
 	
 	/*
 	 * 2. @RequestParam 어노테이션을 이용하는 방법
@@ -91,8 +96,12 @@ public class MemberController {
 	 */
 //	@RequestMapping("login.me")
 //	public String loginMember(@RequestParam(value="userId", defaultValue="test222") String id, String userPwd) {
+//	= public String loginMember(String userId, String userPwd) {
+//	* 이런식으로 @RequestParam은 생략이 가능하지만 아무것도 입력하지 않았을 때 나타나는 값인 defaultValue값을 적어주려면 @RequestParam을 생략해서는 안된다.
+//	String id = request.getParameter("userId");
+//	String pwd = request.getParameter("userPwd");
 //
-//		System.out.println(id);
+//	System.out.println(id);
 //		System.out.println(userPwd);
 //		
 //		return "main";

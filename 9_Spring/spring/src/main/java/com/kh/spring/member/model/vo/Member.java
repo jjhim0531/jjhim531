@@ -11,8 +11,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor //매개변수 없는 생성자
+@AllArgsConstructor //매개변수가 모두인 생성자
 @ToString
 @EqualsAndHashCode
 public class Member {
