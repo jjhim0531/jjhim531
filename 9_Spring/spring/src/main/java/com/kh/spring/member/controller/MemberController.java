@@ -29,7 +29,7 @@ public class MemberController {
 	/*
 	 * @Autowired
 	 * 의존성주입을 사용할 때 사용하는 어노테이션
-	 * 클래스내에서 필요한 객체를 직접생성하지 않고  spring컨테이너가 관리하는 객체(Been)를 주입받아 사용할 수 있게 해줌 
+	 * 클래스내에서 필요한 객체를 직접생성하지 않고  spring컨테이너가 관리하는 객체(Bean에 등록된 객체 )를 주입받아 사용할 수 있게 해줌 
 	 * + 필드주입방식/생성자주입방식
 	 */
 	
@@ -124,7 +124,7 @@ public class MemberController {
 //		
 //		if (loginMember == null) {
 //			System.out.println("로그인 실패");
-//		} else {
+//		 } else {
 //			System.out.println("로그인 성공");
 //		}
 //		
