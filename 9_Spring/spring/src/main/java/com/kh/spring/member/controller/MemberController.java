@@ -136,8 +136,10 @@ public class MemberController {
 	/*
 	 * 1. 스프링에서 제공하는 Model객체를 이용하는 방법
 	 * 포워딩할 응답뷰로 전달하고자하는 데이터를 맵형식(k-v)으로 담을 수 있는 영역
-	 * Model객체는 requestScope
+	 * Model객체는 requestScope에 데이터를 저장하기 때문에, 한 번의 요청-응답 주기 동안에만 해당 데이터를 사용할 수 있다.
+	 * 쉽게 말해, 클라이언트가 요청을 보낸 후 응답할 때까지만 유효한 데이터 저장소이다.
 	 * request.setAttribute() -> model.addAttribute()
+	 * model.addAttribute("key", "value");
 	 */
 	
 //	@RequestMapping("login.me")
@@ -146,9 +148,9 @@ public class MemberController {
 //		Member loginMember = memberService.loginMember(m);
 //		
 //		if (loginMember == null) {
-//			System.out.println("로그인 실패");
-//			model.addAttribute("errorMsg", "로그인실패"); // requestScope에 에러문구를 담는다.
-//			
+//			System.out.println("로그인 실패"); 
+//			model.addAttribute("errorMsg", "로그인실패"); 
+			// requestScope에 에러문구를 담는다.(model객체에 담으면 requestScope에 담는 것과 동일하다)
 //			///WEB-INF/views/common/errorPage.jsp
 //			return "/common/errorPage";
 //		} else {
@@ -170,7 +172,8 @@ public class MemberController {
 //		
 //		if (loginMember == null) {
 //			System.out.println("로그인 실패");
-//			//model.addAttribute("errorMsg", "로그인실패"); // requestScope에 에러문구를 담는다.
+//			//model.addAttribute("errorMsg", "로그인실패"); 
+			// requestScope에 에러문구를 담는다.(model객체에 담으면 requestScope에 담는 것과 동일하다)
 //			mv.addObject("errorMsg", "로그인실패");
 //			
 //			///WEB-INF/views/common/errorPage.jsp
@@ -179,7 +182,7 @@ public class MemberController {
 //		} else {
 //			session.setAttribute("loginUser", loginMember);
 //			System.out.println("로그인 성공");
-//			
+//			 
 //			//return "redirect:/";
 //			mv.setViewName("redirect:/");
 //		}
@@ -222,8 +225,8 @@ public class MemberController {
 	
 	@RequestMapping("logout.me")
 	public String logoutMember(HttpSession session) {
-//		session.invalidate();
-		session.removeAttribute("loginUser");
+//		session.invalidate(); //session정보 초기화
+		session.removeAttribute("loginUser"); //loginUser정보만 제거.
 		
 		return "redirect:/";
 	}
