@@ -1,41 +1,47 @@
 import React from 'react'
 
 const styles = {
-    wrapper: {
-        margin: 8,
-        padding: 8,
-        display: "flex",
+    wrapper : {
+        margin: 8, 
+        padding: 8, 
+        display: "flex", 
         flexDirection: "row",
         border: "1px solid gray",
-        borderradius: 16,
+        borderRadius: 16,
     },
     image: {
         width: 50,
         height: 50,
-        borderradius: 25,
+        borderRadius: 25,
     },
     contentContainer: {
-        marginleft: 8,
+        marginLeft: 8,
         display: "flex",
-        flexDirection : "column",
-        justifyContent: "center"
-    }
+        flexDirection: "column",
+        justifyContent: "center",
+        fontSize: 16,
+        alignItems : "flex-start",
+        color: "black",
+    },
+    nameText:{
+        fontWeight: "bold",
+    },
 }
 
-function Comment() {
-    return (
+function Comment(props) {
+  return (
+    <div style={styles.wrapper}>
         <div>
-            <div style={styles.wrapper}>
-                <img src="https://blog.naver.com/dadaist96/222592034984?photoView=1"
-                    alt="프로필이미지"
-                    style={styles.image} />
-            </div>
-            <div style={styles.contentContainer}>
-                <span>최지원</span>
-                <span>안녕하세요</span>
-            </div>
+            <img src={props.path}
+                 alt="프로필이미지" 
+                 style={styles.image}/>
         </div>
-    )
+        <div style={styles.contentContainer}>
+            <span style={styles.nameText}>{props.name}</span>
+            <span>{props.comment}</span>
+        </div>
+    </div>
+  )
 }
 
-export default Comment;
+export default Comment
