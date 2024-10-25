@@ -20,7 +20,7 @@ import com.kh.spring.member.service.MemberService;
 
 //Bean에 Class를 등록하는 방법으로 @Component을 클래스에 부여해주면 된다.
 // @Controller -> @Component + Controller객체가 가질 수 있는 예외처리등이 추가된 어노테이션
-//@RestController
+//@RestController(프로젝트에 ajax요청의 갯수가 많다면 RestController를 따로 만들어주자)(적다면 그냥 각각 @ResponseBody를 붙여준다)
 @CrossOrigin
 @Controller
 public class MemberController {
@@ -236,7 +236,7 @@ public class MemberController {
 		return "member/memberEnrollForm";
 	}
 	/*
-	 * ajax요청에 대한 응답을 위한 controller에는 @ResponseBody어노테이션을 작성해줘야한다.
+	 * ajax요청에 대한 응답을 위한 controller에는 @ResponseBody어노테이션을 작성해줘야한다.(반환값이 기본적으로 String이다)
 	 * 기본적인 세팅이 jsp응답으로 되어있기 때문에 @ResponseBody를 작성해주면
 	 * 반환값을 http응답 객체에 직접 작성하겠다라는 의미를 가지고 있다.
 	 */

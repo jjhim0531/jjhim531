@@ -94,7 +94,7 @@
                                                     console.log("아이디 중복체크 ajax 실패")
                                                 }
                                             })
-                                        }, 1000)
+                                        }, 1000) 
                     } else {
                         document.querySelector("#enrollForm button[type='submit']").disabled = true;
                         document.querySelector("#checkResult").style.display = "none";
