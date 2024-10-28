@@ -19,8 +19,8 @@ import com.kh.spring.member.service.MemberService;
 
 
 //Bean에 Class를 등록하는 방법으로 @Component을 클래스에 부여해주면 된다.
-// @Controller -> @Component + Controller객체가 가질 수 있는 예외처리등이 추가된 어노테이션
-//@RestController(프로젝트에 ajax요청의 갯수가 많다면 RestController를 따로 만들어주자)(적다면 그냥 각각 @ResponseBody를 붙여준다)
+//@Controller -> @Component + Controller객체가 가질 수 있는 예외처리등이 추가된 어노테이션
+//@RestController(프로젝트에 ajax요청의 갯수가 많다면 RestController를 따로 만들어주자. 그 안의 모든 클래스가 @ResponseBody로 바뀐다.)(적다면 그냥 각각 @ResponseBody를 붙여준다)
 @CrossOrigin
 @Controller
 public class MemberController {
@@ -35,29 +35,38 @@ public class MemberController {
 	
 	/*
 	 * private MemberService memberService = new MeberServiceImpl();
-	 * 기존 객체 생성 방식 
-	 * 객체간의 결합도가 높아짐(소스코드 수정이 일어날 경우 하나하나 전부 다 바꿔줘야한다.)
-	 * 서비스가 동시에 매우 많은 획수요청이 될 경우 그만큼 객체가 생성된다.
+	 * - 기존 객체 생성 방식 
+	 * 객체간의 결합도가 높아짐
+	 * (memberController안에 직접적으로 memverService가 들어있다)(memberService는 memberController가 작동하기위한 필수조건이 되버린다.)
+	 * (소스코드 수정이 일어날 경우 하나하나 전부 다 바꿔줘야한다.)
+	 * 서비스가 동시에 매우 많은 횟수요청이 될 경우 그만큼 객체가 생성된다.
 	 * 
-	 * DI(Dependency Injection) - 의존성 주입
-	 * 코드 결합도가 낮아지고 코드를 분리할 수 있음
+	 * - DI(Dependency Injection) - 의존성 주입
+	 * 코드 결합도가 낮아지고 코드를 분리할 수 있음(new로 객체를 어떻게 생성하든 bean에서 객체를 찾아서 주입해준다.)
+	 * 하나의 객체만 만들어놓고 참조변수를 여러개 만들어서 사용한다.(싱글톤 방식)
 	 * 
-	 * 필드주입방식
-	 * 스프링컨테이너가 객체를 생성한 후, @Autowired 어노테이션이 붙은 필드에 의존성을 주입한다.
+	 * 		* 필드주입방식
+	 * 		스프링컨테이너가 객체를 생성한 후, @Autowired 어노테이션이 붙은 필드에 의존성을 주입한다.
 	 * 
-	 * 생성자주입방식
-	 * 스프링컨테이너가 객체를 생성할 때 @Autowired 어노테이션이 붙은 생성자를 통해서 필요한 의존성을 주입한다.
+	 *	 	* 생성자주입방식
+	 * 		스프링컨테이너가 객체를 생성할 때 @Autowired 어노테이션이 붙은 생성자를 통해서 필요한 의존성을 주입한다.
 	 * 
-	 * 필드주입방식 -> 생성자주입방식 : 주입시점의 차이로인해 객체가 완전히 초기화된 상태로 사용할 수 있음을 보장하고
-	 * 테스트 기능성과 유지보수성이 좋아진다.
+	 *	 	필드주입방식 -> 생성자주입방식 : 
+	 * 		주입시점의 차이로인해 객체가 완전히 초기화된 상태로 사용할 수 있음을 보장하고
+	 * 		테스트 기능성과 유지보수성이 좋아진다.
 	 */
 	
-//	@Autowired
-//	private MemberService memberService;
+	//	필드주입방식	
+	//	@Autowired
+	//	private MemberService memberService;
 	
+	
+	
+	//생성자 주입방식
 	private final MemberService memberService;
 	private final BCryptPasswordEncoder bcryptPasswordEncoder;
 	
+
 	@Autowired
 	public MemberController(MemberService memberService, BCryptPasswordEncoder bcryptPasswordEncoder) {
 		this.memberService = memberService;
@@ -256,17 +265,17 @@ public class MemberController {
 	
 	@RequestMapping("insert.me")
 	public String insertMember(Member m, HttpSession session, Model model) {
-		System.out.println(m);
+		Sys tem.out.println(m);
 		
-		/* 인코딩 필터를 적용해 줬기 때문에 한글을 잘 받을 수 있음
+		/* web.xml에 인코딩 필터를 적용해 줬기 때문에 한글을 잘 받을 수 있음  
 		 * 
-		 * age같은 경우 int로 필드를 구성할 경우 빈문자열이 전달되면 형변환과정에서 400에러가 발생한다
+		 * age같은 경 우 int로 필드를 구성할 경우 빈문자열이 전달되면 형변환과정에서 400에러가 발생한다(400에러는 보통 프론트문제라고 말한다)
 		 * 400에러는 보통 요청하는 데이터와 이를 받아주는 데이터가 일치하지 않아서 많이 발생한다.
 		 * 
 		 * 비밀번호가 사용자의 입력 그대로 전달된다.(평문)
 		 * Bcrypt방식을 이용해서 암호화 작업 후 저장을 하겠다.
 		 * => 스프링시큐리티에서 제공하는 모듈을 이용 (pom.xml에 라이브러리 추가 후 빈에 객체등록)
-		 */
+		 */ 
 		
 		String encPwd = bcryptPasswordEncoder.encode(m.getUserPwd());
 		m.setUserPwd(encPwd);

@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
-<body>
+<body>  
 
 	<!-- 메뉴바 -->
     <jsp:include page="../common/header.jsp" />

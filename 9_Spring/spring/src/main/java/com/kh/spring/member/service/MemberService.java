@@ -18,4 +18,4 @@ public interface MemberService {
 	
 	//회원탈퇴
 	int deleteMember(String userId);
-}
+} 

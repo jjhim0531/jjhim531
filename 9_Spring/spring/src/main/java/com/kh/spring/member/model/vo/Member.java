@@ -15,6 +15,7 @@ import lombok.ToString;
 @AllArgsConstructor //매개변수가 모두인 생성자
 @ToString
 @EqualsAndHashCode
+//lombok은 카멜케이스쓸때 맨앞이 반드시 2자리 이상이어야 에러가 발생하지않는다.
 public class Member {
 	private String userId;
 	private String userPwd;
