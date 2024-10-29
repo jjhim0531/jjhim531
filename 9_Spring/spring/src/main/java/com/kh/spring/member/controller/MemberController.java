@@ -265,7 +265,7 @@ public class MemberController {
 	
 	@RequestMapping("insert.me")
 	public String insertMember(Member m, HttpSession session, Model model) {
-		Sys tem.out.println(m);
+		System.out.println(m);
 		
 		/* web.xml에 인코딩 필터를 적용해 줬기 때문에 한글을 잘 받을 수 있음  
 		 * 
@@ -273,7 +273,7 @@ public class MemberController {
 		 * 400에러는 보통 요청하는 데이터와 이를 받아주는 데이터가 일치하지 않아서 많이 발생한다.
 		 * 
 		 * 비밀번호가 사용자의 입력 그대로 전달된다.(평문)
-		 * Bcrypt방식을 이용해서 암호화 작업 후 저장을 하겠다.
+		 * Bcrypt 방식을 이용해서 암호화 작업 후 저장을 하겠다.
 		 * => 스프링시큐리티에서 제공하는 모듈을 이용 (pom.xml에 라이브러리 추가 후 빈에 객체등록)
 		 */ 
 		
@@ -281,7 +281,7 @@ public class MemberController {
 		m.setUserPwd(encPwd);
 		
 		int result = memberService.insertMember(m);
-		
+		 
 		if(result > 0) {
 			session.setAttribute("alertMsg", "성공적으로 회원가입이 완료되었습니다.");
 			return "redirect:/";
