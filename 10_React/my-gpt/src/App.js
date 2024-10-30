@@ -14,7 +14,7 @@ function App() {
   }
 
   const clickSearchIcon = async () => {
-    if(searchText.trim() === "")
+    if (searchText.trim() === "")
       return;
 
     const chatData = {
@@ -39,13 +39,13 @@ function App() {
         <Title>나만의 GPT</Title>
       </Header>
       <Contents>
-
+        <ChatDisplay>chatDataList</ChatDisplay>
       </Contents>
       <Footer>
-        <SearchBar 
-          searchText = {searchText}
-          changeSearchText = {changeSearchText}
-          clickSearchIcon = {clickSearchIcon}
+        <SearchBar
+          searchText={searchText}
+          changeSearchText={changeSearchText}
+          clickSearchIcon={clickSearchIcon}
         />
         <DescriptText>
           ChatGPT는 실수를 할 수 있습니다. 중요한 정보를 확인하세요.
