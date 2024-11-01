@@ -207,7 +207,7 @@ public class MemberController {
 		
 		//loginMember pwd -> 암호화된 비밀번호 
 		//bcryptPasswordEncoder -> matches(평문, 암호문)메소드를 이용하여 내부적으로 복호화작업 후 비교가 이루어짐
-		//두 구문이 일치하면 true를 반환 일치하지 않으면 false반환
+		//두 구문이  일치하면 true를 반환, 일치하지 않으면 false를 반환
 		//bcryptPasswordEncoder.matches(m.getUserPwd(), loginMember.getUserPwd());
 		
 		if(loginMember == null) { // 아이디없는 경우
@@ -219,10 +219,13 @@ public class MemberController {
 		} else {
 			Cookie ck = new Cookie("saveId", loginMember.getUserId());
 			if (saveId == null) {
+				//아이디 저장 버튼 체크 해제
 				ck.setMaxAge(0);
 			}
+			//null이 아니면 사용자가 다음번에 로그인할 때 브라우저가 이 쿠키를 서버에 다시 보내므로, 자동으로 아이디를 입력
 			response.addCookie(ck);
-			
+			// 로그인된 사용자의 정보를 세션에 저장.
+			// 세션은 사용자가 사이트에 접속해 있는 동안 유지되므로, 로그인된 상태가 지속된다. 이렇게 하면 페이지를 이동해도 로그인이 계속 유지된다.
 			session.setAttribute("loginUser", loginMember);
 
 			mv.setViewName("redirect:/");
@@ -298,6 +301,7 @@ public class MemberController {
 	
 	@RequestMapping("update.me")
 	public String updateMember(Member m, HttpSession session, Model model) {
+		//UPDATE는 수정된 행의 갯수를 int로 반환한다.
 		int result = memberService.updateMember(m);
 		
 		if(result > 0) {
@@ -313,6 +317,7 @@ public class MemberController {
 	@RequestMapping("delete.me") 
 	public String deleteMember(Member m, HttpSession session) {
 		//비밀번호를 암호화된 비밀번호와 비교
+		//session에 로그인 정보가 저장되어 있으므로. 
 		String encPwd = ((Member)session.getAttribute("loginUser")).getUserPwd();
 		
 		//일치하면 탈퇴처리 -> session에서 로그인정보 제거 -> 메인페이지

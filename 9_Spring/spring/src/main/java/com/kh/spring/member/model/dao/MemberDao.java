@@ -24,6 +24,7 @@ public class MemberDao {
 		return sqlSession.update("memberMapper.updateMember", m);
 	}
 	
+	//회원 탈퇴를 할 때 deleteMember 메서드에서 update를 사용하는 이유는 보통 실제 데이터를 삭제하는 것이 아니라, 해당 회원의 상태를 '탈퇴' 상태로 변경하기 때문이다.
 	public int deleteMember(SqlSessionTemplate sqlSession, String userId) {
 		return sqlSession.update("memberMapper.deleteMember", userId);
 	}
