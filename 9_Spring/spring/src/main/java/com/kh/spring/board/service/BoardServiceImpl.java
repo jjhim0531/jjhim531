@@ -13,14 +13,14 @@ import com.kh.spring.common.vo.PageInfo;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor //이 어노테이션을 쓴다면 autowired를 붙여주지 않아도 된다.
 @Service
 public class BoardServiceImpl implements BoardService{
  
-	@Autowired
+
 	private final SqlSessionTemplate sqlSession;
 	
-	@Autowired
+
 	private final BoardDao boardDao;
 	
 	@Override

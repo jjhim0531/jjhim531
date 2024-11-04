@@ -40,7 +40,7 @@ public class BoardController {
 		ArrayList<Board> list = boardService.selectList(pi);
 		
 		model.addAttribute("list", list);
-		model.addAttribute("pi", pi);
+		model.addAttribute("pi", pi); 
 		return "board/boardListView";
 	}
 	
@@ -148,4 +148,4 @@ public class BoardController {
 	public String ajaxTopBoardList() {
 		return new Gson().toJson(boardService.selectTopBoardList());
 	}
-}
+} 
