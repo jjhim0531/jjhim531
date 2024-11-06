@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -7,7 +8,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
-<body>  
+<body>
 
 	<!-- 메뉴바 -->
     <jsp:include page="../common/header.jsp" />
@@ -94,7 +95,7 @@
                                                     console.log("아이디 중복체크 ajax 실패")
                                                 }
                                             })
-                                        }, 1000) 
+                                        }, 1000)
                     } else {
                         document.querySelector("#enrollForm button[type='submit']").disabled = true;
                         document.querySelector("#checkResult").style.display = "none";
