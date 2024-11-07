@@ -39,8 +39,8 @@ public class BoardController {
 		PageInfo pi = Template.getPageInfo(boardCount, currentPage, 10, 5);
 		ArrayList<Board> list = boardService.selectList(pi);
 		
-		model.addAttribute("list", list);
-		model.addAttribute("pi", pi);
+		model.addAttribute("list", list); 
+		model.addAttribute("pi", pi);  
 		return "board/boardListView";
 	}
 	
@@ -148,4 +148,4 @@ public class BoardController {
 	public String ajaxTopBoardList() {
 		return new Gson().toJson(boardService.selectTopBoardList());
 	}
-}
+} 

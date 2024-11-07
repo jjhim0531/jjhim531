@@ -16,6 +16,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+//필요없는 annotation은 최대한 안쓰는게 좋다.(예를 들어 해쉬코드는 지금 필요없다)
 public class Board {
 	private int boardNo;
 	private String boardTitle;

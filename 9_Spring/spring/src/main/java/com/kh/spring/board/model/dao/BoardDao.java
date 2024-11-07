@@ -18,6 +18,13 @@ public class BoardDao {
 	}
 	
 	public ArrayList<Board> selectList(SqlSessionTemplate sqlSession, PageInfo pi){
+		//마이바티스에서는 페이징처리를 위해 rowBounds라는 클래스를 제공
+		// offset : 몇개의 게시글을 건너뛰고 조회할건지
+		/*
+		 * currentPage : 1     1~5		0	5 
+		 * currentPage : 2     6~10		5	5
+		 * currentPage : 3     11~15	10	5
+		 */
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
 		
 		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());

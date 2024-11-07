@@ -5,6 +5,7 @@
 
 <!-- namespace: 해당 mapper파일의 고유한 별칭 -->
 
+<!--  <select id="selectBoard" resultMap="boardResult">의 resultMap을 만들어준것 -->
 <mapper namespace="boardMapper">
 	<resultMap type="Board" id="boardResult">
 		<result column="BOARD_NO" property="boardNo"/>
@@ -23,8 +24,7 @@
    	SELECT COUNT(*)
    	  FROM BOARD
    	 WHERE STATUS = 'Y'
-  </select>
-  <!-- 게시글 조회 -->
+  </select> 
   <select id="selectList" resultType="Board">
   	SELECT BOARD_NO boardNo,
 			BOARD_TITLE boardTitle,
@@ -44,7 +44,7 @@
   	   AND STATUS = 'Y'
   </update>
   
-  <!-- bno로 게시글 조회 -->
+  <!-- bno로 게시글 조회 --><!-- 맨위의 resultMap 참고 -->
   <select id="selectBoard" resultMap="boardResult">
   	SELECT BOARD_NO,
 			BOARD_TITLE,
