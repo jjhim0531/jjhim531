@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funtion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funtion</title>
 </head>
+
 <body>
-    <script>
-        function test(){
-            console.log("test함수")
-            console.log(this)
-        }
-        test();
+  <script>
+    //함수 선언식
+    function test() {
+      console.log("test함수")
+      console.log(this)
+    }
+    test();
+    //전역에서 호출했기 때문에 전역 객체(window 또는 globalThis)를 출력합니다.
+    //브라우저 환경: this === window
+    //Node.js 환경: this === global
 
-        const test2 = function(){
-            console.log("test2함수")
-            console.log(this)
-        }
 
-        test2();
+    //함수표현식
+    const test2 = function () {
+      console.log("test2함수")
+      console.log(this)
+    }
 
-        const test3 = () => {
-            console.log("test3함수")
-            console.log(this)
-        }
-        test3();
+    test2();
+    //전역에서 호출했기 때문에, 전역 객체(window)를 출력합니다.
+    //호출 컨텍스트가 전역인 경우, this === window입니다.
 
-    </script>
+
+
+    //화살표함수
+    const test3 = () => {
+      console.log("test3함수")
+      console.log(this)
+    }
+    test3();
+    //즉, 화살표 함수의 this는 작성된 위치의 상위 스코프의 this를 사용합니다.
+
+  </script>
 </body>
+
 </html>

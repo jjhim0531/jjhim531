@@ -196,3 +196,9 @@ const arr2 = ["빨간색", "주황색", "파란색"];
 //shift는 첫 번째 요소를 제거한 후, 그 제거된 값을 반환
 console.log(arr2.shift()); // "빨간색" (첫 번째 요소 제거)
 console.log(arr2);         // ["주황색", "파란색"] (나머지 배열)
+
+
+let globalVar2 = "전역 변수 let";
+console.log(window.globalVar2); // undefined
+//let과 const는 var와 달리 전역 객체에 포함되지 않으며, 스코프가 더 제한적입니다.
+//따라서, let과 const로 선언된 전역 변수는 window 객체의 속성이 되지 않습니다.
