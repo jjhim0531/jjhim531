@@ -18,7 +18,7 @@ console.log(name + " " + age + " " + height + " " + isTrue)
 
 /**
  * let은 var에서 같은이름의 중복생성을 하지 못하게 만든 자료형이다.
- * 다만 let과 var는 모두 값을 변경하는 것은 가능하다.
+ * 다만 let과 var는 모두 값을 변경하는 것은 가능하다.(재할당 가능)
  */
 
 let name2 = "최지원";
@@ -27,7 +27,7 @@ name2 = "김수민";
 
 /**
  * const는 상수를 표현하기위한 자료형
- * 값을 변경할 수 없음
+ * 값을 변경할 수 없음(재할당 불가능)
  */
 
 const name3 = "최지원";
@@ -74,7 +74,7 @@ let _name = "최민수"
 
 //Number 타입
 const age2 = 55;
-const tampature = -10
+const tempature = -10
 const pi = 3.14
 
 // console.log(age2, tampature, pi)
@@ -89,11 +89,20 @@ console.log(typeof -Infinity)
 // String타입
 const name4 = "최지원 66살"
 const num1 = 55
-console.log(num1 == "55")
-console.log(num1 === "55")
+console.log(num1 == "55")//타입변환을 허용하고 값만 비교
+console.log(num1 === "55")//타입변환을 허용하지 않고 값과 타입을 모두 비교.
+//(js에서는 가급적 === 사용하는 것을 권장.(정확한 비교))
 
 
 console.log("안녕하세요 저는 최지원입니다. \n \t 나이는 51살입니다.")
+/*
+\n: 새 줄
+\t: 탭
+\\: 백슬래시 출력
+\": 큰따옴표 출력
+\': 작은따옴표 출력
+*/
+
 
 //Boolean 타입
 const isTrue2 = true;
@@ -105,7 +114,7 @@ console.log(typeof isFalse)
  * undefined
  * 
  * 개발자가 직접 값을 초기화하지 않았을 때
- * 지정되는 값이다.
+ * 지정되는 값이다.(자동할당)
  * 
  * undefined를 직접 넣어주는 것은 지양해야한다.
  */
@@ -116,7 +125,7 @@ console.log(num2 === undefined);
 /**
  * null 타입
  * undefined와 동일하게 값이 없음을 표시
- * 다만 js에서는 개발자가 직접 명시적으로 없는 값을 초기화할 때 사용
+ * 다만 js에서는 개발자가 직접 명시적으로 없는 값을 초기화할 때 사용(의도적 사용)
  */
 
 let init = null;
@@ -135,12 +144,12 @@ if(!init){
 
 const tmp1 = '1';
 const tmp2 = '1';
-console.log(tmp1 === tmp2)
+console.log(tmp1 === tmp2)// true (문자열은 값과 타입이 같으면 동일)
 
 const symbol1 = Symbol('1');
 const symbol2 = Symbol('1');
-console.log(symbol1, symbol2)
-console.log(symbol1 === symbol2)
+console.log(symbol1, symbol2)//Symbol(1) Symbol(1) (각각 고유한 Symbol)
+console.log(symbol1 === symbol2)//false(같은 type(string)과 값을 가져도 서로 다른 symbol로 인식된다.)
 
 /**
  * Object타입
@@ -160,10 +169,11 @@ const man = {
     }
 }
 
- man.value = "무직";
- let func1 = man.printInfo();
- let func2 = man.printInfo;
- let value2 = func2();
+ man.value = "무직";//객체의 속성값은 언제든 변경가능하다.
+  
+ let func1 = man.printInfo();//"최지원입니다."가 출력되고, 함수의 반환값 "10"이 func1에 저장된다. func1의 값은 문자열 "10"이다.
+ let func2 = man.printInfo;//man.printInfo를 호출하지 않고 참조만 한다.
+ let value2 = func2();//func2는 man.printInfo를 참조하므로 value2와 func1의 결과는 동일.
 
 console.log(typeof man);
 
@@ -173,9 +183,16 @@ console.log(typeof man);
  * 값을 리스트로 나열할 수 있는타입
  */
 
-const arr = [];
-arr.push("빨간색");
-arr.push("주황색");
-arr.push("파란색");
-console.log(arr.pop());
-console.log(arr[0],arr[1])
+const arr1 = [];
+arr1.push("빨간색");//배열명.push("추가할 값"); - 배열의 끝에 데이터 추가.
+arr1.push("주황색");
+arr1.push("파란색");
+console.log(arr.pop());//arr.pop()의 결과는 "파란색"입니다.// pop후에 메서드 상태 = ["빨간색", "주황색"]
+//즉 pop메서드는 배열의 마지막 요소 "파란색"을 제거하고, 그 제거된 값을 반환합니다.
+//배열이 빈 상태에서 pop()을 호출하면 undefined를 반환합니다.
+console.log(arr[0],arr[1])//["빨간색", "주황색"]
+
+const arr2 = ["빨간색", "주황색", "파란색"];
+//shift는 첫 번째 요소를 제거한 후, 그 제거된 값을 반환
+console.log(arr2.shift()); // "빨간색" (첫 번째 요소 제거)
+console.log(arr2);         // ["주황색", "파란색"] (나머지 배열)
