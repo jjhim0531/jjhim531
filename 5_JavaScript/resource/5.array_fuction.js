@@ -321,15 +321,23 @@ console.log(buyHistory)
 */
 
 //* find()
-// return되는 조건에 값이 true인 첫 요소를 반환
-// 모든요소가 조건에 부합하지 않는다면(false를 리턴한다면) undefind를 반환
+// return되는 조건에 값이 true인 첫번째 요소를 반환
+// 모든요소가 조건에 부합하지 않는다면(=false를 리턴한다면) undefind를 반환
 console.log(tmp2.find(function (n) {
     return n % 2 === 0;
-}));
+}));//[6]
 
 //* findIndex();
-// return되는 조건에 값이 true인 첫 요소의 인덱스를 반환
+// return되는 조건에 값이 true인 첫번째 요소의 인덱스를 반환
 // 모든요소가 조건에 부합하지 않는다면(false를 리턴한다면) -1을 반환
 console.log(tmp2.findIndex(function (n) {
     return n % 2 === 1;
 }));
+
+//조건을 만족하는 요소가 없으므로 findIndex는 -1을 반환합니다.
+
+let tmp3 = [6, 10, 15, 3];
+console.log(tmp3.findIndex(function (n) {
+    return n % 2 === 1;
+})); // 2 (15의 인덱스)
+
