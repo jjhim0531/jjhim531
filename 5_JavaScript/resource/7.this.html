@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         /**
@@ -16,53 +18,99 @@
          * (함수를 누가 호출했냐에 따라서 this가 결정된다.)
          */
 
-         const test = function(){
-            function test2(){
+        const test = function () {
+            function test2() {
                 return this;
             }
 
             return test2();
-         }
+        }
 
         // const test = function(){
         //     return this;
         // }
 
-        console.log(test());
+        console.log(test()); // window(test() 함수 내에서 test2()는 this의 호출 주체가 명시되지 않았으므로.)
 
+
+        //*human 객체
         const human = {
-            name : 'sumin',
-            age : 55,
-            hello : function(){
+            name: 'sumin',
+            age: 55,
+            hello: function () {
                 console.log(this)
                 return "안녕하세요" + this.name + "입니다.";
             }
         }
 
-        console.log(human.hello())
+        console.log(human.hello())//안녕하세요 sumin입니다.
 
-        function Human(name, age){
+
+
+        //* 생성자 함수 Human
+        //생성자 함수 Human을 new 키워드와 함께 호출하면, 새로운 객체가 생성되고 this는 그 새로운 객체를 참조합니다.
+        function Human(name, age) {
             this.name = name;
             this.age = age;
 
-            this.hello = function(){
+            this.hello = function () {
                 return "안녕하세요" + this.name + "입니다.";
             }
         }
 
         const human2 = new Human("성호", 40);
-        console.log(human2.hello());
+        console.log(human2.hello());//안녕하세요 성호입니다.
 
-        human2.move = function(){
-            console.log(this)
-            function move2(){
-                console.log(this)
+
+        human2.move = function () {
+            console.log(this)// human2 객체 출력
+            function move2() {
+                console.log(this)// 전역 객체 또는 undefined(엄격 모드)
+                //move2는 중첩 함수로, 호출 주체가 지정되지 않았습니다.
                 return this.name + "이 움직입니다.";
+                //undefined// move2 함수의 this.name
+                //TypeError: Cannot read property 'name' of undefined
             }
             return move2();
         }
 
         console.log(human2.move());
+
+        //방법 1.
+        human2.move = function () {
+            const self = this; // 외부 함수의 this 저장
+            console.log(self);
+            function move2() {
+                console.log(self);
+                return self.name + "이 움직입니다.";
+            }
+            return move2();
+        };
+
+
+        //방법2. 화살표 함수는 상위 스코프의 this를 상속받으므로 문제가 해결됩니다.
+        human2.move = function () {
+            console.log(this);// human2 객체 출력
+            const move2 = () => {
+                console.log(this);// human2 객체 출력
+                return this.name + "이 움직입니다.";
+            };
+            return move2();
+        };
+
+
+        //방법3.  .bind(this)//move2 함수를 this에 명시적으로 바인딩합니다.
+        human2.move = function () {
+            console.log(this);
+            function move2() {
+                console.log(this);
+                return this.name + "이 움직입니다.";
+            }
+            return move2.bind(this)();
+        };
+
+
     </script>
 </body>
+
 </html>

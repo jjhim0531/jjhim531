@@ -7,30 +7,43 @@
  * (상위 함수보다 하위함수가 더 오래 살아있는 경우)
  */
 
+//전역변수 선언
 let num = 5;
 let num1 = 5;
 let num2 = 5;
 let num3 = 5;
 
-function getNum(){
-    let num = 5;
-
-    function inner(){
-        num++;
+//getNum은 inner 함수를 반환하며, 이 반환된 함수는 num에 대한 클로저를 생성합니다.
+function getNum() {
+    let num = 5; // `getNum` 함수의 지역 변수
+    
+    function inner() {
+        num++; // `num` 값을 증가
         return num;
     }
 
-    return inner;
+    return inner; // `inner` 함수 반환
 }
+
 
 let run = getNum();
 
-console.log(run());
-console.log(run());
-console.log(run());
-console.log(run());
-console.log(run());
-console.log(run());
+console.log(run()); // 6 -> `num`이 5에서 6으로 증가
+console.log(run()); // 7 -> `num`이 6에서 7로 증가
+console.log(run()); // 8 -> `num`이 7에서 8로 증가
+console.log(run()); // 9 -> `num`이 8에서 9로 증가
+console.log(run()); // 10 -> `num`이 9에서 10으로 증가
+console.log(run()); // 11 -> `num`이 10에서 11로 증가
+
+let run1 = getNum();
+let run2 = getNum();
+
+console.log(run1()); // 6 (새로운 `num` 변수 생성)
+console.log(run1()); // 7
+console.log(run2()); // 6 (새로운 `num` 변수 생성)
+console.log(run2()); // 7
+
+
 
 function out(outValue){
     function inner(innerValue){
@@ -56,15 +69,15 @@ function getNumber(){
     return inner;
 }
 
-let run2 = getNumber();
 let run3 = getNumber();
 let run4 = getNumber();
+let run5 = getNumber();
 
-console.log("run2 :" + run2())
-console.log("run2 :" + run2())
-console.log("run2 :" + run2())
+console.log("run3 :" + run3())
 console.log("run3 :" + run3())
 console.log("run3 :" + run3())
 console.log("run4 :" + run4())
 console.log("run4 :" + run4())
-console.log("run4 :" + run4())
+console.log("run5 :" + run5())
+console.log("run5 :" + run5())
+console.log("run5 :" + run5())
