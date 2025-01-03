@@ -51,7 +51,7 @@ function out(outValue){
         console.log("innerValue : " + innerValue)
     }
 
-    return inner;
+    return inner; 
 }
 
 const numOutFunk = out('외부함수');
@@ -69,15 +69,19 @@ function getNumber(){
     return inner;
 }
 
+//변수선언을 해서 함수를 할당할 때 클로저가 생성된다. //그 후에 console.log에 변수를 넣어준다.
+//console.log에 함수 자체를 넣어주면 매번 초기화되어서 한번밖에 사용못한다. 클로저의 의미가 없다.
 let run3 = getNumber();
 let run4 = getNumber();
 let run5 = getNumber();
 
-console.log("run3 :" + run3())
-console.log("run3 :" + run3())
-console.log("run3 :" + run3())
-console.log("run4 :" + run4())
-console.log("run4 :" + run4())
-console.log("run5 :" + run5())
-console.log("run5 :" + run5())
-console.log("run5 :" + run5())
+console.log("run3 :" + run3()); // run3 :6 (run3 클로저 안의 number는 5에서 1 증가하여 6)
+console.log("run3 :" + run3()); // run3 :7 (run3 클로저 안의 number는 6에서 1 증가하여 7)
+console.log("run3 :" + run3()); // run3 :8 (run3 클로저 안의 number는 7에서 1 증가하여 8)
+
+console.log("run4 :" + run4()); // run4 :6 (run4 클로저 안의 number는 독립적으로 5에서 1 증가하여 6)
+console.log("run4 :" + run4()); // run4 :7 (run4 클로저 안의 number는 6에서 1 증가하여 7)
+
+console.log("run5 :" + run5()); // run5 :6 (run5 클로저 안의 number는 독립적으로 5에서 1 증가하여 6)
+console.log("run5 :" + run5()); // run5 :7 (run5 클로저 안의 number는 6에서 1 증가하여 7)
+console.log("run5 :" + run5()); // run5 :8 (run5 클로저 안의 number는 7에서 1 증가하여 8)
