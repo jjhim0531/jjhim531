@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #area{
+        #area {
             border: 1px solid black;
             height: 300px;
             width: 500px;
         }
+
+        input {
+            width: 300px;
+        }
     </style>
 </head>
+
 <body>
     <h1>Practice6</h1>
     <fieldset>
@@ -33,18 +39,22 @@
 
     <div id="area"></div>
     <script>
-        function textPrint(){
+        function textPrint() {
             const area = document.getElementById('area');
-            area.innerHTML = "";
+            area.innerHTML = "";//초기화(해당 요소(id="area") 내부의 기존 내용을 모두 제거)
 
             let liArr = document.querySelectorAll('#buy-info > li')
-            for(let li of liArr) {
+            for (let li of liArr) {
                 let valueObj = li.children[0];
 
-                area.innerHTML += (li.innerText + valueObj.value + 
-                                    (valueObj.dataset.info ? (valueObj.dataset.info + "<br>") : "<br>"));
+
+                //<input> 태그에서 value 속성이 명시되지 않은 경우, value 값은 빈 문자열("")로 기본 설정됩니다.
+                //즉, 사용자가 입력하지 않은 상태에서는 valueObj.value가 빈 문자열로 반환됩니다.
+                area.innerHTML += (li.innerText + valueObj.value +
+                    (valueObj.dataset.info ? (valueObj.dataset.info + "<br>") : "<br>"));
             }
         }
     </script>
 </body>
+
 </html>

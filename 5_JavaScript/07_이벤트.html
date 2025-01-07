@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .area{
+        .area {
             background: beige;
             height: 100px;
             border: 1px solid black;
         }
     </style>
 </head>
+
 <body>
     <h1>이벤트</h1>
     <h2>1. 이벤트 모델 종류</h2>
@@ -31,17 +33,37 @@
         const area1 = document.getElementById('area1')
         const btn1 = document.getElementById('btn1')
 
-        btn1.onclick = function(){
+        btn1.onclick = function () {
             area1.innerHTML += "btn1이 클릭되었습니다 <br>"
         }
 
-        document.getElementById('btn2').onclick = function(){
+        document.getElementById('btn2').onclick = function () {
             area1.innerHTML += "btn2가 클릭되면서 btn1의 이벤트가 제거됨 <br>";
-            btn1.onclick = null;
+            btn1.onclick = function () {
+                area1.innerHTML += "btn1이 다시 클릭되었습니다 <br>"
+                //btn1.onclick = null;//btn1의 이벤트가 제거되어서 다시 클릭해도 아무것도 나타나지 않음
+            };
         }
+
+        /* 같은 코드
+const area1 = document.getElementById('area1');
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2'); // btn2를 선언
+
+btn1.onclick = function() {
+    area1.innerHTML += "btn1이 클릭되었습니다 <br>";
+};
+
+btn2.onclick = function() { // btn2를 변수로 참조하여 이벤트 핸들러 등록
+    area1.innerHTML += "btn2가 클릭되면서 btn1의 이벤트가 제거됨 <br>";
+    btn1.onclick = null; // btn1의 이벤트 제거
+};
+*/
     </script>
 
+
     <br>
+
 
     <h3>*인라인 이벤트 모델</h3> <!--우리가 지금까지 많이 썼던 것-->
     <p>
@@ -54,8 +76,8 @@
     <div id="area2" class="area"></div>
 
     <script>
-        function test1(){
-             document.getElementById('area2').innerHTML += "btn2이 클릭되었습니다 <br>"
+        function test1() {
+            document.getElementById('area2').innerHTML += "btn2이 클릭되었습니다 <br>"
         }
     </script>
 
@@ -71,43 +93,52 @@
         const btn5 = document.querySelector("#btn5");
         //이벤트를 걸고자하는 요소객체.addEventListener("이벤트명", 이벤트핸들러)
 
-        btn5.addEventListener("click", function(){
+        btn5.addEventListener("click", function () {
             alert("표준 이벤트 모델 테스트")
         })
-        btn5.addEventListener("mouseenter", function(){
+        btn5.addEventListener("mouseenter", function () {
             btn5.innerHTML = "클릭!!!";
         })
-        btn5.addEventListener("mouseout", function(){
+        btn5.addEventListener("mouseout", function () {
             btn5.innerHTML = "실행확인";
         })
     </script>
 
+
     <h2>2. 현재 이벤트가 발생한 요소객체에 접근하는 방법</h2>
     <button id="btn6"><span>기본이벤트방식</span></button>
-    <button id="btn7">표준이벤트방식</button>
+    <button id="btn7">표준이벤트방식</button><!--가장 추천-->
     <button onclick="test5(event, this);">인라인이벤트방식</button>
 
     <script>
-        document.getElementById("btn6").onclick = function(event){ //이벤트핸들러
-            console.log(event)//이벤트에 관련된 정보가 들어있는 객체를 첫번째 인자로 넘겨준다.
-            console.log(window.event)
+        document.getElementById("btn6").onclick = function (ev) {
+            console.log(ev); // 이벤트 객체
+            console.log(window.ev); // 글로벌 이벤트 객체(브라우저가 전역적으로 관리하는 가장 최근에 발생한 이벤트 객체를 의미.
+            //일부 오래된 브라우저(특히 Internet Explorer)에서 사용되었으며, 최신 브라우저에서도 지원은 되지만 권장하지 않음.)
 
-            //현재 이벤트가 발생한 요소
-            console.log(event.target)
+            // 현재 이벤트가 발생한 요소
+            console.log(ev.target);
 
-            //해당 함수를 호출한 요소
-            console.log(this)
+            // 현재 함수를 호출한 요소
+            console.log(this);
 
-            event.target.parentNode.style.background = "red"
-            this.innerHTML = "버튼이 클릭됨"
-        }
+            // 이벤트가 발생한 요소의 부모의 배경색을 변경
+            ev.target.parentNode.style.background = "red";
 
-        document.getElementById('btn7').addEventListener("click", function(ev){
+            // 버튼 텍스트 변경
+            this.innerHTML = "버튼이 클릭됨";
+        };
+
+        //vent.target: 이벤트가 발생한 요소(여기서는 <button id="btn6">).
+        //parentNode: 해당 요소의 부모 노드(여기서는 <body>).
+        //style.background: 부모 노드의 배경색을 빨간색으로 변경.
+
+        document.getElementById('btn7').addEventListener("click", function (ev) {
             console.log(ev.target)
             console.log(this)
         })
 
-        function test5(ev, _this){
+        function test5(ev, _this) {
             console.log(ev)
             console.log(_this)
         }
@@ -120,34 +151,52 @@
         - form 내의 submit 버튼 : 클릭시 사용자가 입력한 값들을 action에 제시되어있는 url로 제출
         <br><br>
 
-        태그내에 기본적으로 설정되어있는 이벤트가 실행안되게끔 막고싶다. <br>
+        태그내에 기본적으로 설정되어있는 이벤트가 실행안되게끔 막고싶다? <br>
         => 이벤트 핸들러의 return 값을 false로 하면 기본이벤트 실행 안됨
     </p>
 
     <a href="http://www.naver.com" onclick="alert('ㅋㅋㅋ'); return false;">네이버로</a>
-    
+
     <form action="test.do">
         아이디 : <input type="text" name="userId" id="user-id">
         <input type="submit" onclick="return validate()">
+        <!--onclick은 제출 버튼을 클릭했을 때만 실행됨.
+        폼 제출을 막으려면 반드시 버튼을 클릭해야한다.
+        폼 제출이 버튼 클릭 외 다른 방식(예: Enter 키)을 통해 발생하면 validate()가 실행되지 않는다.
+        따라서 form 자체에 onsubmit = "return validate()"를 하는게 더 효과적이다.(폼이 제출되기 직전에 제출 방법에 관계없이(버튼 클릭, Enter 키 등) 항상 실행)-->
+        <!--
+        <form action="test.do" onsubmit="return validate();">
+    <input type="text" name="userId" id="user-id">
+    <input type="submit">
+</form>
+-->
     </form>
 
     <script>
-        function validate(){
+        function validate() {
             //영문자 또는 숫자로만 5~12글자이하가 맞는가?
             //조건에 부합하면 return x
             //조건에 부합하지 않으면 return false;
 
-            const userId = document.getElementById('user-id').value
-            console.log(userId)
+            // 1. 입력값 가져오기
+            const userId = document.getElementById('user-id').value;
+            console.log(userId);
 
-            const regRxp = /^[a-zA-Z0-9]{5,12}$/ //정규식표현
-            console.log(regRxp.test(userId))
-            if(!regRxp.test(userId)){
-                alert("유효한아이디가 아닙니다.")
-                return false;
+            // 2. 정규 표현식 정의
+            const regRxp = /^[a-zA-Z0-9]{5,12}$/; // 영문자 또는 숫자, 5~12자
+            //const regRxp = /^[a-z](?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,11}$/;
+            //반드시 소문자로 시작, 숫자가 반드시 포함, 특수문자가 반드시 포함(목록 수정가능)
+
+            console.log(regRxp.test(userId));
+
+            // 3. 입력값 유효성 검사
+            if (!regRxp.test(userId)) {
+                alert("유효한 아이디가 아닙니다.");
+                return false; // 폼 제출 중단
             }
         }
 
     </script>
 </body>
+
 </html>

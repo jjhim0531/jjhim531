@@ -31,6 +31,10 @@
     <script>
         function resultFunk(){
             const operator = document.querySelector("#calcul-select").value;
+
+            // HTML <input> 태그에서 입력된 값은 숫자처럼 보이더라도 문자열로 취급되기 때문에, 숫자로 변환해야 수학적인 계산을 정확히 수행가능.
+            //.value 속성이 항상 문자열(String)로 반환됨
+            //따라서 Number()로 변환해야줘야함.
             const num1 = Number(document.getElementById('number1').value);
             const num2 = Number(document.getElementById('number2').value);
 

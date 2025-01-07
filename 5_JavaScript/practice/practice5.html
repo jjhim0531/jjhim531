@@ -20,24 +20,60 @@
     <form action="">
         <fieldset>
             <legend>회원가입</legend>
-            아이디 : <input type="text" onkeyup="checkId(this)" id="user-id" data-name="아이디"><span id="id-review"></span> <br><br>
-            비밀번호 : <input type="password" id="user-pwd" data-name="비밀번호"> <br><br>
-            비밀번호 확인 : <input type="password" id="check-pwd" onblur="checkPass()" data-name="비밀번호 확인"><span id="pwd-review"></span> <br><br>
-            이름 : <input type="text" data-name="이름"> <br><br>
+            아이디 : <input type="text" onkeyup="checkId(this)" id="user-id" data-name="아이디"><span id="id-review"></span> 
+            <br><br>
+            비밀번호 : <input type="password" id="user-pwd" data-name="비밀번호"> 
+            <br><br>
+            비밀번호 확인 : <input type="password" id="check-pwd" onblur="checkPass()" data-name="비밀번호 확인"><span id="pwd-review"></span>
+             <br><br>
+            이름 : <input type="text" data-name="이름"> 
+            <br><br>
 
             <input type="submit" onclick="return validate();" value="회원가입">
 
         </fieldset> 
-    </form>
+    </form> 
 
     <script>
+         function checkId(_this){
+            /*
+            ‘user01’이라는 아이디만 저장되어 있다는 설정으로 두고
+            ‘user01’이 아니라면 아이디 필드 옆에 ‘사용 가능한 아이디입니다.’가 초록 글자로 뜨며
+            ‘user01’이면 ‘이미 존재하는 아이디입니다.’가 빨간 글자로 뜸
+            */
+
+            console.log(_this.id); // "user-id"
+            console.log(_this.getAttribute('data-name')); // "아이디"
+
+           
+            const idValue = _this.value; //사용자가 입력한 id
+          
+
+            const reviewSpan = document.getElementById('id-review');
+
+            if(idValue === 'user01'){
+                reviewSpan.className = 'none-pass';
+                reviewSpan.innerText = "이미 존재하는 아이디입니다.";
+            } else if(idValue.trim() === ""){
+                reviewSpan.innerText = "";
+            }else {
+                reviewSpan.className = 'pass';
+                reviewSpan.innerText = "사용 가능한 아이디입니다.";
+            }
+
+        
+    }
+
+
+
         function validate(){
             //전체 input을 입력했는지 확인
             const inputList = document.getElementsByTagName('input')
+            
             for(let input of inputList){
                 if(input.dataset.name && input.value.trim() === ""){
                     alert(input.dataset.name + "입력해주세요.");
-                    input.focus();
+                    input.focus(); //입력 필드에 포커스를 이동
                     return false; 
                 }
             }   //모든칸은 정상
@@ -46,17 +82,18 @@
             const userId = document.getElementById('user-id');
             if(userId.value === "user01") {
                 alert("사용할 수 없는 아이디입니다.");
-                userId.value = "";
-                userId.focus();
-                return false;
+                userId.value = ""; //입력필드를 초기화
+                userId.focus(); //입력 필드에 포커스를 이동
+                return false; //폼 제출 중단
             }  //아이디도 정상
 
             const checkPwd = document.getElementById('check-pwd');
+
            if(!equalPwd()) {
                 alert("비밀번호가 일치하지 않습니다.");
-                checkPwd.value = "";
-                checkPwd.focus();
-                return false;
+                checkPwd.value = ""; //확인 필드 값을 초기화 
+                checkPwd.focus(); //입력 필드에 포커스를 이동
+                return false; //폼 제출 중단
            }
 
         }
@@ -66,6 +103,7 @@
             const checkPwd = document.getElementById('check-pwd');
             return userPwd.value === checkPwd.value;
         }
+
         function checkPass(){
             /*
                 비밀번호와 비밀번호 확인의 값을 비교함
@@ -83,27 +121,118 @@
                 reviewSpan.innerText = "비밀번호가 일치하지 않습니다.";
             }
         }
-        function checkId(_this){
-            /*
-            ‘user01’이라는 아이디만 저장되어 있다는 설정으로 두고
-            ‘user01’이 아니라면 아이디 필드 옆에 ‘사용 가능한 아이디입니다.’가 초록 글자로 뜨며
-            ‘user01’이면 ‘이미 존재하는 아이디입니다.’가 빨간 글자로 뜸
-            */
-           
-            const idValue = _this.value; //사용자가 입력한 id
 
-            const reviewSpan = document.getElementById('id-review');
-            if(idValue === 'user01'){
-                reviewSpan.className = 'none-pass';
-                reviewSpan.innerText = "이미 존재하는 아이디입니다.";
-            } else if(idValue.trim() === ""){
-                reviewSpan.innerText = "";
-            }else {
-                reviewSpan.className = 'pass';
-                reviewSpan.innerText = "사용 가능한 아이디입니다.";
-            }
-
-        }
+       
     </script>
+
+
+<form action="">
+    <fieldset>
+        <legend>회원가입</legend>
+        
+        아이디 : 
+        <input type="text" onkeyup="checkField(this)" id="user-id" data-name="아이디">
+        <span id="id-review"></span> 
+        <br><br>
+        
+        비밀번호 : 
+        <input type="password" onkeyup="checkField(this)" id="user-pwd" data-name="비밀번호"> 
+        <br><br>
+        
+        비밀번호 확인 : 
+        <input type="password" onkeyup="checkField(this)" onblur="checkPass()" id="check-pwd" data-name="비밀번호 확인">
+        <span id="pwd-review"></span>
+        <br><br>
+        
+        이름 : 
+        <input type="text" onkeyup="checkField(this)" data-name="이름"> 
+        <br><br>
+
+        <input type="submit" onclick="return validate();" value="회원가입">
+    </fieldset> 
+</form>
+<script>
+    // 공통 필드 유효성 검사 함수
+function checkField(inputElement) {
+    const fieldName = inputElement.getAttribute("data-name"); // 필드 이름
+    const inputValue = inputElement.value.trim(); // 입력값
+    const reviewSpan = document.getElementById(`${inputElement.id}-review`); // 메시지 표시 위치
+
+    if (inputValue === "") {
+        // 비어 있을 때
+        if (reviewSpan) {
+            reviewSpan.className = 'none-pass';
+            reviewSpan.innerText = `${fieldName}는 비워둘 수 없습니다.`;
+        }
+    } else {
+        // 채워졌을 때
+        if (reviewSpan) {
+            reviewSpan.className = 'pass';
+            reviewSpan.innerText = `${fieldName} 입력 완료.`;
+        }
+    }
+
+    // 아이디 필드의 특별한 유효성 검사
+    if (inputElement.id === "user-id" && inputValue === "user01") {
+        reviewSpan.className = 'none-pass';
+        reviewSpan.innerText = "이미 존재하는 아이디입니다.";
+    }
+}
+
+// 비밀번호 확인 필드 검증
+function checkPass() {
+    const reviewSpan = document.getElementById('pwd-review');
+    if (equalPwd()) {
+        reviewSpan.className = 'pass';
+        reviewSpan.innerText = "비밀번호가 일치합니다.";
+    } else {
+        reviewSpan.className = 'none-pass';
+        reviewSpan.innerText = "비밀번호가 일치하지 않습니다.";
+    }
+}
+
+// 비밀번호 동일성 확인 함수
+function equalPwd() {
+    const userPwd = document.getElementById('user-pwd');
+    const checkPwd = document.getElementById('check-pwd');
+    return userPwd.value === checkPwd.value;
+}
+
+// 전체 유효성 검사
+function validate() {
+    const inputList = document.querySelectorAll('input[data-name]');
+
+    for (const input of inputList) {
+        if (input.value.trim() === "") {
+            alert(`${input.getAttribute('data-name')}를 입력해주세요.`);
+            input.focus();
+            return false;
+        }
+    }
+
+    // 추가 유효성 검사: 아이디 중복 확인
+    const userId = document.getElementById('user-id');
+    if (userId.value === "user01") {
+        alert("사용할 수 없는 아이디입니다.");
+        userId.value = "";
+        userId.focus();
+        return false;
+    }
+
+    // 비밀번호 확인
+    if (!equalPwd()) {
+        alert("비밀번호가 일치하지 않습니다.");
+        document.getElementById('check-pwd').focus();
+        return false;
+    }
+
+    alert("회원가입이 완료되었습니다.");
+    return true;
+}
+
+</script>
+
+
+
 </body>
-</html>
+</html>>
