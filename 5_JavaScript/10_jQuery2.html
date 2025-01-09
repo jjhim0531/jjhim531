@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script
-        src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
-    <script
-        src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
-        integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+        integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
 
     <style>
-        .area{
+        .area {
             border: 1px solid black;
             height: 300px;
         }
 
-        .qa-box > div{
+        .qa-box>div {
             width: 300px;
             height: 30px;
             line-height: 30px;
@@ -32,7 +29,7 @@
             margin-top: 5px;
         }
 
-        .qa-box > p{
+        .qa-box>p {
             border: 1px solid whitesmoke;
             width: 300px;
             height: 100px;
@@ -43,6 +40,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>jQuery</h1>
 
@@ -51,7 +49,7 @@
         <h6>클릭시 h6요소 추가</h6>
     </div>
 
-    <script> 
+    <script>
         //방법1. 이벤트 메소드 -> 동적으로 만들어진 요소에 이벤트 적용 안됨
         //=> 이벤트를 부여하는 시점에 요소가 DOM에 존재하지 않았기 때문에
         // $("#wrap > h6").click(function(){
@@ -64,7 +62,7 @@
         // })
 
         //방법3 $(부모요소).on(이벤트명, 자식요소, 실행할 함수)
-        $("#wrap").on("click", "h6", function(){
+        $("#wrap").on("click", "h6", function () {
             $("#wrap").append("<h6>클릭시 h6요소 추가</h6>");
         })
 
@@ -103,15 +101,17 @@
     <button id="toggle-btn">토글</button>
 
     <br><br>
-    <img id="hide-show-img" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MTFfNjgg%2FMDAxNzIzMzU0MTUwMDQy.RCviofc8KvNCKLY4vLxX5zQHL7r8KeUoMjkUWZCjzGEg.TN1DOp2iBpdqCx9rryobEmQhVMNAJPTT4jVe969qI24g.JPEG%2FKakaoTalk_20240810_185536154_02.jpg&type=a340" alt="">
+    <img id="hide-show-img"
+        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MTFfNjgg%2FMDAxNzIzMzU0MTUwMDQy.RCviofc8KvNCKLY4vLxX5zQHL7r8KeUoMjkUWZCjzGEg.TN1DOp2iBpdqCx9rryobEmQhVMNAJPTT4jVe969qI24g.JPEG%2FKakaoTalk_20240810_185536154_02.jpg&type=a340"
+        alt="">
     <script>
-        $("#show-btn").click(function(){
+        $("#show-btn").click(function () {
             $("#hide-show-img").show(500);
         })
-        $("#hide-btn").click(function(){
+        $("#hide-btn").click(function () {
             $("#hide-show-img").hide(500);
         })
-        $("#toggle-btn").click(function(){
+        $("#toggle-btn").click(function () {
             $("#hide-show-img").toggle(500);
         })
     </script>
@@ -123,16 +123,18 @@
     <button id="fadeout-btn">숨기기</button>
     <button id="fadetoggle-btn">토글</button>
     <br><br>
-    <img id="fade-img" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MTFfNjgg%2FMDAxNzIzMzU0MTUwMDQy.RCviofc8KvNCKLY4vLxX5zQHL7r8KeUoMjkUWZCjzGEg.TN1DOp2iBpdqCx9rryobEmQhVMNAJPTT4jVe969qI24g.JPEG%2FKakaoTalk_20240810_185536154_02.jpg&type=a340" alt="">
-   
+    <img id="fade-img"
+        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MTFfNjgg%2FMDAxNzIzMzU0MTUwMDQy.RCviofc8KvNCKLY4vLxX5zQHL7r8KeUoMjkUWZCjzGEg.TN1DOp2iBpdqCx9rryobEmQhVMNAJPTT4jVe969qI24g.JPEG%2FKakaoTalk_20240810_185536154_02.jpg&type=a340"
+        alt="">
+
     <script>
-        $("#fadein-btn").click(function(){
+        $("#fadein-btn").click(function () {
             $("#fade-img").fadeIn(2000);
         })
-        $("#fadeout-btn").click(function(){
+        $("#fadeout-btn").click(function () {
             $("#fade-img").fadeOut(2000);
         })
-        $("#fadetoggle-btn").click(function(){
+        $("#fadetoggle-btn").click(function () {
             $("#fade-img").fadeToggle(500);
         })
     </script>
@@ -159,18 +161,19 @@
     </div>
 
     <script>
-        $(".qa-box > div").click(function(){
+        $(".qa-box > div").click(function () {
             //this -> 클릭이벤트가 발생한 요소(div)
             //$(this).next(); -> 선택된 요소의 뒤에있는 요소
-            
-            const $p = $(this).next();
-            if($p.css("display") === "none"){
-                $(".qa-box > p").slideUp();
-                $p.slideDown();
-            } else {
-                $p.slideUp();
+
+            const $p = $(this).next(); // 클릭된 div의 바로 다음 요소(<p>)를 선택
+            if ($p.css("display") === "none") { // 만약 <p>가 숨겨져 있다면
+                $(".qa-box > p").slideUp(); // 다른 모든 <p>를 숨김
+                $p.slideDown(); // 현재 클릭된 <p>만 슬라이드 다운(보임)
+            } else { // <p>가 이미 보이는 상태라면
+                $p.slideUp(); // 해당 <p>를 슬라이드 업(숨김)
             }
-        })
+        });
     </script>
 </body>
+
 </html>

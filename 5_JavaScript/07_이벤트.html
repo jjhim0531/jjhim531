@@ -153,6 +153,7 @@ btn2.onclick = function() { // btn2를 변수로 참조하여 이벤트 핸들�
 
         태그내에 기본적으로 설정되어있는 이벤트가 실행안되게끔 막고싶다? <br>
         => 이벤트 핸들러의 return 값을 false로 하면 기본이벤트 실행 안됨
+        (ev.preventDefault()**와 **ev.stopPropagation()**을 한 번에 처리하는 효과가 있습니다)
     </p>
 
     <a href="http://www.naver.com" onclick="alert('ㅋㅋㅋ'); return false;">네이버로</a>

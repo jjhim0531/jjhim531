@@ -80,9 +80,16 @@
             $("#" + id).show();
         }
 
+        //$(document).ready(function(){...} => function(){...}으로 간단히 작성 가능
         $(function(){
            document.querySelector("input[value='title']").click();
         })
+        //페이지가 로드되자마자 
+        //"제목" 라디오 버튼이 자동으로 클릭됩니다.
+        //"제목" 라디오 버튼의 onclick="showSearchBox('title-search-box')"가 호출됩니다.
+        //showSearchBox('title-search-box') 함수가 실행되어, 제목 검색창만 표시됩니다.
+
+        
     </script>
 
 </body>
