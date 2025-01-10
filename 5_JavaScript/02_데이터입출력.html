@@ -9,10 +9,10 @@
     <h1>자바스크립트에서 데이터 입/출력</h1>
 
     <!--
-        *window : 자바스크립트의 내장 객체로 브라우저 창이 열릴 때마다 하나씩 만들어지는 객체
-                  브라우저 창 안에 모든요소들의 최상의 객체
+        * window : 자바스크립트의 내장 객체로 브라우저 창이 열릴 때마다 하나씩 만들어지는 객체
+                  브라우저 창 안에 모든요소들의 최상위 객체
 
-        *document : 웹 문서마다 하나씩 만들어지는 객체(html 문서에 대한 정보를 가지고 있음 -> DOM관리)
+        * document : 웹 문서마다 하나씩 만들어지는 객체(html 문서에 대한 정보를 가지고 있음 -> DOM관리)
     -->
 
     <h2>1. 데이터를 출력하는 구문</h2>
@@ -40,7 +40,8 @@
           "<td>2</td>" +
           "</tr>" +
           "</table>";
-        document.write(str);
+        document.write(str);//과거에는 유용했지만, 현재는 잘 사용하지 않음. innerHTML권장.
+
       }
     </script>
 
@@ -72,8 +73,8 @@
 
         //속성값 변경
 
-        divEl.innerText = "<h3>속성이 변경됨</h3>";
-        //divEl.innerHTML = "<h3>속성이 변경됨</h3>";
+        divEl.innerText = "<h3>속성이 변경됨</h3>";//태그는 제외하고, 순수 텍스트만 반환
+        //divEl.innerHTML = "<h3>속성이 변경됨</h3>";//태그와 HTML 구조를 포함한 문자열로 반환
         divEl.style.background = "yellow";
       }
     </script>
@@ -130,7 +131,7 @@
         let age = prompt("단싱의 나이는 몇살입니까?");
 
         let divE3 = document.getElementById("area3");
-        divE3.innerHTML = "단신은 " + age + "살 <b>" + name + "</b>이시군요.";
+        divE3.innerHTML = "당신은 " + age + "살 <b>" + name + "</b>이시군요.";
       }
     </script>
 

@@ -139,7 +139,8 @@
         //true  나머지 모든 체크박스가 true
         //false=> 하나라도 false이면 false
 
-        let allCheck = true;
+        let allCheck = true;//초기값을 모두 선택됨으로 설정.(내가 원하는대로 설정 가능)
+                            //반복문에서 체크박스 중 하나라도 선택이 안 되어 있다면 allCheck = false;로 변경.
         let hobbyList = document.getElementsByName("hobby");
         for (let checkBox of hobbyList) {
           if (checkBox.id === "all") {
@@ -154,17 +155,8 @@
         let allCheckBox = document.getElementById("all");
         allCheckBox.checked = allCheck;
       }
-      function checkHobby() {
-        let hobbyList = document.getElementsByName("hobby");
-        for (let checkBox of hobbyList) {
-          if (checkBox.id === "all") {
-            continue;
-          }
-          if (checkBox.checked) {
-            allCheck = false;
-          }
-        }
-      }
+
+    
     </script>
 
     <h3>4) class로 접근</h3>
