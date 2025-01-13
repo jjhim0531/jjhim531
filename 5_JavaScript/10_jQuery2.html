@@ -51,17 +51,19 @@
 
     <script>
         //방법1. 이벤트 메소드 -> 동적으로 만들어진 요소에 이벤트 적용 안됨
-        //=> 이벤트를 부여하는 시점에 요소가 DOM에 존재하지 않았기 때문에
+        //=> 이벤트를 부여하는 시점에 요소가 DOM에 존재하지 않았기 때문.
         // $("#wrap > h6").click(function(){
         //     $("#wrap").append("<h6>클릭시 h6요소 추가</h6>");
         // })
 
-        //방법2 on메소드
+        //방법2 on메소드> 동적으로 만들어진 요소에 이벤트 적용 안됨
+        //=> 이벤트를 부여하는 시점에 요소가 DOM에 존재하지 않았기 때문.
         // $("#wrap > h6").on("click", function(){
         //     $("#wrap").append("<h6>클릭시 h6요소 추가</h6>");
         // })
 
         //방법3 $(부모요소).on(이벤트명, 자식요소, 실행할 함수)
+        //동적으로 생성된 요소에 이벤트를 적용할 때 가장 적합한 방법
         $("#wrap").on("click", "h6", function () {
             $("#wrap").append("<h6>클릭시 h6요소 추가</h6>");
         })
@@ -73,7 +75,7 @@
         //     h6El.innerText = "클릭시 h6요소 추가";
         //     addClickEvent(h6El);
 
-        //     wrap.appendChild(h6El);
+        //     wrap.appendChild(h6El);//appendChild는 순수 javascript메서드
         // })
 
         // function addClickEvent(h6El){

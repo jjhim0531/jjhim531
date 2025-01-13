@@ -32,13 +32,13 @@
             const str2 = "java oracle html css";
 
             //정규표현식 객체 생성
-            //-> 검색 조건으로 삼고자하는 문자열 또는 특정패턴 만듬
-            const regExp1 = new RegExp("script");  //방법1
-            const regExp2 = /script/; //방법2
+            //-> 검색 조건으로 삼고자하는 문자열 또는 특정패턴 만듬(예제 : script라는 패턴을 찾는 정규표현식)
+            const regExp1 = new RegExp("script");  //방법1 - new RegExp() : 생성자 함수로 정규표현식 객체 생성.
+            const regExp2 = /script/; //방법2 -  슬래시(/)를 사용하여 간단히 표현.
 
             /*
                 RegExp 객체에서 제공하는 메소드
-                1) 정규식.test(문자열) : 문자열에서 정규식값과 일치하는 값이 있으면 true 없으면 false
+                1) 정규식.test(문자열) : 문자열에서 정규식값과 일치하는 값이 있으면 true, 없으면 false
                 2) 정규식.exec(문자열) : 문자열에서 정규식값과 일치하는 값이 있으면 해당 값중 가장 처음에 찾은 값을 반환
              */ 
 
@@ -50,7 +50,7 @@
         }
     </script>
 
-    <h3>*메타문자</h3>
+    <h3>*메타문자(특수기호)</h3>
     <p>
         메타문자를 이용해서 정규식의 검색조건으로 삼을 '특정패턴' 제시가능 <br>
         문자열이 해당 정규식으로 제시한 특정 패턴에 만족하는지 test()를 통해 검사할 수 있음.
@@ -65,14 +65,15 @@
             const str = "javascript jquery ajax";
 
             let regExp = /a/ // 메타문자 없음
-            area2.innerHTML += '/a/ : ' + regExp.test(str) + "<br>";
+
+            area2.innerHTML = '/a/ : ' + regExp.test(str) + "<br>";
 
             regExp = /^j/ // ^ : 시작을 의미
             area2.innerHTML += '/^j/ : ' + regExp.test(str) + "<br>";
             area2.innerHTML += '/^j/ : ' + str.replace(regExp, "*") + "<br>";
 
 
-            regExp = /[abc]/ // [] : []내에 여러문자들을 목록처럼 나열 가능
+            regExp = /[abc]/ // [] : []내에 여러문자들을 목록처럼 나열 가능. 대괄호 내부의 문자 중 하나에 일치하는지.
             area2.innerHTML += '/[abc]/ : ' + regExp.test(str) + "<br>";
             area2.innerHTML += '/[abc]/ : ' + str.replace(regExp, "*") + "<br>";
 

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>window 객체</h1>
     <p>
@@ -16,12 +18,12 @@
     <h4>- [window].open(["url"], "특성")</h4>
     <button onclick="test1()">네이버</button>
     <script>
-        function test1(){
-            // window.open(); // 새창열림
+        function test1() {
+            // window.open(); // 새창열림(주로 팝업창으로 사용)
             //window.open(첫번째, 두번째, 세번째)
-            // 첫번째 : 새창에서 열고자하는 url주소
+            // 첫번째 : 새창에서 열고자하는 url주소(생략하면 빈 새창이 열림)
             //window.open("https://www.naver.com")
-            // 두번째 : 창이름, 창이름이 같으게 이미 열러 있을 경우 
+            // 두번째 : 창이름, 창이름이 같은 게 이미 열려 있을 경우 
             //          새로운 창이 열리지않고 이미 열린창이 없을 경우 새로운 창이 열림
             //window.open("https://www.naver.com", "test")
             //세번째 : 너비, 높이, 주소창여부, 툴바여부...
@@ -47,9 +49,13 @@
 
     <h3>window 객체의 timer관련 메소드</h3>
     <h4>window.setTimeOut(함수, 시간ms)</h4><!--일정시간후에 함수 딱 한번만 실행해줘 / 비동기-->
+    <!--
+    setTimeout은 코드 실행을 일정 시간 지연시키지만, 브라우저는 대기하는 동안 다른 코드를 실행.
+    이를 통해 동시 처리 효과를 얻음.
+    -->
     <button onclick="test2()">실행</button>
     <script>
-        function test2(){
+        function test2() {
             // const myWindow = window.open();
             // myWindow.alert("ㅋㅋㅋㅋㅋㅋㅋ")
 
@@ -60,27 +66,47 @@
             console.log("처음로딩 -> 화면표시")
 
             console.log("서버요청")
-            setTimeout(function(){
+
+            setTimeout(function () {
                 console.log("서버에서 데이터 도착")
                 console.log("실제 데이터로 화면구성")
-            },3000)
+            }, 3000)
             console.log("데이터 없이 화면 구성")
         }
+
     </script>
 
     <br>
 
     <h4>- window.setInterval(함수, 시간ms)</h4>
+    <!--
+    주요 사용 사례 - 시계, 스톱워치, 서버에서 데이터를 주기적으로 요청하거나 업데이트하는 데 사용됩니다. (ex. 주식 가격, 실시간 채팅)
+    웹 페이지에서 배너 광고나 슬라이더 이미지를 주기적으로 교체할 때 사용.
+
+    타이머를 생성하고, 그 타이머를 식별할 수 있는 고유한 ID(숫자)를 반환합니다.
+
+    사용 후에는 clearInterval을 통해 반드시 정리하여 효율성을 유지.
+    -->
     <button onclick="test3()">실행</button>
     <div id="area1" class="area">0</div>
+    <button onclick="stopTimer()">정지</button>
 
-    <script>0
-        function test3(){
+
+    <script>
+        let intervalId = null; // 전역 변수 선언
+
+        function test3() {
             const area1 = document.getElementById("area1")
             //1초마다 카운트값 1씩 증가 -> 스탑워치처럼
-            
+
+            // 타이머 중복 실행 방지
+            if (intervalId !== null) {
+                console.warn("이미 실행 중입니다!");
+                return;
+            }
+
             // let count = 0;
-            setInterval(() => {
+            intervalId = setInterval(() => {
                 // count++;
                 area1.innerHTML = getNowTimeHHMMSS();
             }, 1000);
@@ -88,16 +114,34 @@
             console.log("시간출력이후")
         }
 
-        function getNowTimeHHMMSS(){
+        function getNowTimeHHMMSS() {
             const now = new Date();
 
-            let hour = now.getHours(); // 시
-            let min = now.getMinutes(); // 분
-            let sec = now.getSeconds(); // 초
+            let hour = String(now.getHours()).padStart(2, "0"); // 두 자리로 변환
+            let min = String(now.getMinutes()).padStart(2, "0");
+            let sec = String(now.getSeconds()).padStart(2, "0");
 
-            const str = hour + " : " + min + " : " + sec;
-            return str;
+            return `${hour} : ${min} : ${sec}`; // 템플릿 문자열 사용
         }
+        // function stopTimer() {
+        //     if (intervalId !== null) {
+        //         clearInterval(intervalId);
+        //         intervalId = null; // 상태 초기화
+        //         console.log("타이머가 정지되었습니다.");
+        //     }
+        // }
+
+        // const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+        // let index = 0;
+
+        // setInterval(() => {
+        //     const banner = document.getElementById("banner");
+        //     banner.src = images[index];
+        //     index = (index + 1) % images.length; // 순환
+        // }, 3000); // 3초마다 이미지 변경
+
+
+
     </script>
 
     <hr>
@@ -111,17 +155,34 @@
 
     <a href="http://www.naver.com">네이버로이동</a>
     <button onclick="location.href = 'http://www.naver.com'">네이버로이동</button>
+    <!--특징: 뒤로 가기를 통해 이전 페이지로 돌아갈 수 있습니다.-->
 
     <button onclick="location.assign('http://www.google.com')">구글로 이동</button>
+    <!-- 뒤로 가기를 사용할 수 있습니다. 사용자의 탐색 기록에 추가됩니다.-->
+
     <button onclick="location.replace('http://www.google.com')">구글로 이동</button>
     <!-- replace는 뒤로가기를 사용할 수 없도록 ip와 포트이외에 경로 삭제 -->
+    <!--새로운 페이지로 이동하되, 이전 페이지의 기록을 덮어씁니다-->
+    <!--보안이나 기록 관리가 필요한 경우 유용-->
 
     <button onclick="location.href = location.href">새로고침</button>
+    <!--새로고침 : 브라우저는 현재 페이지를 다시 로드-->
+    <!--
+    특정상황에서만 필요
+    URL 파라미터를 추가하거나 변경해야 할 때, 다른 페이지로 리디렉션하는 경우
+    -->
+
     <button onclick="location.reload()">새로고침</button>
+    <!--
+    location.reload(); // 캐시를 사용하여 새로고침(단순 새로고침)
+    location.reload(true); // 캐시를 무시하고 새로고침 ex)실시간 데이터가 중요한 대시보드, 서버 업데이트 반영 필요.
+    -->
 
     <br><br><br>
 
     <h3>screen객체</h3>
+    <!--사용자의 디스플레이 화면 정보를 제공-->
+
     <button onclick="console.log(screen)">screen객체확인</button>
 
     <h3>navigator 객체</h3>
@@ -137,20 +198,20 @@
     <p>
         HTML에 있는 각각의 요소들을 노드(Node)라고 함<br>
         >요소노드(Element Node) : 태그 그 자체만을 의미<br>
-        >텍스트노드(Text Node) : 태그내에 기록되는 내용<br><br>
+        >텍스트노드(Text Node) : 태그 내에 기록되는 내용<br><br>
     </p>
 
     <button onclick="test4()">Element 생성</button>
     <div id="area2"></div>
 
     <script>
-        function test4(){
+        function test4() {
             const area2 = document.querySelector("#area2");
             // area2.innerText = "안녕하세요."
-            //동적으로 요소노드를 만드는 방법1 "문자열"
+            //동적으로 요소노드를 만드는 방법1 - "문자열"
             // area2.innerHTML = "<h2>안녕하세요.</h2>";
 
-            //동적으로 요소노드를 만드는 방법2 documnet에서 제공하는 메소드를 통해 생성
+            //동적으로 요소노드를 만드는 방법2 - documnet에서 제공하는 메소드를 통해 생성
             let h3El = document.createElement('h3'); // <h3></h3>
             h3El.innerText = "안녕하세요." // <h3>안녕하세요.</h3>
 
@@ -160,4 +221,5 @@
 
     <br><br><br>
 </body>
+
 </html>
