@@ -1,21 +1,18 @@
 package test240711.object3;
 
 public class Book {
-	private String title;
-	private String genre;
-	private String name;
-	private int num;
-
-	public Book() {
-		super();
-	}
-
-	public Book(String title, String genre, String name, int num) {
+	
+	private String title; //제목
+	private String genre; //장르
+	private String author; //저자
+	private int number;//책번호
+	
+	public Book(String title, String genre, String author, int number) {
 		super();
 		this.title = title;
 		this.genre = genre;
-		this.name = name;
-		this.num = num;
+		this.author = author;
+		this.number = number;
 	}
 
 	public String getTitle() {
@@ -34,25 +31,24 @@ public class Book {
 		this.genre = genre;
 	}
 
-	public String getName() {
-		return name;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
-	public int getNum() {
-		return num;
+	public int getNumber() {
+		return number;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
+	public void setNumber(int number) {
+		this.number = number;
 	}
 
-	public void toString() {
-		System.out.printf("제목은 %s 장르는 %s 저자는 %s 책번호는 %d", title, genre, name, num);
-
+	public String toString() {
+		return "제목 : " + this.title + " 장르 : " + this.genre + " 저자 : " + this.author + " 책번호 : " + this.number;
 	}
 
 }

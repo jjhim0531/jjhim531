@@ -1,4 +1,4 @@
-package test.t240712.object1;
+package test240712.object1;
 
 import java.util.Scanner;
 
