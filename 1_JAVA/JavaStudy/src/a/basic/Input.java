@@ -14,7 +14,7 @@ public class Input {
 	 * Scanner 이름 = new Scanner(System.in);
 	 * ex) Scanner sc = new Scanner(System.in);
 	 * 
-	 * sc.next() : 사용자가 입력한 값중 공백이 있을 경우 공백 이전까지의 값만 가져온다.
+	 * sc.next() : 사용자가 입력한 값 중 공백이 있을 경우 공백 이전까지의 값만 가져온다.
 	 * sc.nextLine() : 사용자가 입력한 값중 \n(개행문자)를 포함하는 한 라인을 읽고 \n버린 나머지 값만 가져온다.
 	 * 
 	 * sc.nextByte(), sc.nextShort(), sc.nextInt(), sc.nextLong()
