@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Practice3 {
 	/*
-	 * 문자열 => 객체(기능들이 있다.)
+	 * 문자열 => String클래스의 객체(기능들이 있다.)
+	 * 객체이므로 문자열은 다양한 메서드(기능)를 제공한다.(원시타입과의 차이점 - int같은 것은 단순히 데이터만 저장가능)
 	 * ex) 문자열비교시 -> 문자열.equals(비교문자열)
 	 * 
 	 * 문자열.charAt(index) : 문자열에서 내가 원하는 index의 글자를 가져온다.
@@ -21,7 +22,7 @@ public class Practice3 {
 	public static void main(String[] args) {
 		//String str1 = "jiwon";
 		//char ch1 = str1.charAt(4);
-		//System.out.println(ch1);
+		//System.out.println(ch1); // 출력: n
 		
 		Scanner sc = new Scanner(System.in);
 		String str;

@@ -89,8 +89,10 @@ public class Variable {
 		 */
 		
 		String str1 = "안녕하세요안녕하세요안녕하세요안녕하세요";
+		
 		String str2;
 		str2 = new String("반달곰");
+		
 		String str3 = new String("반달곰");
 		
 		//String str3 = new String("안녕하세요"); //객체생성방식으로 String변수를 선언

@@ -90,6 +90,7 @@ public class B_while {
 			i++;
 		}
 		*/
+		
 		 /*
 		int i = 1; // 1 choijiwon  h i i o   3
 		while(i < str.length()) { // 길이 9

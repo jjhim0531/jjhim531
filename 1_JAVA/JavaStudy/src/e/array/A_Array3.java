@@ -6,8 +6,9 @@ public class A_Array3 {
 	public static void main(String[] args) {
 		// 1. 크기가 10인 정수형 배열 생성후
 			//int[] arr = new int[10];
-		// 2. 반복문을 통해서 0번인덱스부터 마지막인덱스까지 모든값을 1로 초기화
-		// 0~(배열의 길이 - 1)까지 반복
+		
+		// 2. 반복문을 통해서 0번 인덱스부터 마지막 인덱스까지 모든 값을 1로 초기화
+			// 0~(배열의 길이 - 1)까지 반복
 //			for(int i=0; i < arr.length; i++) {
 //				arr[i]=1;
 //			}
@@ -29,8 +30,9 @@ public class A_Array3 {
 		
 		String[] strArr = new String[size];
 		
-		//5. 반복문을 활용해서 매번 사용자에게 과일명을 입력받아 그값을 strArr에 대입(0~마지막인덱스)
-		//좋아하는 과일을 입력 : 바나나(반복)
+		//5. 반복문을 활용해서 매번 사용자에게 과일명을 입력받아 그값을 strArr에 대입
+		 	* (0~마지막인덱스)
+			//좋아하는 과일을 입력 : 바나나(반복)
 		for(int i=0; i < strArr.length; i++) {
 			System.out.print("좋아하는 과일을 입력 : ");
 			strArr[i] = sc.next();
@@ -94,10 +96,6 @@ public class A_Array3 {
 		
 		System.out.println();
 		System.out.print("짝수의 총 합 : " + sum);
-		
-		
-		
-		
 		
 		
 		

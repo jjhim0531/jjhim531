@@ -2,16 +2,20 @@ package e.array;
 
 public class A_Array2 {
 	public static void main(String[] args) {
+		//해시코드란 : 객체를 고유하게 식별하기 위해 사용하는 정수값입니다.
+		//			기본적으로 객체의 메모리 주소를 기반으로 생성된 값
+		
 //		int i = 10;
 //		int[] iArr = new int[5];
-//		System.out.println(iArr.hashCode());
+//		System.out.println(iArr.hashCode()); // 정수 배열의 해시코드 출력
 //		
 //		double[] dArr = new double[3];
-//		System.out.println(dArr.hashCode());
+//		System.out.println(dArr.hashCode());// 실수 배열의 해시코드 출력
+		
 		
 		/*
 		 * 실제 리터럴값을 곧바로 담을 수 있는 변수를 일반변수라고 한다.
-		 * 주소값을 담고 있는 변수는 참조 변수(레퍼런스 변수)라고 표현
+		 * 주소값을 담고 있는 변수는 참조변수(레퍼런스 변수)라고 표현
 		 * 
 		 * 기본자료형(원시타입) : boolean, int, char, byte, long, double등등으로 선언된 변수
 		 * => 실제 리터럴값을 바로 담을 수 있다.
@@ -29,7 +33,7 @@ public class A_Array2 {
 			System.out.println(dArr[i]);
 		}
 		
-		//내가 각 인덱스의 초기화를 하지 않아도 값들이 담겨있다.
+		//내가 직접 각 인덱스의 초기화를 하지 않아도 데이터 타입에 따라 기본값으로 초기화됩니다
 		// Heap이라는 메모리공간은 절대 빈공간을 허용하지 않는다.
 		// => 공간이 만들어질 때 JVM이 기본값으로라도 초기화를 진행한다.
 		
@@ -43,7 +47,9 @@ public class A_Array2 {
 		 * null을 가지고 있는 참조변수에 접근하여 다른 정보를 구하고자 하면 어떻게 될까?
 		 * 항상 오류가 발생한다.
 		 * 
-		 * System.out.println(arr.hashCode());
+		 * System.out.println(arr);//null출력
+		 * System.out.println(arr.hashCode());// NullPointerException 발생
+		 * //JVM이 "대상이 없다"고 판단하여 오류를 발생
 		 */
 		
 		arr = new int[5];
@@ -57,6 +63,8 @@ public class A_Array2 {
 		// - 한번 지정된 배열의 크기는 변경이 불가하다.
 		// => 배열의 크기를 변경하고자한다면 다시 만들어야한다.
 		System.out.println(arr.hashCode());
+		
+		
 		arr = new int[7];
 		System.out.println(arr.hashCode());
 		//주소값이 변경되었다 -> 새로운 곳을 참조하고 있다.

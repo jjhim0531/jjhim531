@@ -16,14 +16,14 @@ public class Operator5 {
 	 * true && false -> false;
 	 * false && ture -> false;
 	 * false && false -> false;
-	 * => 앞의 결과가 false일 경우 뒤의 조건은 궂이 실행하지 않는다.
+	 * => 앞의 결과가 false일 경우 뒤의 조건은 굳이 실행하지 않는다.
 	 * 
 	 * ||
 	 * true || ture -> true;
 	 * true || false -> true;
 	 * false || ture -> ture;
 	 * false || false -> false;
-	 * => 앞의 결과가 true일 경우 뒤의 조건은 궂이 실행하지 않아도 된다.
+	 * => 앞의 결과가 true일 경우 뒤의 조건은 굳이 실행하지 않아도 된다.
 	 * 
 	 */
 	public static void main(String[] args) {

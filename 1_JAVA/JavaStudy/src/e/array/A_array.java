@@ -19,6 +19,8 @@ public class A_Array {
 //		int n4 = 3;
 //		int n5 = 4;
 		
+		// Java에서 배열은 고정된 크기의 객체이다.
+		//크기를 변경하려면 새로운 배열을 생성해야 합니다
 //		int[] arr1 = new int[5];
 //		arr1[0] = 0;
 //		arr1[1] = 1;
@@ -29,7 +31,7 @@ public class A_Array {
 		
 		
 		/*
-		 * 1. 배열선언(여러개의 값들을 보관할 배열을 만들겠다. -> 참조변수 선언)
+		 * 1. 배열선언(여러 개의 값들을 보관할 배열을 만들겠다. -> 참조변수 선언)
 		 * 자료형[] 배열이름;
 		 * 자료형 배열이름[];
 		 */
@@ -62,7 +64,8 @@ public class A_Array {
 			System.out.println(arr[i]);
 		}
 		
-		System.out.println(arr); //실제 arr이라는 값을 출력하면 arr의 정보(자료형+길이+주소정보)같은 것들이 출력됨 -> 이상문구출력
+		System.out.println(arr); 
+		//실제 arr이라는 값을 출력하면 arr의 정보(자료형+길이+주소정보)같은 것들이 출력됨 -> 이상한 문구 출력
 	}
 
 }
