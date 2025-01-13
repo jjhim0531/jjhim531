@@ -16,6 +16,7 @@ public class MemberController {
 	
 	public MemberController() {
 		super();
+		memberList.add(new Member("user01", "pass01", "최지원", 20));
 	}
 
 	public boolean insertMember(Member m) {
@@ -32,12 +33,4 @@ public class MemberController {
 		
 		return null;
 	}
-	public boolean deleteMember(String userId, String userPwd) {
-        for (Member m : memberList) {
-            if (m.getUserId().equals(userId) && m.getUserPwd().equals(userPwd)) {
-                return memberList.remove(m);
-            }
-        }
-        return false;
-    }
 }

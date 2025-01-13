@@ -7,13 +7,11 @@ public class Member {
 	private String email;
 	private char gender;
 	private int age;
-	
+
 	public Member() {
-	super();
-}
+	}
 
 	public Member(String id, String name, String password, String email, char gender, int age) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.password = password;
@@ -71,10 +69,7 @@ public class Member {
 	}
 
 	public String inform() {
-		return "아이디 : "+this.id+" / 이름 : "+this.name+" / 비밀번호 : "+ this.password +" / 이메일 : " + this.email+" / 성별 : " + this.gender + " / 나이 : "+this.age;
-		
+		return this.id + " " + this.name + " " + this.password + 
+				" " + this.email + " " + this.gender + " " + this.age;
 	}
 }
-
-
-

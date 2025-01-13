@@ -13,41 +13,36 @@ public class MainMenu {
 	private MemberController mc = new MemberController();
 	private BookController bc = new BookController();
 	private RentController rc = new RentController();
-
+	
 	/**
 	 * 메인화면 : 가장 처음나타나는 화면으로 다양한 메뉴로 진입할 수 있다.
 	 */
 	public void menu() {
-
-		while (true) {
+		
+		while(true) {
 			System.out.println("===============도서관리프로그램=================");
 			System.out.println("1. 로그인");
 			System.out.println("2. 회원가입");
 			System.out.println("3. 아이디찾기");
 			System.out.println("4. 비밀번호찾기");
-			System.out.println("5. 회원탈퇴");
-
 			System.out.println("9. 프로그램종료");
 			System.out.print("메뉴 입력 : ");
-
+			
 			int choice = sc.nextInt();
 			sc.nextLine();
-
-			switch (choice) {
+			
+			switch(choice) {
 			case 1:
-				// 로그인 화면
+				//로그인 화면
 				loginMember();
 				break;
 			case 2:
-				// 회원가입 화면
+				//회원가입 화면
 				insertMember();
 				break;
 			case 3:
 				break;
 			case 4:
-				break;
-			case 5:
-				deleteMember();
 				break;
 			case 9:
 				System.out.println("프로그램을 종료합니다.");
@@ -57,7 +52,7 @@ public class MainMenu {
 			}
 		}
 	}
-
+	
 	/**
 	 * 회원가입 화면 : 사용자에게 회원가입에 필요한 정보를 입력받아 controller로 전달
 	 */
@@ -65,25 +60,25 @@ public class MainMenu {
 		System.out.println("==================회원가입=====================");
 		System.out.print("아이디 입력 : ");
 		String id = sc.nextLine();
-
+		
 		System.out.print("비밀번호 입력 : ");
 		String pwd = sc.nextLine();
-
+		
 		System.out.print("이름 입력 : ");
 		String name = sc.nextLine();
-
-		System.out.print("주소 입력 : ");
-		String address = sc.next();
+		
+		System.out.print("나이 입력 : ");
+		int age = sc.nextInt();
 		sc.nextLine();
-
-		// 회원추가
-		Member m = new Member(id, pwd, name, address);
-		if (mc.insertMember(m)) {
+		
+		//회원추가
+		Member m = new Member(id, pwd, name, age);
+		if(mc.insertMember(m)) {
 			System.out.println("회원가입에 성공하였습니다.");
 		} else {
 			System.out.println("회원가입에 실패하였습니다.");
 		}
-
+		
 	}
 
 	/**
@@ -93,34 +88,66 @@ public class MainMenu {
 		System.out.println("================== 로그인 =====================");
 		System.out.print("아이디 입력 : ");
 		String id = sc.nextLine();
-
+		
 		System.out.print("비밀번호 입력 : ");
 		String pwd = sc.nextLine();
-
-		// 로그인체크
+	
+		//로그인체크
 		Member loginMember = mc.loginMember(id, pwd);
-		if (loginMember == null) {
+		if(loginMember == null) {
 			System.out.println("로그인에 실패하였습니다. id, pwd를 다시 확인하세요.");
 		} else {
 			System.out.println("로그인에 성공하였습니다.");
 			System.out.println(loginMember.getUserName() + "님 반갑습니다.");
-
-			new LibraryMenu(loginMember, bc, sc, rc).menu();
+			
+			this.loginMenu(loginMember);
+		}
+	}
+	
+	
+	public void loginMenu(Member loginMember) {
+		//loginMember 만약 관리자면 도서관리
+		//loginMember 일반회원이면 도서대여/반납
+		
+		while(true) {
+			System.out.println("===============메뉴선택=================");
+			System.out.println("1. 관리자모드");
+			System.out.println("2. 회원모드");
+			System.out.println("9. 로그아웃");
+	
+			System.out.print("메뉴 입력 : ");
+			
+			int choice = sc.nextInt();
+			sc.nextLine();
+			
+			switch(choice) {
+			case 1:
+				//관리자모드
+				new LibraryMenu(loginMember, bc, sc, rc).menu();
+				break;
+			case 2:
+				//회원모드
+				new CustomerMenu(loginMember, bc, sc, rc).menu();
+				break;
+			case 9:
+				System.out.println("로그아웃 되었습니다.");
+				return;
+			default:
+				System.out.println("잘못입력하였습니다. 다시입력해주세요");
+			}
 		}
 	}
 
-	public void deleteMember() {
-		System.out.println("==================회원탈퇴==================");
-		System.out.print("아이디를 입력해주세요: ");
-		String id = sc.nextLine();
-		System.out.print("비밀번호를 입력해주세요: ");
-		String pwd = sc.nextLine();
-
-		 if (mc.deleteMember(id, pwd)) {
-	            System.out.println("회원 탈퇴가 완료되었습니다.");
-	            
-	        } else {
-	            System.out.println("비밀번호가 일치하지 않습니다. 탈퇴에 실패하였습니다.");
-	        }
-	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

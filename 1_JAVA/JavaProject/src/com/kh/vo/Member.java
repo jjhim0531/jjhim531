@@ -7,21 +7,22 @@ public class Member {
 	private String userId;
 	private String userPwd;
 	private String userName;
-	private String address;
+	private int age;
+	//private String grade;
 	
 	//생성자
 	public Member() {
 		super();
 	}
 
-	public Member(String userId, String userPwd, String userName, String address) {
+	public Member(String userId, String userPwd, String userName, int age) {
 		super();
 		//userNo는 식별자로 사용할 것이기 때문에 랜덤으로 만들어서 넣어주겠다. 나중에는 db에서 자동으로 생성해줄 것
 		this.userNo = (int)(Math.random() * 9999999 + 1);
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.userName = userName;
-		this.address = address;
+		this.age = age;
 	}
 
 	//매소드
@@ -57,17 +58,17 @@ public class Member {
 		this.userName = userName;
 	}
 
-	public String getaddress() {
-		return address;
+	public int getAge() {
+		return age;
 	}
 
-	public void setaddress(String address) {
-		this.address = address;
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 	@Override
 	public String toString() {
 		return "Member [userNo=" + userNo + ", userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName
-				+ ", address=" + address + "]";
+				+ ", age=" + age + "]";
 	}
 }

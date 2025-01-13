@@ -89,3 +89,11 @@ public class Student {
 		this.setSqlScore(Math.random() * 101);
 	}
 }
+
+
+
+
+
+
+
+

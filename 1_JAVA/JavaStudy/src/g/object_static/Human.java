@@ -4,18 +4,18 @@ public class Human {
 	String name;
 	int age;
 	static int count = 0;
-
+	
 	public Human(String name, int age) {
 		super();
 		this.name = name;
 		this.age = age;
-
-		this.count++;
+		
+		Human.count++;
 	}
-
+	
 	public Human() {
 		super();
-		this.count++;
+		Human.count++;
 	}
 
 	public String getName() {
@@ -33,12 +33,10 @@ public class Human {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+	
 	public void inform() {
 		System.out.println("이름 : " + this.name);
 		System.out.println("나이 : " + this.age);
-
-		System.out.println("번호 : " + this.count + "\n");
+		System.out.println("고객번호 : " + Human.count);
 	}
-
 }

@@ -6,11 +6,12 @@ public class Snack {
 	private String flavor;
 	private int numOf;
 	private int price;
-
+	
 	public Snack() {
 		super();
+//		System.out.println("Snack 생성됨");
 	}
-
+	
 	public Snack(String kind, String name, String flavor, int numOf, int price) {
 		super();
 		this.kind = kind;
@@ -18,6 +19,13 @@ public class Snack {
 		this.flavor = flavor;
 		this.numOf = numOf;
 		this.price = price;
+	}
+	
+	public String information() {
+		String info = this.kind + "(" + this.name + "-" + this.flavor + ") " + 
+						this.numOf + "개 " + this.price + "원";
+		
+		return info;
 	}
 
 	public String getKind() {
@@ -59,11 +67,4 @@ public class Snack {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-	public String information() {
-		String info = this.kind + "(" + this.name + "-" + this.flavor + ") " + 
-				this.numOf + "개 " + this.price + "원"; 
-		return info;
-	}
-	
 }

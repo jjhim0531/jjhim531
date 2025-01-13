@@ -4,6 +4,19 @@ public class Product {
 	private String pName;
 	private int price;
 	private String brand;
+	
+	public Product() {
+		super();
+	}
+	
+	
+	
+	public Product(String pName, int price, String brand) {
+		super();
+		this.pName = pName;
+		this.price = price;
+		this.brand = brand;
+	}
 
 	public String getpName() {
 		return pName;
@@ -29,11 +42,9 @@ public class Product {
 		this.brand = brand;
 	}
 
-	public Product(String pName, int price, String brand) {
-		super();
-		this.pName = pName;
-		this.price = price;
-		this.brand = brand;
+	public void information() {
+		System.out.println("제품 : "  + this.pName);
+		System.out.println("가격 : "  + this.price);
+		System.out.println("브랜드 : "  + this.brand);
 	}
-
 }
