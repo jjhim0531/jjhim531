@@ -1,5 +1,5 @@
 package f.object.ex3;
-import f.object.ex2.BankAccount;
+
 
 public class Run {
 
@@ -18,7 +18,8 @@ public class Run {
 		b1.setTitle("불안을 이기는 심리학");
 		
 		System.out.println(b1.getTitle());
-		check(b1);
+		
+		check(b1);//check(Book tmp) 메서드를 호출하며, b1 객체를 매개변수로 전달합
 		check(5);
 	}
 

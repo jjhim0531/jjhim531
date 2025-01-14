@@ -24,6 +24,7 @@ public class C_Array_Two {
 		 * 배열명[1] = new 자료형[m];
 		 * 배열명[n] = new 자료형[m];
 		 */
+		
 		//arr = new int[3][4];// 4개짜리 1차원배열 3개묶음 생성
 //		arr = new int[3][]; // 1차원배열 3개묶음 생성
 //		arr[0] = new int[4];

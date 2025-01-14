@@ -3,7 +3,7 @@ package g.object_static;
 public class Human {
 	String name;
 	int age;
-	static int count = 0;
+	static int count = 0;//생성된 객체 수를 추적할 때 유용
 	
 	public Human(String name, int age) {
 		super();

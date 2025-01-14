@@ -3,13 +3,13 @@ package test240715.object2;
 public class Practice2 {
 
 	public static void main(String[] args) {
-		//주어짂 String 데이터를 “,”로 나누어 5개의 실수 데이터들을 꺼내어 합과 평균을 구핚다. 
+		//주어짂 String 데이터를 “,”로 나누어 5개의 실수 데이터들을 꺼내어 합과 평균을 구한다. 
 		//단, String 문자열의 모든 실수 데이터를 배열로 만들어 계산핚다.
 
 		//문자열.split(구분자)
 		//문자열은 구분자로 나눠서 배열로 반환하는 메소드
 		
-		//배열에 들어있는 모든 요소를 가져와서 사용하는 경우가 매우많다.
+		//배열에 들어있는 모든 요소를 가져와서 사용하는 경우가 매우 많다.
 		//for(자료형 변수명 : 배열) {
 		//		변수명 -> 배열에 있는 모든 요소가 한번씩 들어와서 반복
 		//}
@@ -20,6 +20,8 @@ public class Practice2 {
 		//실수데이터를 저장할 배열
 		double[] dArr = new double[sArr.length];
 		for(int i=0; i<sArr.length; i++) {
+			System.out.println(sArr[i]);
+			//문자열 배열로 반환되어서 숫자처럼 보이지만 문자이다.따라서 덧셈이 안된다. 덧셈을 하려면 문자열을 숫자로 변환해줘야한다.
 			dArr[i] = Double.parseDouble(sArr[i]);
 		}
 		

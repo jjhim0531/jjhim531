@@ -27,5 +27,5 @@ public class Man {
 	@Override
 	public String toString() {
 		return "이름 : " + name;
-	}
+	}//단축키 : alt + shift + s+ s
 }
