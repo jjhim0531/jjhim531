@@ -7,7 +7,9 @@ public class PersonController {
 	public int[] personCount() {
 		int[] countArr = new int[2];
 		
+		//여러 변수를 한줄에 선언 가능.
 		int studentCount = 0, employeeCount = 0;
+		
 		for(int i = 0; i < s.length; i++) {
 			if(s[i] == null) {
 				break;
@@ -21,17 +23,20 @@ public class PersonController {
 			}
 			employeeCount++;
 		}
+		
 		countArr[0] = studentCount;
 		countArr[1] = employeeCount;
 		
 		return countArr;
 	}
 	
+	
 	public void insertStudent(String name, int age, double height, double weight, int grade,String major) {
 		for(int i=0; i<s.length; i++) {
 			if(s[i] == null) {
 				s[i] = new Student(name, age, height, weight, grade, major);
-				return;
+				return;//삽입 작업이 끝난 뒤 메서드를 종료하려는 경우에 적합
+				//만약 삽입 이후에 추가 작업(예: 로그 출력)이 필요하다면, break를 사용하는 것이 더 적합
 			}
 		}
 	}

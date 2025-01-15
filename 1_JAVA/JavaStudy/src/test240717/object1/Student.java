@@ -9,7 +9,7 @@ public class Student extends Person{
 	}
 
 	public Student(String name, int age, double height, double weight, int grade, String major) {
-		super(name, age, height, weight);
+		super(name, age, height, weight);//부모의 매개변수 생성자로 초기화해주는 과정.
 		this.grade = grade;
 		this.major = major;
 	}

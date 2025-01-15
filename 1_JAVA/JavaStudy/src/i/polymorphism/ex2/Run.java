@@ -6,21 +6,29 @@ public class Run {
 		//1. 부모타입 레퍼런스(참조변수)로 부모객체를 다루는 경우
 		Car c1 = new Car("빨간색", "가솔린", 2020);
 		c1.drive();
+		System.out.println();
 		
 		//2.자식타입 레퍼런스로 자식객체를 다루는 경우
 		Avante c2 = new Avante("검은색", "디젤", 2022);
 		c2.drive();
 		c2.moveAvante();
+		System.out.println();
 		
 		//3.부모타입 레퍼런스로 자식객체를 다루는 경우
 		Car c3 = c2;
 		c3.drive();
-		((Car)c2).drive();
+		((Car)c2).drive();//자식의 참조변수를 부모의 참조변수로 바꿈.(업캐스팅 - 자동이므로 (Car)c2)를 굳이 안적어줘도 된다.)
+		System.out.println();
+		//c3는 Car 타입으로 선언되어 있습니다.
+		//하지만 실제로 c3가 참조하는 객체는 Avante 객체이다.
+		//(c2가 Avante 객체이기 때문).
 		
-		Car c4 = new Sonata("횐색", "가스", 2023);
+		Car c4 = new Sonata("횐색", "가스", 2023);//업캐스팅
 		c4.drive();
-		Sonata c5 = (Sonata)c4;
-		((Sonata)c4).moveSonata();
+		Sonata c5 = (Sonata)c4;//부모 클래스 타입인 c4를 자식 클래스 타입(Sonata)으로 다운캐스팅(Downcasting)
+		//c5는 Sonata 타입 변수
+		((Sonata)c4).moveSonata();//c4를 다운캐스팅하여 moveSonata 메서드 호출.
+		System.out.println();
 		
 		/*
 		 * "상속 구조"의 클래스들 간에 형변환 가능
@@ -46,6 +54,8 @@ public class Run {
 		//다형성 사용 전
 		Sonata[] sonataArr = new Sonata[5];
 		sonataArr[0] = new Sonata("횐색", "가스", 2023);
+	
+		
 		Avante[] avanteArr = new Avante[5];
 		avanteArr[0] = new Avante("검은색", "가솔린", 2023);
 		
@@ -57,7 +67,7 @@ public class Run {
 		carArr[3] = new Avante("검은색", "가솔린", 2023);
 		
 		for(int i=0; i<carArr.length; i++) {
-			//해당 참조변수가 실제 Sonata객체를 참조하고 있니?
+			//해당 참조변수가 실제 Sonata 객체를 참조하고 있니?
 			if(carArr[i] instanceof Sonata) {
 				((Sonata)carArr[i]).moveSonata();
 			} else if(carArr[i] instanceof Avante) {
