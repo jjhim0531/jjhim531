@@ -2,7 +2,7 @@ package test240716.object1;
 
 import java.util.Scanner;
 
-//사용자로부터 입력을 받거나 결과를 보여주는 class
+//사용자로부터 입력을 받거나 결과를 보여주는 class(view 역할)
 public class PointMenu {
 	private Scanner sc = new Scanner(System.in);
 	private CircleController cc = new CircleController();
@@ -26,7 +26,7 @@ public class PointMenu {
 				break;
 			case 9:
 				System.out.println("종료합니다.");
-				return;
+				return;//return은 while문의 반복과 아무 상관없이 종료시켜버린다.
 			default:
 				System.out.println("잘못입력하셨습니다.");
 			}
@@ -81,8 +81,7 @@ public class PointMenu {
 		System.out.print("반지름 : ");
 		radius = sc.nextInt();
 	
-		String result = cc.calcCircum(x, y, radius);
-		System.out.println(result);
+		System.out.println(cc.calcCircum(x, y, radius));
 	};
 
 	public void calcCircleArea() {
@@ -97,8 +96,7 @@ public class PointMenu {
 		System.out.print("반지름 : ");
 		radius = sc.nextInt();
 		
-		String result = cc.calcArea(x, y, radius);
-		System.out.println(result);
+		System.out.println(cc.calcArea(x, y, radius));
 	};
 
 	public void calcPerimeter() {

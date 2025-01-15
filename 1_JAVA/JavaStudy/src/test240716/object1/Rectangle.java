@@ -34,4 +34,16 @@ public class Rectangle extends Point{
 	public String toString() {
 		return super.toString() + " " + this.height + " " + this.width;
 	}
+	
+	/*
+	// 면적 계산 메서드 추가
+    public int calculateArea() {
+        return this.width * this.height;
+    }
+
+    // 둘레 계산 메서드 추가
+    public int calculatePerimeter() {
+        return 2 * (this.width + this.height);
+    }
+    */
 }

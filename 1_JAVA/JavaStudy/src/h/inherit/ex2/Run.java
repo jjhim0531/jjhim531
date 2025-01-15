@@ -33,8 +33,8 @@ public class Run {
 		
 		//Product를 상속받는 TV클래스 작성
 		// 필드에는 int inch정보를 가지고 있고 
-		//information을 오버라이딩하여 기본product의 정보+ inch정보 출력
-		// tv생성 후 정보출력
+		//information을 오버라이딩하여 기본 product의 정보 + inch정보 출력
+		// tv 객체 생성 후 정보출력
 		
 		TV tv1 = new TV("삼성", "t-100", "LED TV", 1000000, 55);
 		System.out.println(tv1.information());
