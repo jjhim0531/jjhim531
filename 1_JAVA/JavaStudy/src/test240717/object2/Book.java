@@ -1,5 +1,5 @@
 package test240717.object2;
-
+//책 객체인 bList를 위한 설계도(책 정보)
 public class Book {
 	private String title;
 	private String author;

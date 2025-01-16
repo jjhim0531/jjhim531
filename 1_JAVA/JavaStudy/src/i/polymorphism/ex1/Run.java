@@ -11,7 +11,7 @@ public class Run {
 		
 		Cake c1 = new CheeseCake();
 		//Cake까지 접근가능하며 메모리공간은 실제 CheeseCake다
-		//업캐스팅에만 new키워드 사용이 가능하다.ㄴ
+		//업캐스팅에만 new 키워드 사용이 가능하다.ㄴ
 		c1.sweet();
 		
 		c1.yummy(); 

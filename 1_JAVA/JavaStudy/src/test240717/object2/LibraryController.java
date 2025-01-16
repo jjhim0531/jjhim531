@@ -1,5 +1,5 @@
 package test240717.object2;
-
+//컨트롤러 객체인 lc를 위한 설계도(데이터 관리와 로직을 처리)
 public class LibraryController {
 	private Member mem = null;
 	private Book[] bList = new Book[5];
