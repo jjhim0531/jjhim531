@@ -19,6 +19,7 @@ public class PersonController {
 			}
 		}
 		
+		
 		countArr[0] = studentCount;
 		countArr[1] = employeeCount;
 		
