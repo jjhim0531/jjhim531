@@ -130,7 +130,7 @@ public class PersonMenu {
 			System.out.print("직원 이름 : ");
 			name = sc.next();
 			
-			System.out.print("직원  나이 : ");
+			System.out.print("직원 나이 : ");
 			age = sc.nextInt();
 			
 			System.out.print("직원 키 : ");
