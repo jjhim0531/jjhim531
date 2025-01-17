@@ -63,6 +63,7 @@ public class LibraryController {
 		} else if(b instanceof CookBook) {
 			if(((CookBook)b).isCoupon()) {
 				this.mem.setCouponCount(this.mem.getCouponCount() + 1);
+				//그냥 ++처리하면 안됨 -> get으로 가져와서 1을 더한 후 set으로 바꿔줘야한다.
 				result = 2;
 			}
 		}
