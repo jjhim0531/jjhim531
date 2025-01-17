@@ -81,6 +81,7 @@ public class LibraryMenu {
 				break;
 			}
 			System.out.println(i + "번 도서 : " +  bList[i].toString());
+			//객체 bList가 new로 어떤 클래스에서 생성되었느냐에 따라 그 클래스의 오버라이딩된 함수가 호출된다.
 		}
 	}
 	
