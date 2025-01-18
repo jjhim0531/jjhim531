@@ -4,6 +4,7 @@ public class GalaxyNote9 extends SmartPhone implements NotePen{
 	public GalaxyNote9() {
 		super();
 		this.setMaker("삼성");
+		//SmartPhone클래스에서 초기값 설정을 안해줘서 초기값은 null이므로 "삼성"으로 바꿔줘야한다. 
 	}
 
 	@Override

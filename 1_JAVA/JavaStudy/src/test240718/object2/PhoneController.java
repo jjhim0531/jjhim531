@@ -12,9 +12,11 @@ public class PhoneController {
 		phArr[1] = new V40();
 		
 		// for문을 이용하여 Phone 객체배열에 각 인덱스의 printInformation()의
-		// 반환 값을 String배열에 담아 반환
+		// 반환 값을 String 배열에 담아 반환
 		for(int i=0; i<phArr.length; i++) {
 			result[i] = ((SmartPhone)phArr[i]).printInformation();
+			//자식 클래스만의 고유 메서드나 속성을 사용하려면 다운캐스팅을 통해 접근.
+			//SmartPhone은 인터페이스 Phone을 구현한 자식 클래스
 		}
 		return result;
 	}

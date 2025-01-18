@@ -14,6 +14,6 @@ public class Dog implements Animal{
 
 	@Override
 	public void makeSound() {
-		System.out.println("멍멍 ~ 왈왈");
+		System.out.println("멍멍 ~ 왈왈 ~ ");
 	}
 }

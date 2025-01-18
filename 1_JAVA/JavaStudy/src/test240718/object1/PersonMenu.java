@@ -8,7 +8,7 @@ public class PersonMenu {
 
 	public void mainMenu() {
 		
-		while(true) {
+		while(true) { 
 			int[] countArr = pc.personCount();
 			
 			System.out.println("학생은 최대 3명까지 저장할 수 있습니다.");
@@ -66,7 +66,30 @@ public class PersonMenu {
 	}
 
 	public void employeeMenu() {
-		System.out.println("employeeMenu");
+		System.out.println();
+		System.out.println("<employeeMenu>");
+		while(true) {
+			System.out.println();
+			System.out.println("1. 사원 추가");
+			System.out.println("2. 사원 보기");
+			System.out.println("9. 메인으로");
+			System.out.print("메뉴 번호 : ");
+			
+			int choice = sc.nextInt();
+			switch(choice) {
+			case 1:
+				this.insertEmployee();
+				break;
+			case 2:
+				this.printEmployee();
+				break;
+			case 9:
+				System.out.println("메인으로 돌아갑니다.");
+				return;
+			default:
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+			}
+		}
 	}
 
 	public void insertStudent() {

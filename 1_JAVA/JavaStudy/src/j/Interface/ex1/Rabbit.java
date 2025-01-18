@@ -1,6 +1,7 @@
 package j.Interface.ex1;
 
 public class Rabbit implements Animal, Baby{
+	//인터페이스는 다중구현 가능(Animal, Baby를 모두 구현되게 이어서 적을수 있음)
 
 	@Override
 	public void move() {

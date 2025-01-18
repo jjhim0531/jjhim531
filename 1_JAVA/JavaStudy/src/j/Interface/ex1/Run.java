@@ -16,8 +16,8 @@ public class Run {
 		Animal[] ani = new Animal[5];
 		
 		for(int i=0; i<ani.length; i++) {
-			System.out.println("추가할 동문을 선택해주세요.");
-			System.out.print("1. 강아지 2. 고양이 3. 토끼 : ");
+			System.out.println("추가할 동물을 선택해주세요.");
+			System.out.print("1. 강아지  2. 고양이  3. 토끼 : ");
 			int choice = sc.nextInt();
 			
 			switch(choice) {
@@ -29,14 +29,25 @@ public class Run {
 				break;
 			case 3:
 				ani[i] = new Rabbit();
+				
+				
 			}
 		}
+		
+		for(Animal a : ani) {
+			a.makeSound();
+			
+		}
+		System.out.println();
 		
 		for(int i=0; i<ani.length; i++) {
 			if(ani[i] instanceof Baby) {
 				System.out.println("토끼는 아기라 못움직여요");
+				System.out.println();
 			} else {
 				ani[i].move();
+				System.out.println();
+
 			}
 		}
 

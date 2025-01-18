@@ -17,9 +17,10 @@ public class Run {
 		shapes[1] = new Rectangle(3, 4);
 		
 		/*
+		 * for-each 반복문 : 
 		 * 배열 또는 컬렉션에서 사용
 		 * 처음부터 끝까지 무조건 모두 탐색
-		 * 해당배열에 인덱스값이 하나씩 왼쪽에있는 값에 대입되어 반복문 실행
+		 * 해당배열에 인덱스값이 하나씩 왼쪽에 있는 값에 대입되어 반복문 실행
 		 */
 		
 		for(Shape shape : shapes) {
