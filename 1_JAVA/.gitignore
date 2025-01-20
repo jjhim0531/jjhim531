@@ -1,2 +1,18 @@
+# Eclipse 설정 파일 제외
 .metadata/
+.settings/
+.classpath
+.project
+
+# 빌드된 바이너리 파일 제외
 bin/
+target/
+*.class
+
+# OS 관련 파일 제외
+*.DS_Store
+Thumbs.db
+
+# 로그 및 환경 설정 파일 제외
+*.log
+*.properties

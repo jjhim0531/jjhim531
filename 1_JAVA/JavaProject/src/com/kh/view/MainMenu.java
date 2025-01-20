@@ -20,12 +20,14 @@ public class MainMenu {
 	public void menu() {
 		
 		while(true) {
-			System.out.println("===============도서관리프로그램=================");
+			System.out.println("=============== 도서 관리 프로그램 =================\n");
+			
 			System.out.println("1. 로그인");
 			System.out.println("2. 회원가입");
-			System.out.println("3. 아이디찾기");
-			System.out.println("4. 비밀번호찾기");
-			System.out.println("9. 프로그램종료");
+			System.out.println("3. 아이디 찾기");
+			System.out.println("4. 비밀번호 찾기");
+			System.out.println("9. 프로그램 종료\n");
+			
 			System.out.print("메뉴 입력 : ");
 			
 			int choice = sc.nextInt();
@@ -46,9 +48,9 @@ public class MainMenu {
 				break;
 			case 9:
 				System.out.println("프로그램을 종료합니다.");
-				return;
+				return;//메소드 종료
 			default:
-				System.out.println("잘못입력하였습니다. 다시입력해주세요");
+				System.out.println("잘못 입력하였습니다. 다시입력해주세요");
 			}
 		}
 	}

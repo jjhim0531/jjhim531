@@ -9,9 +9,10 @@ public class FileByte {
 	/*
 	 * "바이트 스트림"을 통한 입출력해보기
 	 * 
-	 * -바이트스트림 : 데이터를 1바이트 단위로 전송하는 통로(좁은통로 -> 한글깨짐)
-	 * -기반스트림 : 외부매체와 직접적으로 연결하는 통로
+	    - 바이트스트림 : 데이터를 1byte 단위로 전송하는 통로(좁은 통로 -> 한글이 깨짐)
+	    - 기반스트림 : 외부매체와 직접적으로 연결하는 통로
 	 * 
+	 * input or output ? 컴퓨터의 입장에서 생각하기.
 	 * xxxInputStream : xxx매체로부터 데이터를 입력받는 통로(외부로부터 데이터를 읽어오겠다.)
 	 * xxxOutputStream : xxx매체로부터 데이터를 출력하는 통로(외부매체로 데이터를 내보내겠다.)
 	 */
@@ -20,8 +21,9 @@ public class FileByte {
 	public void fileSave() {
 	
 		//1. FileOutputStream 객체 생성
-		//해당파일이 없으면 새로만들어주고 통로연결 / 있으면 해당 파일에 통로연결 
-		//FileOutputStream의 두번째 매개변수에 true를 전달하면 해당 파일이 존재할 경우 기존데이터에 이어서 작성을 한다.
+		//해당파일이 없으면 새로 만들어주고 통로 연결 / 있으면 해당 파일에 통로 연결 
+		//FileOutputStream의 두번째 매개변수에 true를 전달하면 
+		//해당 파일이 존재할 경우 기존 데이터에 이어서 작성을 한다.
 	
 		try (FileOutputStream fout = new FileOutputStream("byte_test.txt", true);){
 			

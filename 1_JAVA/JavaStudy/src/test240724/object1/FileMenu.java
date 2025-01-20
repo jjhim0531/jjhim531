@@ -118,9 +118,10 @@ public class FileMenu {
 			
 		} else {
 			System.out.println("없는 파일입니다.");
-	        return;  // 메서드를 즉시 종료하고 mainMenu로 돌아감
-	        //void 메서드는 return;을 생략해도 됨.가독성을 위해 명시적으로 써줌.
-	        //종료되면 자동으로 처음으로 돌아감.
+			//return을 사용하지 않으면 메서드가 종료되지 않고, 자연스럽게 mainMenu()의 반복문이 계속 실행되어 메뉴가 다시 출력된다.
+	        //return; // 메서드가 여기서 종료되어 mainMenu()로 돌아가지 않음
+	       
+	     
 		}
 			// 받은 파일 명을 fc에 checkName()의 매개변수로 넘겨 반환 값에 따라 나뉨
 		// 반환 값이 false일 경우 “없는 파일입니다.” 출력 후 mainMenu()로 돌아감
