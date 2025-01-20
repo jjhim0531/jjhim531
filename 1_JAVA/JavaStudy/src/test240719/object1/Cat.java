@@ -29,7 +29,7 @@ public class Cat extends Animal{
 
 	@Override
 	public void speak() {
-		String info = super.toString() + location + "에 서식하며, 색상은 " + color + "입니다.";
+		String info = super.toString() + location + "에 서식하며, 색상은 " + color + "입니다.\n";
 		System.out.println(info);
 	}
 }

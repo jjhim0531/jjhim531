@@ -18,6 +18,7 @@ public class FileMenu {
 			
 			int choice = sc.nextInt();
 			sc.nextLine();
+			System.out.println();
 			
 			switch(choice) {
 			case 1:
@@ -48,11 +49,12 @@ public class FileMenu {
 			System.out.println("ex끝it  이라고 입력하면 종료됩니다.");
 			System.out.print("내용 : ");
 			String str = sc.nextLine();
+			System.out.println();
 			
 			//ex끝it이라고 입력했을 때
 			if (str.equals("ex끝it")) {
 				
-				//파일명이 존재하지 하면서 덮어쓰기를 하지 않겠다고 할때 계속반복
+				// 파일명이 존재하지만 덮어쓰기를 하지 않겠다고 할 때 계속 반복 계속반복
 				while(true) {
 					System.out.print("저장할 파일 명을 입력해주세요(ex. myFile.txt) : ");
 					String fileName = sc.next();
@@ -61,14 +63,16 @@ public class FileMenu {
 					if (fc.checkName(fileName)) {
 						System.out.print("이미 존재하는 파일입니다. 덮어쓰시겠습니까?(y/n) : ");
 						char isPass = sc.next().charAt(0);
-						//덮어쓰겠다고 할 때
+						System.out.println();
+						
+						// 덮어쓰겠다고 하면 파일 저장 후 종료
 						if (isPass == 'y') {
 							fc.fileSave(fileName, sb);
-							return;
+							return;// 메서드 종료
 						}
 					} else { //파일명이 존재하지 않을 때
 						fc.fileSave(fileName, sb);
-						return;
+						return;// 새 파일 저장 후 메서드 종료
 					}
 				}
 			}
@@ -78,20 +82,23 @@ public class FileMenu {
 	}
 	
 	public void fileOpen() {
-		System.out.print("열 파일 명 :");
+		System.out.print("열고 싶은 파일명 : ");
 		String file = sc.nextLine();
+		
 		if (fc.checkName(file)) {
 			StringBuilder sb = fc.fileOpen(file);
 			System.out.println(sb.toString());
 		} else {
-			System.out.println("없는 파일입니다.");
+			System.out.println("없는 파일입니다.\n");
 		}
 	}
 	
 	public void fileEdit() {
-		System.out.print("수정할 파일 명 :");
+		System.out.print("수정할 파일명 :");
 		String file = sc.next();
 		sc.nextLine();
+		System.out.println();
+		
 		if(fc.checkName(file)) {
 			
 			StringBuilder sb = new StringBuilder();
@@ -111,6 +118,9 @@ public class FileMenu {
 			
 		} else {
 			System.out.println("없는 파일입니다.");
+	        return;  // 메서드를 즉시 종료하고 mainMenu로 돌아감
+	        //void 메서드는 return;을 생략해도 됨.가독성을 위해 명시적으로 써줌.
+	        //종료되면 자동으로 처음으로 돌아감.
 		}
 			// 받은 파일 명을 fc에 checkName()의 매개변수로 넘겨 반환 값에 따라 나뉨
 		// 반환 값이 false일 경우 “없는 파일입니다.” 출력 후 mainMenu()로 돌아감

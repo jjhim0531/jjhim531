@@ -9,7 +9,7 @@ public class GalaxyNote9 extends SmartPhone implements NotePen{
 
 	@Override
 	public String charge() {
-		return "고속 충전, 고속 무선 충전";
+		return "고속 충전, 고속 무선 충전";  
 	}
 
 	@Override

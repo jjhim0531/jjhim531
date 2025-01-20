@@ -23,5 +23,6 @@ public class CharacterMenu {
 			sc.close();
 			System.out.println("잘 종료되었습니다.");
 		}
+		//예외가 발생하건 안하건 finally 부분은 무조건 실행되는영역.
 	}
 }
