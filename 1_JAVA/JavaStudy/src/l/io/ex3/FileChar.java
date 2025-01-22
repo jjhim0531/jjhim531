@@ -8,9 +8,9 @@ import java.io.IOException;
 public class FileChar {
 
 	/*
-	 * "문자기반 스트림"을 활용하여 입출력
+	 * "문자 기반 스트림"을 활용하여 입출력
 	 * 
-	 * - 문자기반스트림: 데이터를 2바이트 단위로 전송하는 통로
+	 * - 문자 기반 스트림: 데이터를 2바이트 단위로 전송하는 통로
 	 * 
 	 * XXXReader : 입력용 스트림
 	 * XXXWriter : 출력용 스트림
@@ -20,7 +20,7 @@ public class FileChar {
 		
 		//1. 객체생성
 		try (FileWriter fw = new FileWriter("char_test.txt",true);){
-			//2. write메소드를 활용하여 데이터 출력
+			//2. write 메소드를 활용하여 데이터 출력(문자기반으로 한글자씩 보낸다)
 			fw.write("와후 IO가 너무너무 재미있다.");
 			fw.write("\n");
 			fw.write("안녕");

@@ -57,7 +57,7 @@ public class FileByte {
 		
 		//1.스트림생성
 		//2.스트림을 통해서 입력받음
-		//3.사용이끝난 스트림 반납
+		//3.사용이 끝난 스트림 반납
 		
 		FileInputStream fin = null;
 		
@@ -65,19 +65,23 @@ public class FileByte {
 			//1.스트림생성
 			fin = new FileInputStream("byte_test.txt");
 			
-			//2.파일로부터 데이터를 읽어들이고자 할때 read메소드 사용
-			// 1byte씩 읽어옴 / 숫자로 읽어들임
+			//2.파일로부터 데이터를 읽어들이고자 할때 read 메소드 사용
+			//  1byte씩 읽어옴
+			//  모든 데이터를 숫자로 읽어들임(문자로 작성되어 있더라도.)
 			
+//			System.out.println(fin.read());	
+			//System.out.println((char)fin.read());
+			//강제형변환을 하면 문자로 읽어들인다. 하지만 그러면 마지막에 -1이 나오지 않는다.
+
 //			System.out.println(fin.read());
 //			System.out.println(fin.read());
 //			System.out.println(fin.read());
 //			System.out.println(fin.read());
 //			System.out.println(fin.read());
 //			System.out.println(fin.read());
-//			System.out.println(fin.read());
-//			System.out.println(fin.read());
-//			System.out.println(fin.read());  //파일의 끝을 만나느 순간 -1을 반환한다.
+//			System.out.println(fin.read());  //파일의 끝을 만나는 순간 -1을 반환한다.
 			
+	//1번 방법
 			while(true) {
 				int value = fin.read();
 				if(value == -1) {
@@ -86,6 +90,7 @@ public class FileByte {
 				System.out.print((char)value);
 			}
 			
+	//2번 방법을 더 권장.
 			int value = 0;
 			while((value = fin.read()) != -1) {
 				System.out.print((char)value);

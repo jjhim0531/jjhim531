@@ -11,27 +11,34 @@ public class B_String {
 		
 		System.out.println(str1);
 		System.out.println(str2);
-		// String클래스에 toString메소드는 이미 오버라이딩 되어있음.
+		// String 클래스에 toString 메소드는 기본적으로 이미 오버라이딩 되어있음.
 		
 		//주소값을 비교하기 때문에 false가 나옴
 		System.out.println(str1 == str2);
 		
-		//String클래스에서 equalse메소드는 이미 오버라이딩이 되어있음(주소값이 아닌 값비교)
+		//String 클래스에서 equals 메소드는 이미 오버라이딩이 되어있음(주소값이 아닌 값 비교)
 		System.out.println(str1.equals(str2));
 		
-		//String클래스에서 hashCode메소드 이미 오버라딩이 되어있음(주소값이 아닌 문자열을 가지고 만들도록)
+		//String 클래스에서의 hashCode 메소드는 이미 오버라이딩이 되어있음(주소값이 아닌 문자열을 가지고 만들도록)
+		//원래의 hashCode 메소드는 고유의 값이 나와야함.
 		System.out.println(str1.hashCode());
 		
+		//실제 고유의 hashCode값이 나오는 메소드.(각각 고유의 값)
 		System.out.println(System.identityHashCode(str1));
 		System.out.println(System.identityHashCode(str2));
 		
-		//----------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 		
-		//2. 문자열을 리터럴값으로 생성
+		//2. 문자열을 리터럴 값으로 생성
 		String str3 = "hello";
 		String str4 = "hello";
-		//리터럴 제시시 상수풀영역에 들어감
-		//String Pool특징 : 동일한문자열을 가질 수 없다.
+		//리터럴 제시 시 상수풀 영역에 들어감
+		//String Pool 특징 : 동일한 문자열을 가질 수 없다.
+		// 문자열 리터럴을 "문자열 상수 풀(String Pool)"이라는 특별한 메모리 영역에 저장.
+		//같은 문자열 리터럴은 한 번만 저장되고, 이후에는 재사용.
+		//→ "hello"라는 문자열이 String Pool에 이미 존재하면, 새로운 공간을 만들지 않고 기존의 "hello"를 가리킴.
+		//== 연산자가 true 반환 → 리터럴로 만든 문자열은 같은 객체이므로 주소값 비교에서도 true가 나옴.
+		
 		
 		System.out.println(str3);
 		System.out.println(str4);
@@ -39,7 +46,7 @@ public class B_String {
 		System.out.println(str3.hashCode());
 		System.out.println(str4.hashCode());
 		
-		System.out.println(str3 == str4);
+		System.out.println(str3 == str4);//true
 		System.out.println(System.identityHashCode(str1));
 		System.out.println(System.identityHashCode(str2));
 		System.out.println(System.identityHashCode(str3));
@@ -47,8 +54,8 @@ public class B_String {
 		
 		str3 = "bye";
 		System.out.println(System.identityHashCode(str3));
-		//변경하는 순간 기존의 문자열 자리에서 변경되는게 아닌
-		// 새로운 곳을 참조하도록 됨(새로운 주소값 부여받음 == 주소값 변경)
+		//변경하는 순간 기존의 문자열 자리에서 변경되는 것이 아니고
+		//새로운 곳을 참조하도록 됨(새로운 주소값 부여받음 == 주소값 변경)
 	}
 	
 	public void method02() {
