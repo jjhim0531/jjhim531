@@ -6,7 +6,7 @@ public interface Animal {
 	public static final int num = 0;
 	
 	public abstract void move();
-	//void move();//public void move()//모두 가능.
+	//void move();  //public void move()  //모두 가능.
 	//단, 오버라이딩헤서 구현 시에는 반드시 public을 적어줘야함.
 	public abstract void eat();
 	public abstract void makeSound();

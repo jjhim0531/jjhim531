@@ -2,7 +2,7 @@ package m.api.ex1;
 
 public class C_Wrapper {
 	/*
-	 * * Wrapper클래스
+	 * * Wrapper 클래스
 	 * => 기본자료형을 객체로 포장해줄 수 있는 클래스가 래퍼클래스이다.
 	 * 
 	 * 		boolean(Boolean)
@@ -21,11 +21,13 @@ public class C_Wrapper {
 	 */
 
 	public void method01() {
-		//Boxing : 기본자료형 -> Wrapper클래스 자료형
+		
+		//Boxing : 기본자료형 -> Wrapper 클래스 자료형
 		int num1 = 10;
 		int num2 = 20;
 		
 		//System.out.println(num1.equals(num2));
+		//equals 같은 메서드를 쓰려면 객체여야한다. 원시타입으로는 안됨.
 		
 		//1. 객체생성구문을 통한 방법
 		Integer i1 = new Integer(num1); // num1 => i1
@@ -35,19 +37,32 @@ public class C_Wrapper {
 		System.out.println(i2);
 		
 		System.out.println(i1.equals(i2));
-		System.out.println(i1.compareTo(i2)); //두 값을 비교해서 앞쪽이 크면 1반환, 뒤쪽이 크면 -1반환, 같으면 0반환
+		//객체로 만든 후부터는 ==비교는 쓰지말고 equals로 비교해야한다.
 		
-		//2. 객체생성따위 하지않고 곧바로 대입방법(AutoBoxing)
+		System.out.println(i1.compareTo(i2)); 
+		//두 값을 비교해서 앞쪽이 크면 1 반환, 뒤쪽이 크면 -1 반환, 같으면 0 반환
+		
+		//2. 객체생성따위 하지않고 곧바로 대입 방법(AutoBoxing)
 		Integer i3 = num1;
-		System.out.println(i3);
+		System.out.println(i3);		
+
+		//// 문자열을 Integer로 변환하는 다양한 방법(반드시 객체생성을 통해 변환해야한다)
+
+			// 1. 문자열을 int로 변환한 뒤 AutoBoxing으로 Integer로 변환
+			Integer i4 = Integer.parseInt("123");
+	
+			// 2. (Deprecated) 직접 객체 생성
+			Integer i5 = new Integer("123");  // 비추천 (Java 9 이상에서는 사용 X)
+	
+			// 3. 문자열을 바로 Integer 객체로 변환
+			Integer i6 = Integer.valueOf("123");  // 권장
+
 		
-		//객체생성을 통해서 반드시 변환해야하는 경우 -> 문자열을 Intefer타입으로 변환하고 싶을 때
-		Integer i4 = Integer.parseInt("123");
-		Integer i5 = new Integer("123");
+//---------------------------------------------------------------------------------------------------		
+			
+		// UnBoxing : Wrapper 클래스 자료형 -> 기본자료형
 		
-		// UnBoxing : Wrapper클래스 자료형 -> 기본자료형
-		
-		//1. 해당 그 Wrapper클래스에서 제공하는 xxxValue()메소드를 통해서 가능
+		//1. 해당 Wrapper 클래스에서 제공하는 xxxValue()메소드를 통해서 가능
 		int num3 = i3.intValue();
 		int num4 = i4.intValue();
 		
@@ -58,16 +73,16 @@ public class C_Wrapper {
 		String str1 = "10";
 		String str2 = "15.5";
 		
-		System.out.println(str1 + str2);
+		System.out.println(str1 + str2);//1015.5
 		
 		// String -> 기본자료형
 		//   "10" ->  10
-		// "15.5" ->  15.5
+		//  "15.5" ->  15.5
 		//해당 Wrapper클래스.parsexxx()사용
 		
 		int i = Integer.parseInt(str1);
 		double d = Double.parseDouble(str2);
-		System.out.println(i + d);
+		System.out.println(i + d);//10 + 15.5 = 25.5
 		
 		// 기본자료형 -> String
 		System.out.println(i + "");

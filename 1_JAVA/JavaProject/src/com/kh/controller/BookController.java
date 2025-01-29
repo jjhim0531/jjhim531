@@ -7,8 +7,11 @@ import com.kh.vo.Book;
 
 public class BookController {
 	private List<Book> bookList = new ArrayList<>();
-	
-	
+	//List 인터페이스에는 clone() 메서드가 정의되어 있지 않다.
+	//clone() 메서드는 Object 클래스에서 제공하는 메서드
+
+
+	  //생성자 (BookController 객체가 생성될 때 자동으로 실행됨)
 	public BookController() {
 		super();
 		bookList.add(new Book("자바의 정석", "IT", "남궁성"));
@@ -18,9 +21,17 @@ public class BookController {
 		bookList.add(new Book("아프니까 청춘이다.", "에세이", "박민수"));
 	}
 
-	public List<Book> getBookList(){
-		return bookList;
+	public List<Book> getBookList() {
+		//깊은복사(원본과 완전히 독립시킴)
+	    List<Book> clonedList = new ArrayList<>();
+	    for (Book b : this.bookList) {
+	        clonedList.add(new Book(b.getTitle(), b.getAuthor(), b.getGenre())); // 새로운 Book 객체 생성
+	    }
+	    return clonedList;
 	}
+
+
+
 	
 	public boolean insertBook(Book b) {
 		return bookList.add(b);
@@ -51,6 +62,7 @@ public class BookController {
 		return bookList.remove(b);
 	}
 	
+	//keyword가 제목에 포함되어 있는 도서 목록 반환
 	public List<Book> searchBook(String keyword){
 		List<Book> searchBookList = new ArrayList<>();
 		for(Book b : bookList) {

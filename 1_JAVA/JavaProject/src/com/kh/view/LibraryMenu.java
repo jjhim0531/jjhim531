@@ -71,6 +71,7 @@ public class LibraryMenu {
 		List<Book> bList = bc.getBookList();
 		
 		System.out.printf("%7s %12s %5s\n", "장 르", "제 목", "글쓴이");
+		
 		for(Book b : bList) {
 			b.printInfo();
 		}

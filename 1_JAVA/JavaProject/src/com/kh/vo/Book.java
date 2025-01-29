@@ -7,6 +7,7 @@ public class Book {
 	private String author;
 	private String genre;
 	
+	//Book 객체가 생성될 때 자동으로 호출됨.
 	public Book(String title, String author, String genre) {
 		super();
 		this.title = title;
