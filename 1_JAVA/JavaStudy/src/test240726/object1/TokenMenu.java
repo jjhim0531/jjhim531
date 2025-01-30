@@ -45,13 +45,14 @@ public class TokenMenu {
 	public void inputMenu() {
 		System.out.print("문자열을 입력하세요 : ");
 		String str = sc.nextLine();
+		
 		String firstCapStr = tc.firstCap(str);
 		System.out.println("첫 글자 대문자 : " + firstCapStr);
 		
-		System.out.print("찾을 문자 하나를 입력하세요 : ");
+		System.out.print("검색할 스펠링 문자 한 개를 입력하세요 : ");
 		char target = sc.next().charAt(0);
 		int count = tc.findChar(str, target);
 		
-		System.out.println(target + "문자가 들어간 개수 : " + count);
+		System.out.println(target + " 문자가 들어간 개수 : " + count);
 	}
 }

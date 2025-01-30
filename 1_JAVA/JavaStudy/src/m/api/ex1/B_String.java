@@ -159,7 +159,8 @@ public class B_String {
 
 		System.out.println(stn.countTokens());
 
-//		System.out.println(stn.nextToken()); // 더이상 토근이 남아있지 않을 때 다음토큰을 가져오려고 하면 예외발생!
+//		System.out.println(stn.nextToken()); 
+		// 더이상 토큰이 남아있지 않을 때 다음 토큰을 가져오려고 하면 예외발생!
 
 		stn = new StringTokenizer(str, ",");
 		// 모든 토큰을 조회하는 방법1
@@ -168,7 +169,8 @@ public class B_String {
 			System.out.println(stn.nextToken());
 		}
 
-		// hasMoreElements -> 가져올 토근이 남아있는지 확인해주는 메소드 남아있다면 true반환 없다면 false반환
+		// hasMoreElements -> 가져올 토큰이 남아있는지 확인해주는 메소드.
+		// 남아있다면 true 반환, 없다면 false 반환
 		stn = new StringTokenizer(str, ",");
 		while (stn.hasMoreElements()) {
 			System.out.println(stn.nextToken());
