@@ -73,7 +73,7 @@ public class ServeStream {
 //			System.out.println(br.readLine());
 			
 			//readLine() - BufferedReader 클래스의 메서드로, 파일이나 입력 스트림에서 한 줄 단위로 데이터를 읽어올 때 사용
-			//			 - 한번에 한줄씩 꺼내와서 읽어줌. 더 이상 읽을 내용이 없으면 null 반환.
+			//			 - 한 번에 한줄씩 꺼내와서 읽어줌. 더 이상 읽을 내용이 없으면 null 반환.
 			//			 - 줄바꿈(개행) 문자를 기준으로 읽으며, 한 줄을 읽고 개행 문자는 제외
 			String value = null;
 			while((value = br.readLine()) != null) {
@@ -106,6 +106,7 @@ public class ServeStream {
 			//.writeObject : 객체를 바이트 스트림으로 변환하여 파일 또는 네트워크로 전송할 수 있도록 함.
 			//Serializable 인터페이스 필수
 			//특정 필드를 직렬화에서 제외하려면 transient 키워드를 사용
+			//private transient String password;  // ✅ 직렬화에서 제외됨
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

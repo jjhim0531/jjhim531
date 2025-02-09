@@ -41,7 +41,7 @@ public class Music {
 	}
 	@Override
 	public String toString() {
-		return title + " - " + singer;
+		return singer + " - " + title;
 	}
 	
 	public void compareTo(Object o) {

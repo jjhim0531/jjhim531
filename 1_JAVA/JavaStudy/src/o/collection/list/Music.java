@@ -27,7 +27,7 @@ public class Music {
 	}
 	@Override
 	public String toString() {
-		return "Music [title=" + title + ", artist=" + artist + "]";
+		return "Music [title = " + title + ", artist = " + artist + "]";
 	}
 	
 	@Override

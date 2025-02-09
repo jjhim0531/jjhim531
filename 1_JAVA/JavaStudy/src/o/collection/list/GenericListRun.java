@@ -11,7 +11,7 @@ public class GenericListRun {
 		list.add(new Music("에피소드", "이무진"));
 		list.add(new Music("비의 랩소디", "임재현"));
 		list.add(new Music("천상연", "이창섭"));
-//		list.add("끝");
+//		list.add("끝");//List의 타입인자를 제네릭을 이용하여 Music으로 정해놔서 String은 못들어감.
 		
 		System.out.println(list);
 		
@@ -21,7 +21,7 @@ public class GenericListRun {
 		/*
 		 * 제네릭을 사용하는 이유
 		 * 1. 명시된 타입의 객체만 저장하도록 제한을 둘 수 있다.
-		 * 2. 컬레션에 저장된 객체를 열어서 사용할 때 매번 형변환하는 절차를 없애기 위해서
+		 * 2. 컬레션에 저장된 객체를 열어서 사용할 때 매번 형변환하는 절차를 없애기 위해서.
 		 */
 	}
 

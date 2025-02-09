@@ -61,17 +61,17 @@ public class MusicView {
 	public void addList() {
 		System.out.println("****** 마지막 위치에 곡 추가 ******");
 		
-		System.out.print("곡 명: ");
+		System.out.print("곡 명 : ");
 		String title = sc.nextLine();
 		
-		System.out.print("가수 명: ");
+		System.out.print("가수 명 : ");
 		String singer = sc.nextLine();
 		
 		int result = mc.addList(new Music(title, singer));
 		if (result == 1) {
-			System.out.println("추가 성공");
+			System.out.println("추가 성공!!");
 		} else {
-			System.out.println("추가 실패");
+			System.out.println("추가 실패!!");
 		}
 	}
 
@@ -95,7 +95,11 @@ public class MusicView {
 	public void printAll() {
 		System.out.println("****** 전체 곡 목록 출력 ******");
 		List list = mc.printAll();
+		//System.out.println(객체); 하면 객체.toString()이 자동 실행됨!
 		System.out.println(list);
+		//ArrayList의 toString() 메서드가 
+		//리스트 내부 객체들을 [ ]로 감싸서 출력하도록 구현되어 있기 때문에 자동으로 붙어서 출력됨.
+		
 	}
 
 	public void searchMusic() {
@@ -106,6 +110,7 @@ public class MusicView {
 		if (m == null) {
 			System.out.println("검색한 곡이 없습니다.");
 		} else {
+			//searchMusic()의 반환 타입이 Music이므로, System.out.println(m); 하면 Music의 toString()이 자동 실행됨.
 			System.out.println(m);
 		}
 

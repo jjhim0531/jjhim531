@@ -11,17 +11,18 @@ public class Run {
 	 */
 	public static void main(String[] args) {
 
-		//1. 경로 지정을 딱히 하지않고 파일 생성하기 - 지금 작업중인 project에 파일이 생성됨.
+		//1. 경로 지정을 딱히 하지 않고 파일 생성하기 - 지금 작업중인 project에 파일이 생성됨.
 		File f1 = new File("test.txt"); // 파일객체를 하나 만든 상태(실제 파일 x)
 		
 		//2. 존재하는 폴더에 파일 생성 - 지정한 경로에 파일이 생성됨.
 		File f2 = new File("D:\\test2.txt");
+		
 		//3. 존재하지 않는 경로에 파일 생성
 //		File f3 = new File("D:\\tmp\\test.txt");
 		
 		try {
 			
-			f1.createNewFile(); // createNewFile 메소드가 실행할 때 실제 파일이 만들어짐(코드로 만들어서 내보낸 개념이기에 OUTPUT)
+			f1.createNewFile(); // createNewFile 메소드가 실행할 때 실제 파일이 만들어짐(컴퓨터입장에선 코드로 만들어서 내보낸 개념이기에 OUTPUT)
 			
 			f2.createNewFile();// createNewFile 메소드의 반환값은 true 또는 false
 			
@@ -29,7 +30,7 @@ public class Run {
 			
 			//3. 폴더 먼저 만들고 파일이 만들어지게 하는 방법
 			File tmpFolder = new File("D:\\tmp");
-			tmpFolder.mkdir();//mkdir 는 make directory 라는 의미.
+			tmpFolder.mkdir();//mkdir 는 make directory 라는 의미.(폴더생성)
 			
 			File f3 = new File("D:\\tmp\\test.txt");
 			f3.createNewFile();
@@ -42,13 +43,14 @@ public class Run {
 			
 			//파일의 존재유무를 코드로 확인할 수 있다.
 			System.out.println(f4.exists());
-			System.out.println(f1.exists());
+			System.out.println(f3.exists());
 			
 			//파일인지 확인하는 메소드
 			System.out.println(f1.isFile()); 
 			System.out.println(tmpFolder.isFile());
 			
 //------------------------------------------------------------------------------------------------
+			
 			File folder = new File("parent");
 			folder.mkdir();
 			
