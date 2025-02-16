@@ -42,19 +42,25 @@ public class MusicController {
 			this.list.remove(m);
 			return m;
 		}
-		return null;
+		return null;//찾은게 없으면 null 반환.
 	}
 	
-	public Music setMusic(String title, Music music) {
+	public Music setMusic(String title, Music newMusic) {
 		Music m = this.searchMusic(title);
 		if (m != null) {
+			//indexOf(m)은 리스트에서 기존 곡이 몇 번째 위치에 있는지 찾는 역할
+			// 만약 리스트에 m이 존재하지 않으면 -1을 반환!
 			int index = list.indexOf(m);
-			this.list.set(index, music);
+			//list의 index 위치에 있는 데이터를 music으로 변경
+			// 즉, 기존 곡을 새로운 Music 객체로 덮어쓰는 역할
+			//list.set(int index, E element);
+			this.list.set(index, newMusic);
 			return m;
 		}
 		return null;
 	}
 	
+	//Comparator를 별도 클래스로 구현한 경우 (ascTitle())
 	public int ascTitle() {
 		//Collections.sort : 컬렉션에서 정렬 기능을 제공하는 메소드
 		//정렬하고 싶은 컬렉션 객체와 
@@ -62,7 +68,8 @@ public class MusicController {
 		//전달하면 정렬기준에 맞춰 정렬을 수행해준다.
 			
 		//Comparator<Music> comparator = new AscTitle();
-		//new AscTitle()은 Comparator 타입의 객체를 생성하는 것!		
+		//new AscTitle()은 Comparator 타입의 객체를 생성하는 것!	
+		// compare() 메서드가 1, -1, 0을 반환하면 Collections.sort()가 이를 기반으로 정렬을 수행함.
 		Collections.sort(list, new AscTitle());//AscTitle 클래스는 Comparator<Music>을 구현한 클래스.
 		
 		//list.sort(new AscTitle());
@@ -73,6 +80,8 @@ public class MusicController {
 		return 1;
 	}
 	
+	//descSinger()에서는 AscTitle 같은 별도 클래스 없이 Comparator<Music>을 익명 클래스로 직접 구현!
+	//계속 쓰는 함수가 아니라 한번만 쓰면 되는 경우엔 익명이 더 편함!
 	public int descSinger() {
 		Collections.sort(list, new Comparator<Music>() {
 			@Override
