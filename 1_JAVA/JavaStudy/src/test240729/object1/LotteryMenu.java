@@ -50,7 +50,7 @@ public class LotteryMenu {
 
 	public void insertObject() {
 		System.out.print("추가할 추첨 대상 수 : ");
-		int num = sc.nextInt(); //3
+		int num = sc.nextInt();
 		sc.nextLine();
 		
 		for(int i=0; i<num; i++) {
@@ -59,10 +59,11 @@ public class LotteryMenu {
 			System.out.print("핸드폰 번호('-'빼고) : ");
 			String phone = sc.nextLine();
 			
-			Lottery lo = new Lottery(name, phone);
+			//매개변수 생성자를 이용해 Lottery 객체에 추첨자 정보 저장.
+ 			Lottery lo = new Lottery(name, phone);
 			boolean isInsert = lc.insertObject(lo);
 			
-			//isInsert -> false때 다시 입력받고 싶다.
+			//isInsert -> false 일 때 다시 입력받고 싶다.
 			if(!isInsert) {
 				System.out.println("중복된 대상입니다. 다시 입력하세요.");
 				i--;
@@ -102,6 +103,8 @@ public class LotteryMenu {
 	public void sortedWinObject() {
 		TreeSet sortedList = lc.sortedWinObject();
 		if(sortedList.isEmpty()) {
+			//isEmpty 메서드는 모든 컬렉션에서 사용 가능.(List, Set, Map)
+			//비어 있으면 true, 요소가 하나라도 있으면 false를 반환한다.
 			System.out.println("당첨결과가 없습니다.");
 		} else {
 			for(Object obj : sortedList) {

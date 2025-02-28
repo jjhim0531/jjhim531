@@ -12,6 +12,7 @@ public class SetRun {
 		
 		//Object에 hashCode()
 		//=> 해당 객체의 "주소값"을 가지고 10진수의 형태로 만들어서 반환
+		//반드시 hashcode, equals 오버라이딩을 해줘야 중복값이 저장안됨.
 		HashSet<String> hsi = new HashSet<String>();
 		
 		hsi.add("반갑습니다");
@@ -30,7 +31,7 @@ public class SetRun {
 		//String에 hashCode() 오버라이딩 
 		//=> "실제 담긴 문자열"을 가지고 10진수의 형태로 만들어서 반환.
 
-		HashSet hsi2 = new HashSet();
+		HashSet<Student> hsi2 = new HashSet<Student>();
 		
 		//만약 hashCode, equals를 오버라이딩 하지 않으면 중복인 것을 알아차리지 못하고 2번 출력됨.
 		hsi2.add(new Student("최지원", 22, 95));
@@ -63,22 +64,45 @@ public class SetRun {
 		//인덱스의 개념이 없기 때문에 get을 할 수 없음 -> 한 개씩 무작위로 가져올 수 있음.
 		
 		//HashSet에 담긴 모든 객체들을 순차적으로 접근하는 방법
-		//1. for each 문 이용
+		//방법1. for each 문 이용
 		for(Object s : hsi2) {
 			System.out.println(s);
 		}
+		System.out.println();
 		
-		//2. Iterator 반복자를 이용해서 순차적 접근 방법
-		Iterator it = hsi2.iterator();
+		
+		//방법2. Iterator 반복자를 이용해서 순차적 접근 방법
+		Iterator<Student> it = hsi2.iterator();
 		
 		while(it.hasNext()) {//다음에 가져올 값이 있니?
 			Object obj = it.next();
 			System.out.println(obj);
 		}
+		System.out.println();
 		
-		//3. ArrayList에 담아준 다음 그 ArrayList를 반복적으로 돌아가며 접근 방법
-		ArrayList list = new ArrayList();
-		list.addAll(hsi2);
+		//방법3. ArrayList에 담아준 다음 그 ArrayList를 반복적으로 돌아가며 접근.
+		ArrayList<Student> list = new ArrayList<Student>();
+		//ArrayList는 중복을 허용(List가 중복을 허용하므로)
+		//addAll() - true 또는 false를 반환.
+		/*addAll()이 적합한 상황
+		다른 컬렉션의 모든 요소를 한 번에 추가할 때
+		데이터를 추가하는 것 외에 별도의 처리가 필요하지 않을 때
+		반환값을 사용하지 않아도 되는 경우
+		리스트가 중복을 허용해도 되는 경우
+		*/
+		/*
+		 A.addAll(B)
+		 => A와 B의 요소가 같더라도 B의 모든 요소가 다시 추가됨 → 즉, A의 값들이 2배로 늘어남!
+		 */
+		//hsi2의 모든 요소가 list에 추가됨 → list.size()가 hsi2.size()와 동일한 값이 됨
+		
+		boolean isAdded = list.addAll(hsi2);
+		//추가된 요소가 있으면 true 반환, 아무 요소도 추가되지 않으면 false 반환
+		
+		  System.out.println("addAll() 반환값: " + isAdded);
+	        System.out.println("리스트 크기: " + list.size());
+
+
 		
 		for(int i=0; i< list.size(); i++) {
 			System.out.println(list.get(i));

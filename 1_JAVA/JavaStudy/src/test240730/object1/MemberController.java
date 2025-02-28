@@ -5,43 +5,45 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 public class MemberController {
-	HashMap map = new HashMap();
-	
+	HashMap map = new HashMap();// 기본적으로 Object 타입으로 받음.
+
+	// 회원가입 기능을 구현한 메서드
 	public boolean joinMembership(String id, Member m) {
-		if(map.get(id) == null) { // id를 key로 값을 가져왔을 때 값이 없다면
-			map.put(id, m);
+		// id를 key로 값을 가져왔을 때 값이 없다면 회원추가
+		if (map.get(id) == null) { // 새 회원 정보를 HashMap에 추가
 			return true;
 		}
-		return false;
+		return false;// 이미 존재하는 아이디 → 회원가입 실패
+
 	}
-	
+
 	public String login(String id, String password) {
-		Member m = (Member)map.get(id);
-		if(m != null) {
-			if(m.getPassword().equals(password)) {
+		Member m = (Member) map.get(id);
+		if (m != null) {
+			if (m.getPassword().equals(password)) {
 				return m.getName();
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	public boolean changePassword(String id, String oldPw, String newPw) {
-		Member m = (Member)map.get(id);
-		if(m != null && m.getPassword().equals(oldPw)) {
+		Member m = (Member) map.get(id);
+		if (m != null && m.getPassword().equals(oldPw)) {
 			m.setPassword(newPw);
 			return true;
 		}
 		return false;
 	}
-	
+
 	public void changeName(String id, String newName) {
-		Member m = (Member)map.get(id);
-		if(m != null) {
+		Member m = (Member) map.get(id);
+		if (m != null) {
 			m.setName(newName);
 		}
 	}
-	
+
 	public TreeMap sameName(String name) {
 		TreeMap result = new TreeMap(new Comparator<String>() {
 			@Override
@@ -49,15 +51,15 @@ public class MemberController {
 				return o1.compareTo(o2);
 			}
 		});
-		
-		//map.keySet() -> id가 모여있는 set자료구조
-		for(Object id : map.keySet()) {
-			Member m = (Member)map.get(id);
-			if(m.getName().equals(name)) {
+
+		// map.keySet() -> id가 모여있는 set자료구조
+		for (Object id : map.keySet()) {
+			Member m = (Member) map.get(id);
+			if (m.getName().equals(name)) {
 				result.put(id, m.getName());
 			}
 		}
-		
+
 		return result;
 	}
 }
