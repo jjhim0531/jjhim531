@@ -4,27 +4,25 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-
-
 public class MemberMenu {
 	Scanner sc = new Scanner(System.in);
 	MemberController mc = new MemberController();
 
 	public void mainMenu() {
 		System.out.println("========== KH 사이트 ==========");
-		
-		while(true) {
+
+		while (true) {
 			System.out.println("******* 메인 메뉴 *******");
 			System.out.println("1. 회원가입");
 			System.out.println("2. 로그인");
 			System.out.println("3. 같은 이름 회원 찾기");
 			System.out.println("9. 종료");
 			System.out.print("메뉴 번호 선택 :");
-			
+
 			int choice = sc.nextInt();
 			sc.nextLine();
-			
-			switch(choice) {
+
+			switch (choice) {
 			case 1:
 				joinMembership();
 				break;
@@ -45,7 +43,7 @@ public class MemberMenu {
 	}
 
 	public void memberMenu() {
-		while(true) {
+		while (true) {
 			System.out.println("******* 회원 메뉴 *******");
 			System.out.println("1. 비밀번호 바꾸기");
 			System.out.println("2. 이름 바꾸기");
@@ -53,8 +51,8 @@ public class MemberMenu {
 			System.out.print("메뉴 번호 선택 : ");
 			int choice = sc.nextInt();
 			sc.nextLine();
-			
-			switch(choice) {
+
+			switch (choice) {
 			case 1:
 				changePassword();
 				break;
@@ -77,9 +75,9 @@ public class MemberMenu {
 		String password = sc.nextLine();
 		System.out.print("이름 : ");
 		String name = sc.nextLine();
-		
+
 		Member m = new Member(name, password);
-		if(mc.joinMembership(id, m)) {
+		if (mc.joinMembership(id, m)) {
 			System.out.println("성공적으로 회원가입 완료하였습니다.");
 		} else {
 			System.out.println("중복된 아이디입니다. 다시 입력해주세요.");
@@ -88,14 +86,14 @@ public class MemberMenu {
 	}
 
 	public void logIn() {
-		while(true) {
+		while (true) {
 			System.out.print("아이디 : ");
 			String id = sc.nextLine();
 			System.out.print("비밀번호 : ");
 			String password = sc.nextLine();
-			
+
 			String name = mc.login(id, password);
-			if(name != null) {
+			if (name != null) {
 				System.out.println(name + "님, 환영합니다!");
 				return;
 			} else {
@@ -111,8 +109,8 @@ public class MemberMenu {
 		String password = sc.nextLine();
 		System.out.print("새로운 비밀번호 : ");
 		String newPwd = sc.nextLine();
-		
-		if(mc.changePassword(id, password, newPwd)) {
+
+		if (mc.changePassword(id, password, newPwd)) {
 			System.out.println("비밀번호 변경에 성공했습니다.");
 		} else {
 			System.out.println("비밀번호 변경에 실패했습니다.");
@@ -120,19 +118,19 @@ public class MemberMenu {
 	}
 
 	public void changeName() {
-		while(true) {
+		while (true) {
 			System.out.print("아이디 : ");
 			String id = sc.nextLine();
 			System.out.print("비밀번호 : ");
 			String password = sc.nextLine();
-			
+
 			String name = mc.login(id, password);
-			if(name != null) {
+			if (name != null) {
 				System.out.println("현재 설정된 이름 : " + name);
-				
+
 				System.out.print("변경할 이름 : ");
 				String newName = sc.nextLine();
-				
+
 				mc.changeName(id, newName);
 			} else {
 				System.out.println("이름 변경에 실패했습니다. 다시 입력해주세요");
@@ -144,11 +142,12 @@ public class MemberMenu {
 		System.out.print("검색할 이름 : ");
 		String name = sc.nextLine();
 		TreeMap result = mc.sameName(name);
-		if(result.isEmpty()) {
+		if (result.isEmpty()) {
 			System.out.println("회원을 찾지 못하였습니다.");
 		} else {
-			for(Object entry : result.entrySet()) {
-				Entry<String, String> en = (Entry)entry;
+			 // `entrySet()`을 사용하여 key-value 쌍을 출력
+			for (Object entry : result.entrySet()) {
+				Entry<String, String> en = (Entry) entry;
 				System.out.println(en.getKey() + " : " + en.getValue());
 			}
 		}
