@@ -4,11 +4,12 @@ import java.io.Serializable;
 
 public class Product implements Serializable {
 	/*
-	 * > 직렬화(Serialization) → 객체를 바이트 스트림(파일, 네트워크 등으로 전송 가능한 형태)으로 변환하는 것!
+	 * > 직렬화(Serialization) 
+	      → 객체를 바이트 스트림(파일, 네트워크 등으로 전송 가능한 형태)으로 변환하는 것!
 	 * > 역직렬화(Deserialization) → 바이트 스트림을 다시 객체로 변환하는 것!
 	 *  즉, 직렬화를 하면 객체를 파일에 저장하거나, 네트워크를 통해 전송할 수 있음!
 	 *  하지만, transient 키워드를 사용하면 특정 필드는 직렬화되지 않음!
-	 *  
+	   
 	 *  직렬화하려는 클래스는 반드시 Serializable 인터페이스를 구현해야 함.
 	 * 
 	 *  Serializable은 구현해야 할 메서드가 없는 마커 인터페이스(단순 표시용). 
