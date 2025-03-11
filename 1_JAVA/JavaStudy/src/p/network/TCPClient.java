@@ -48,7 +48,7 @@ public class TCPClient {
 					System.out.print("서버에게 보낼 내용 : ");
 					String sendMessage = sc.nextLine();
 					pw.println(sendMessage); //입력받은 내용 스트림에 담기
-					pw.flush();//스트림에 담겨있는 내용을 강제로 보냄
+					pw.flush();//스트림에 담겨있는 내용을 강제로 비움.
 					
 					String message = br.readLine();
 					System.out.println("서버로부터 전달받은 메세지 : " + message);
