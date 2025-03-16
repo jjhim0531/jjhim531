@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class ClientReceive extends Thread{
+	
 	private Socket socket;
 
 	public ClientReceive(Socket socket) {

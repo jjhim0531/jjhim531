@@ -9,7 +9,7 @@ public class Task1 extends Thread{
 				if(i % 2 == 0) {
 					System.out.println(i + " ");
 				}
-				Thread.sleep(200); // 0.2초동안 지금 쓰레드를 재운다.
+				Thread.sleep(500); // 0.2초동안 지금 쓰레드를 재운다.
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
