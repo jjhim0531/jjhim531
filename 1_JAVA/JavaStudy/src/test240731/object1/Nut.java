@@ -1,5 +1,6 @@
 package test240731.object1;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Nut extends Farm{
@@ -8,9 +9,14 @@ public class Nut extends Farm{
 	public Nut() {
 		super();
 	}
-
+	
 	public Nut(String kind, String name) {
 		super(kind);
+		this.name = name;
+	}
+
+	public Nut(String kind, String name, LocalDate date) {
+		super(kind, date);
 		this.name = name;
 	}
 	
@@ -24,7 +30,7 @@ public class Nut extends Farm{
 
 	@Override
 	public String toString() {
-		return super.getKind() + ": " + this.name;
+		return super.getKind() + " : " + this.name;
 	}
 
 	@Override

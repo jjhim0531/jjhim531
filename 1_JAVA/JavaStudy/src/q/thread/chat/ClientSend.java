@@ -13,7 +13,7 @@ public class ClientSend extends Thread{
 		this.socket = socket;
 	}
 
-	@Override
+	@Override 
 	public void run() {
 		try(PrintWriter pw = new PrintWriter(socket.getOutputStream())) {
 			Scanner sc = new Scanner(System.in);

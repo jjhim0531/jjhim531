@@ -15,8 +15,6 @@ public class TCPServer {
 	public static void main(String[] args) {
 		int port = 3000;
 		
-		
-		
 		try {
 			ServerSocket soc = new ServerSocket(port);
 			System.out.println("서버 연결준비 완료....");
@@ -28,7 +26,7 @@ public class TCPServer {
 			
 			
 			//클라이언트로부터 메세지를 받는 "쓰레드"를 실행하는 코드.
-			ServerReveive receive = new ServerReveive(socket);
+			ServerReceive receive = new ServerReceive(socket);
 			Thread receiveTask = new Thread(receive);
 			receiveTask.start();
 			

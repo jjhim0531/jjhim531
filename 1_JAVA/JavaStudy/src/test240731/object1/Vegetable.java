@@ -1,8 +1,9 @@
 package test240731.object1;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
-public class Vegetable extends Farm{
+public class Vegetable extends Farm {
 	private String name;
 
 	public Vegetable() {
@@ -13,7 +14,12 @@ public class Vegetable extends Farm{
 		super(kind);
 		this.name = name;
 	}
-	
+
+	public Vegetable(String kind, String name, LocalDate date) {
+		super(kind, date);
+		this.name = name;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -24,7 +30,7 @@ public class Vegetable extends Farm{
 
 	@Override
 	public String toString() {
-		return super.getKind() + ": " + this.name;
+		return super.getKind() + " : " + this.name;
 	}
 
 	@Override
@@ -35,8 +41,8 @@ public class Vegetable extends Farm{
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Vegetable) {
-			Vegetable v = ((Vegetable)obj);
-			if(v.getName().equals(this.getName()) && v.getKind().equals(super.getKind())){
+			Vegetable v = ((Vegetable) obj);
+			if (v.getName().equals(this.getName()) && v.getKind().equals(super.getKind())) {
 				return true;
 			}
 		}

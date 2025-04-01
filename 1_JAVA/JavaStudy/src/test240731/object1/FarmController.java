@@ -15,7 +15,7 @@ public class FarmController {
 	}
 	
 	public boolean addNewKind(Farm f, int amount) {
-		if(hMap.containsKey(f)) { // f라는 키로 데이터가 존재한다면 -> 추가불가
+		if(hMap.containsKey(f)) { // f라는 키로 데이터가 존재한다면 -> 추가 불가
 			return false;
 		} else { // 추가가능
 			hMap.put(f, amount);
@@ -28,7 +28,6 @@ public class FarmController {
 			hMap.remove(f);
 			return true;
 		}
-		
 		return false;
 	}
 	

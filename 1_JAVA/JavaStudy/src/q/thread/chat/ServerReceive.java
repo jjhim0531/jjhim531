@@ -5,11 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class ServerReveive implements Runnable{
+public class ServerReceive implements Runnable{
 //run(4)
 	private Socket socket;// 클라이언트와 연결된 소켓
 
-	public ServerReveive(Socket socket) {
+	public ServerReceive(Socket socket) {
 		super();
 		this.socket = socket;// 생성자를 통해 클라이언트 소켓을 받음
 	}
