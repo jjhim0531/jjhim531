@@ -15,7 +15,7 @@ public class Fruit extends Farm {
 		super();
 		this.name = name;
 	}
-	
+
 	public Fruit(String kind, String name) {
 		super(kind);
 		this.name = name;
@@ -47,7 +47,7 @@ public class Fruit extends Farm {
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Fruit) {
-			Fruit f = ((Fruit) obj);
+			Fruit f = (Fruit) obj;
 			if (f.getName().equals(this.getName()) && f.getKind().equals(super.getKind())) {
 				return true;
 			}
