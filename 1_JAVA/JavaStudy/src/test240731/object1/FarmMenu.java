@@ -278,6 +278,7 @@ public class FarmMenu {
 				break;
 			}
 
+			
 			if (fc.buyFarm(Item)) {
 				System.out.println("구매에 성공하였습니다.");
 				break;
